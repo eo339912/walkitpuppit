@@ -35,16 +35,16 @@
 /* 메인 비쥬얼*/
 .main_vis_wrap{width:100%; height:100vh; overflow:hidden; position:relative;}
 
-.main_vis_wrap .main_vis_txt_wrap{position:absolute;top:0; left:0; z-index:1; width:100%; height:100%; background:url('/minproject/images/main/main_bg_dot.png') repeat 0 0; vertical-align:middle;box-sizing:border-box; display:table;}
+.main_vis_wrap .main_vis_txt_wrap{position:absolute;top:0; left:0; z-index:1; width:100%; height:100%; background:url('/dogproject/images/main/main_bg_dot.png') repeat 0 0; vertical-align:middle;box-sizing:border-box; display:table;}
 	.main_vis_txt_wrap .txt_wrap{text-align:center; width:100%; height:100%; vertical-align:middle;box-sizing:border-box; color:#FFF; display:table-cell; text-align:center;}
 	.main_vis_txt_wrap .txt_wrap .t1{font-family: 'yg-jalnan', 'crd';  color:#FFF; font-size:3em; line-height:1.3em;}
 	.main_vis_txt_wrap .txt_wrap .t0 img{display:inline;}
 	.main_vis_txt_wrap .txt_wrap .t0{margin-bottom:10px;}
 .main_vis_wrap .main_vis_img_wrap{height:100%;}
 	.main_vis_img_wrap .vis_img{width:100%; height:100%; background:no-repeat center center; background-size:cover; }
-	.main_vis_img_wrap .vis_img.img1{background-image:url(/minproject/images/main/main_vis_01.png);}
-	.main_vis_img_wrap .vis_img.img2{background-image:url(/minproject/images/main/main_vis_02.png);}
-	.main_vis_img_wrap .vis_img.img3{background-image:url(/minproject/images/main/main_vis_03.png);}
+	.main_vis_img_wrap .vis_img.img1{background-image:url(/dogproject/images/main/main_vis_01.png);}
+	.main_vis_img_wrap .vis_img.img2{background-image:url(/dogproject/images/main/main_vis_02.png);}
+	.main_vis_img_wrap .vis_img.img3{background-image:url(/dogproject/images/main/main_vis_03.png);}
 .main_vis_wrap .slick-list,
 .main_vis_wrap .slick-track{height:100%;}
 .main_vis_wrap  .slick-dots{bottom:unset; top:35em;}
@@ -103,9 +103,9 @@
 		-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position:center center; background-repeat:no-repeat;
 		transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000); -webkit-transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000); transition:1000ms; -webkit-transition:1000ms; transform:translateZ(0) scale(1) rotate(0.1deg); -webkit-transform:translateZ(0) scale(1) rotate(0.1deg);
 	}
-	.sec01_con_wrap .con_bx.bx1 .img{background-image:url(/minproject/images/main/sec01_img_01.png);}
-	.sec01_con_wrap .con_bx.bx2 .img{background-image:url(/minproject/images/main/sec01_img_02.png);}
-	.sec01_con_wrap .con_bx.bx3 .img{background-image:url(/minproject/images/main/sec01_img_03.png);}
+	.sec01_con_wrap .con_bx.bx1 .img{background-image:url(/dogproject/images/main/sec01_img_01.png);}
+	.sec01_con_wrap .con_bx.bx2 .img{background-image:url(/dogproject/images/main/sec01_img_02.png);}
+	.sec01_con_wrap .con_bx.bx3 .img{background-image:url(/dogproject/images/main/sec01_img_03.png);}
 
 	.sec01_con_wrap .con_bx:hover .img{transform:translateZ(0) scale(1.1) rotate(0deg); -webkit-transform:translateZ(0) scale(1.1) rotate(0deg); }
 
@@ -184,8 +184,8 @@
 #section3{}
 .sec03_top_wrap{width:100%; overflow:hidden; max-height:35%;}
 .sec03_top_wrap .sec03_bx{width:50%; float:left; background:no-repeat center center; background-size:cover; box-sizing:border-box; text-align:center; cursor:pointer;}
-.sec03_top_wrap .sec03_bx.bx1{background-image:url(/minproject/images/main/sec03_img_00.png);}
-.sec03_top_wrap .sec03_bx.bx2{background-image:url(/minproject/images/main/sec03_img_01.png);}
+.sec03_top_wrap .sec03_bx.bx1{background-image:url(/dogproject/images/main/sec03_img_00.png);}
+.sec03_top_wrap .sec03_bx.bx2{background-image:url(/dogproject/images/main/sec03_img_01.png);}
 .sec03_top_wrap .sec03_bx .box{position:relative; width:180px; display:inline-block;  margin:8vh auto;}
 .sec03_top_wrap .sec03_bx .box:before{content:""; display:block; padding-top:100%;}
 .sec03_top_wrap .sec03_bx .box .c{position:absolute; top:0; right:0; bottom:0; left:0; text-align:Center; color:#FFF; font-family:'crd'; padding:1.6em 0; font-weight:500; font-size:1.2em; line-height:1.6em; border:10px solid #FFF; box-sizing:border-box;}

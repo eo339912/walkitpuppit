@@ -7,37 +7,31 @@
 	</div>
 
 	<ul class="sub_menu_box sub01 ">
-		<li class="m1"><a href="javascript:GoPage('intro01')">인사말</a></li>
-		<!-- <li class="m2"><a href="javascript:GoPage('intro02')">개요</a></li> -->
-		<li class="m2"><a href="javascript:GoPage('intro03')">연혁</a></li>
-		<li class="m3"><a href="javascript:GoPage('intro04')">CI소개</a></li>
-		<li class="m4"><a href="javascript:GoPage('intro05')">인증서</a></li>
-		<li class="m5"><a href="javascript:GoPage('intro06')">주요거래처</a></li>
-		<li class="m6"><a href="javascript:GoPage('intro07')">오시는 길</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro01')">중구</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro03')">달서구</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro04')">수성구</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro05')">동구</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro06')">달성군</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">북구</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">남구</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">서구</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub02 ">
-		<li class="m1"><a href="javascript:GoPage('process01')">원물관리</a></li>
-		<li class="m2"><a href="javascript:GoPage('process02')">제조관리</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">중고거래</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">무료나눔</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">후기게시판</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub03 ">
-		<li class="m1"><a href="javascript:GoPage('product01')">소용량 컵과일</a></li>
-		<li class="m2"><a href="javascript:GoPage('product02')">중용량 컵과일</a></li>
-		<li class="m3"><a href="javascript:GoPage('product03')">대용량 컵과일</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">마이페이지</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">내 히스토리</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub04 ">
-		<li class="m1"><a href="javascript:GoPage('cs01')">공지사항</a></li>
-		<li class="m2"><a href="javascript:GoPage('cs02')">언론보도</a></li>
-		<li class="m3"><a href="javascript:GoPage('cs03')">고객문의</a></li>
-		<li class="m4"><a href="javascript:GoPage('cs04')">주문ERP</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">공지사항</a></li>
 	</ul>
 
-	<ul class="sub_menu_box sub05 ">
-		<li class="m1"><a href="javascript:GoPage('mem01')">개인정보처리방침</a></li>
-		<li class="m2"><a href="javascript:GoPage('mem02')">이메일무단수집거부</a></li>
-	</ul>
 </div>
 
 

@@ -13,11 +13,11 @@
 #sub_vis_wrap.sub04 .visual-area .visual-area-txt.sub04,
 #sub_vis_wrap.sub05 .visual-area .visual-area-txt.sub05{display:table-cell;}
 
-#sub_vis_wrap.sub01 .visual-area { background-image:url("/minproject/images/sub/sub_vis_01.png");}
-#sub_vis_wrap.sub02 .visual-area { background-image:url("/minproject/images/sub/sub_vis_06.png");}
-#sub_vis_wrap.sub03 .visual-area { background-image:url("/minproject/images/sub/sub_vis_03.png");}
-#sub_vis_wrap.sub04 .visual-area { background-image:url("/minproject/images/sub/sub_vis_04.png");}
-#sub_vis_wrap.sub05 .visual-area { background-image:url("/minproject/images/sub/sub_vis_05.png");}
+#sub_vis_wrap.sub01 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_01.png");}
+#sub_vis_wrap.sub02 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_06.png");}
+#sub_vis_wrap.sub03 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_03.png");}
+#sub_vis_wrap.sub04 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_04.png");}
+#sub_vis_wrap.sub05 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_05.png");}
 
 @keyframes animate_background{ 
 	0%    {background-position:50% 0;}
@@ -129,7 +129,7 @@
 
 
 /* 인사말 */
-.sub0101_vis_wrap{width:96%; margin:0 auto; background:url(/minproject/images/sub/sub0101_img_01.png) no-repeat center center; background-size:cover; height:480px;}
+.sub0101_vis_wrap{width:96%; margin:0 auto; background:url(/dogproject/images/sub/sub0101_img_01.png) no-repeat center center; background-size:cover; height:480px;}
 .sub0101_con_wrap{background:#FFF; padding:50px 50px 6em; box-sizing:Border-box; margin-top:-80px;}
 .sub0101_con_wrap .tit{font-size:2em; font-weight:600; line-height:1.4em;}
 .sub0101_con_wrap .con{margin:4em auto}
@@ -236,14 +236,14 @@
 .sub0104_bx_3{margin:8em auto; }
 .sub0104_bx_3 .s_txt{margin-top:4em; line-height:1.6em; font-size:1.05em;word-break:keep-all}
 
-.sub0104_bx_4{ background:url(/minproject/images/sub/sub0104_img_05.png) repeat 0 0; background-size:10px; padding:4em 20px;  box-sizing:border-box;}
+.sub0104_bx_4{ background:url(/dogproject/images/sub/sub0104_img_05.png) repeat 0 0; background-size:10px; padding:4em 20px;  box-sizing:border-box;}
 .sub0104_bx_4 .bx_wrap{margin-top:4em;}
 .sub0104_bx_4 .bx_wrap:first-child{margin-top:0;}
 .sub0104_bx_4 .bx_wrap .t{display:inline-block; background:#000; color:#FFF; font-weight:500; padding:4px 6px 1px; line-height:1em;}
 .sub0104_bx_4 .bx_wrap .c{display:inline-block; margin-top:10px;}
 .sub0104_bx_4 .bx_wrap img{display:block; margin:30px auto 0;}
 
-.sub0104_bx_5{ background:url(/minproject/images/sub/sub0104_img_06.png) repeat 0 0; padding:15em 20px;  box-sizing:border-box; text-align:center; background-size:cover; margin:8em auto;}
+.sub0104_bx_5{ background:url(/dogproject/images/sub/sub0104_img_06.png) repeat 0 0; padding:15em 20px;  box-sizing:border-box; text-align:center; background-size:cover; margin:8em auto;}
 
 @media all and (max-width:750px) {
 	.sub0104_bx_1 .s_txt br.pc,
@@ -362,7 +362,7 @@
 
 
 /**/
-.sub02_w_inner{overflow:hidden; box-sizing:border-box; color:#FFF; background:#f99700 url('/minproject/images/sub/sub0201_img_00.png') no-repeat center center;  text-align:center; margin:0 auto;}
+.sub02_w_inner{overflow:hidden; box-sizing:border-box; color:#FFF; background:#f99700 url('/dogproject/images/sub/sub0201_img_00.png') no-repeat center center;  text-align:center; margin:0 auto;}
 .sub02_w_inner .tt{font-size:2.6em; padding:2em 0 2.5em}
 
 .sub02_pro_wrap{overflow:hidden; box-sizing:border-box; padding:0 1.5%; margin-top:-2.5em; }

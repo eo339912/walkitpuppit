@@ -21,6 +21,5 @@
 </header>
 
 <div id="gnb_mo" class="mo_menu">
-	<? include "menu.php" ?>
+<%@include file="/common/menu.jsp"%>
 </div>
-<?php include_once(G5_LIB_PATH.'/latest.lib.php'); ?>
