@@ -5,6 +5,32 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>dogproject</name>
+   <dependencies>
+  	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-servlet -->
+	<dependency>
+	    <groupId>org.apache.tiles</groupId>
+	    <artifactId>tiles-servlet</artifactId>
+	    <version>3.0.8</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+	<dependency>
+	    <groupId>org.apache.tiles</groupId>
+	    <artifactId>tiles-core</artifactId>
+	    <version>3.0.8</version>
+	</dependency>
+		
+	
+	
+	
+  </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
