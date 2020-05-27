@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+#wrap {position:relative; width:100%; }
+#headerWrap {position:relative; width:100%;}
+#container {position:relative; width:100%;}
+#footerWrap {position:relative; width:100%;}
+
+
+
+/*Header*/
+
+
+/* Footer */
+#ft_Wrap{width:100%; overflow:hidden;}
+	.ft_top_wrap{border-top:1px solid #dfdfdf; border-bottom:1px solid #dfdfdf; width:100%; overflow:hidden;}
+	.ft_top_wrap .ft_top_bx{width:50%; float:left; box-sizing:border-box; padding:20px 20px; border-left:1px solid #dfdfdf;}
+	.ft_top_wrap .ft_top_bx:first-child{border-left:0;}
+	.ft_top_wrap .ft_top_bx span{ line-height:35px; display:inline-block; width:80px; font-weight:500; float:left; font-family:'crd';}
+	.ft_top_wrap .ft_top_bx .con{float:left; width:calc(100% - 125px); font-size:0.96em;}
+	.ft_top_wrap .ft_top_bx .con .slick-slide{height:35px;}
+	.ft_top_wrap .ft_top_bx .con a{ line-height:35px; width:100%; display:inline-block; width:90%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+	.ft_top_wrap .ft_top_bx .con a:hover{color:#FAA21B;}
+	.ft_top_wrap .ft_top_bx a.link{display:inline-block; width:35px; float:right; filter: grayscale(100%); -webkit-filter: grayscale(100%);}
+	.ft_top_wrap .ft_top_bx a.link:hover{filter: grayscale(0%); -webkit-filter: grayscale(0%);}
+	
+	.ft_in_bx{padding:20px; box-sizing:Border-box; font-size: 0.95em; font-family:'crd'}
+	.ft_mid_wrap{margin-bottom:20px;}
+	.ft_mid_wrap a{font-weight:500;}
+	.ft_mid_wrap span{display:inline-block; width:1px; height:13px; background:#ccc; margin:0 15px;}
+	.ft_bt_wrap{font-size: 0.92em; font-weight:200; line-height:1.5em}
+	.ft_bt_wrap span{color:#999; margin:0 13px;}
+	.ft_bt_wrap b{font-weight:200; margin-top:7px; display:inline-block;}
+
+@media all and (max-width:1200px) {
+	#ft_Wrap .w-inner{width:100%;}
+	.ft_top_wrap .ft_top_bx{padding:15px;}
+	.ft_in_bx{padding:15px;}
+	.ft_mid_wrap{margin-bottom:15px;}
+}
+@media all and (max-width:650px) {
+	.ft_top_wrap .ft_top_bx{padding: 7px 15px; width:100%; border-left:0;}
+	.ft_top_wrap .ft_top_bx:first-child{border-bottom:1px dotted #dfdfdf}
+	
+	.ft_in_bx{text-align:center;}
+	.ft_mid_wrap span{margin:0 10px;}
+	.ft_bt_wrap span{margin:0 5px;}
+	.ft_bt_wrap .mo{display:block}
+	.ft_bt_wrap .pc{display:none}
+
+
+}
+
+/* 개인정보취급방침 private.php*/
+.privacy_policy01 {margin:60px 0 40px 0; }
+.privacy_policy01 h4 {font-size:20px; font-weight:300; margin-bottom:30px;}
+.privacy_policy01 .privacy_box {border:1px solid #ddd; padding:20px;}
+.privacy_policy01 .privacy_box p {line-height:2; color:#666; font-weight:300;}
+.privacy_policy02 {background:#f8f8f8; padding:30px 0 50px 280px; overflow:hidden; margin-bottom:40px; color:#666;}
+.privacy_policy02 p {padding-left:50px; font-weight:400;}
+.privacy_policy02 ul.privacy_txt01 {float:left; margin:10px 50px;}
+.privacy_policy02 ul li {font-weight:300; line-height:1.8;}
+.privacy_policy03 {margin-bottom:50px; color:#666; font-weight:300;}
+.privacy_policy03 h4 {font-size:20px; font-weight:300; margin-bottom:25px; padding-bottom:6px; border-bottom:1px solid #e8e8e8;}
+.privacy_policy03 p {line-height:1.8; margin-bottom:25px;}
+.privacy_policy03 p.bottom00 {margin-bottom:0;}
+.privacy_policy03 ul.bottom26 {margin-bottom:26px;}
+.privacy_policy03 ul li {line-height:1.8;}
+.privacy_txt02 {text-indent:-15px; padding-left:25px;}
+
+
+@media all and (max-width:1200px) {
+	.privacy_policy01 {margin:30px 0 20px 0; }
+	.privacy_policy01 h4 {font-size:18px; margin-bottom:20px;}
+	.privacy_policy01 .privacy_box {font-size:0.9em; padding:10px;}
+	.privacy_policy02 {padding:25px 0 25px 0px; margin-bottom:20px;}
+	.privacy_policy02 p {font-size:0.9em; padding-left:20px;}
+	.privacy_policy02 ul.privacy_txt01 {margin:10px 20px;}
+	.privacy_policy02 ul li {font-size:0.9em;}
+	.privacy_policy03 {margin-bottom:25px;}
+	.privacy_policy03 h4 {font-size:18px; margin-bottom:13px; padding-bottom:3px;}
+	.privacy_policy03 p {font-size:0.9em; margin-bottom:13px;}
+	.privacy_policy03 ul.bottom26 {margin-bottom:13px;}
+	.privacy_policy03 ul li {font-size:0.9em;}
+}
+
+@media all and (max-width:820px) {
+	.privacy_policy01 h4 {font-size:1em;}
+	.privacy_policy01 .privacy_box {font-size:0.9em;}
+	.privacy_policy02 p {font-size:0.9em; padding-left:10px;}
+	.privacy_policy02 ul li {font-size:0.9em;}
+	.privacy_policy03 p {font-size:0.9em;}
+	.privacy_policy03 ul li {font-size:0.9em;}
+}
