@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=1280, user-scalable=yes, target-densitydpi=device-dpi" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<!-- <script type="text/javascript" src="</script'>http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+<script type="text/javascript" src="</script'>http://davidlynch.org/projects/maphilight/jquery.maphilight.min.js"></script>
+
+
+<title>Image Map Test</title>
+
+<script type="text/javascript">
+
+function changeImg(img){
+ var mapimg = document.getElementById('map');
+ mapimg.src = img;
+}
+
+function changeImg1(obj, img){
+ var mapimg1 = document.getElementById('map1');
+ mapimg1.src = img;
+}
+
+</script>
+
+
+<style>
+
+</style>
+
+</head>
+<body>
+
+<img  id="map1" src="img/11.jpg"  onmouseover="changeImg1(this,'img/12.jpg')" onmouseout="changeImg1(this,'img/11.jpg')" />
+
+
+<div style="width: 200px; height: 200px;">
+  <img id="map" src="img/11.jpg" width="200" height="200" border="0" usemap="#Map" />
+  <map name="Map">
+    <area shape="rect" coords="1,1,100,100"  onmouseover="changeImg('img/12.jpg')" onmouseout="changeImg('img/11.jpg')" href="#" target="_self">
+    <area shape="rect" coords="101,1,200,101" href="#" target="_self" onmouseover="changeImg('img/13.jpg')" onmouseout="changeImg('img/11.jpg')">
+    <area shape="rect" coords="1,100,100,200" href="#" target="_self" onmouseover="changeImg('img/15.jpg')" onmouseout="changeImg('img/11.jpg')">
+    <area shape="rect" coords="101,101,200,200" href="#" target="_self" onmouseover="changeImg('img/14.jpg')" onmouseout="changeImg('img/11.jpg')">
+  </map>
+</div>
+
+</body>
+</html>
