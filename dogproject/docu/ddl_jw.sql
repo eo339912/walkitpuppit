@@ -20,3 +20,6 @@ CONSTRAINT board_FK FOREIGN KEY (id) REFERENCES member(id)
 );
 
 alter table board add filename varchar2(100);
+
+
+

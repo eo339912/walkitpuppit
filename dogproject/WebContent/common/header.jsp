@@ -10,7 +10,7 @@
 <meta name="title" content="워킷버킷"> 
 
 
-<title>푸드팩토리</title>
+<title>워킷퍼핏</title>
 
 <!-- css -->
 <link href="${pageContext.request.contextPath}/css/common.css" type="text/css" rel="stylesheet"/>

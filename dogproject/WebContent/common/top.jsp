@@ -13,7 +13,8 @@
 		<%@include file="/common/menu.jsp"%>
 	</div>
 
-	<a class="hd_btn" href="javascript:GoPage('cs03')">제품문의하기</a>
+	<a class="hd_btn" href="javascript:GoPage('cs03')">로그인</a>
+	<a class="hd_btn" href="javascript:GoPage('cs03')" style="right: 102px;">회원가입</a>
 
 	<div class="hd_full mo">
 		<span></span>
