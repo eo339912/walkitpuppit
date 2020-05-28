@@ -23,17 +23,17 @@ public class ParkDAO {
 			// 1. DB 연결
 			conn = ConnectionManager.getConnnect();
 			// 2. 쿼리 준비
-			String sql = "select * from park where spotnum = ? order by seq "; // 2.전체조회는 항상 오더바디 넣자
+			String sql = "select * from park where spotnum = ? "; // 2.전체조회는 항상 오더바디 넣자
 			psmt = conn.prepareStatement(sql);
 			// 3. statement 실행
 			psmt.setString(1, spotnum); // 첫번재 물음표 값이 id다  // 3. 단건에서의 ? 빠졌으니 set도 필요없음
 			ResultSet rs = psmt.executeQuery();
 			while (rs.next()) {
 				ParkVO vo = new ParkVO(); // 4. 위치 while 안으로
-				vo.setSNAME(rs.getString("sname"));
-				vo.setSENTER(rs.getString("senter"));
-				vo.setSEQ(rs.getString("seq"));
-				vo.setSPOTNM(rs.getString("spotnm"));// 결과값에 담기
+				vo.setSname(rs.getString("sname"));
+				vo.setSenter(rs.getString("senter"));
+				vo.setSeq(rs.getString("seq"));
+				vo.setSpotnm(rs.getString("spotnm"));// 결과값에 담기
 				list.add(vo); // 5.리스트에 담기
 			}
 			// 4. 결과 저장

@@ -2,77 +2,62 @@ package co.dog.wp.park.model;
 
 public class ParkVO {
 	
-	String SEQ;
-	String SNAME;
-	String X;
-	String Y;
-	String SPOTNUM;
-	String SPOTNM;
-	String SENTER;
-	
-
-	public String getSEQ() {
-		return SEQ;
+	String seq;
+	String sname;
+	String x;
+	String y;
+	String spotnum;
+	String spotnm;
+	String senter;
+	public String getSeq() {
+		return seq;
 	}
-
-	public void setSEQ(String sEQ) {
-		SEQ = sEQ;
+	public void setSeq(String seq) {
+		this.seq = seq;
 	}
-
-	public String getSNAME() {
-		return SNAME;
+	public String getSname() {
+		return sname;
 	}
-
-	public void setSNAME(String sNAME) {
-		SNAME = sNAME;
+	public void setSname(String sname) {
+		this.sname = sname;
 	}
-
 	public String getX() {
-		return X;
+		return x;
 	}
-
 	public void setX(String x) {
-		X = x;
+		this.x = x;
 	}
-
 	public String getY() {
-		return Y;
+		return y;
 	}
-
 	public void setY(String y) {
-		Y = y;
+		this.y = y;
 	}
-
-	public String getSPOTNUM() {
-		return SPOTNUM;
+	public String getSpotnum() {
+		return spotnum;
 	}
-
-	public void setSPOTNUM(String sPOTNUM) {
-		SPOTNUM = sPOTNUM;
+	public void setSpotnum(String spotnum) {
+		this.spotnum = spotnum;
 	}
-
-	public String getSPOTNM() {
-		return SPOTNM;
+	public String getSpotnm() {
+		return spotnm;
 	}
-
-	public void setSPOTNM(String sPOTNM) {
-		SPOTNM = sPOTNM;
+	public void setSpotnm(String spotnm) {
+		this.spotnm = spotnm;
 	}
-
-	public String getSENTER() {
-		return SENTER;
+	public String getSenter() {
+		return senter;
 	}
-
-	public void setSENTER(String sENTER) {
-		SENTER = sENTER;
+	public void setSenter(String senter) {
+		this.senter = senter;
 	}
-
 	@Override
 	public String toString() {
-		return "parkVO [SEQ=" + SEQ + ", SNAME=" + SNAME + ", X=" + X + ", Y=" + Y + ", SPOTNUM=" + SPOTNUM
-				+ ", SPOTNM=" + SPOTNM + ", SENTER=" + SENTER + "]";
+		return "ParkVO [seq=" + seq + ", sname=" + sname + ", x=" + x + ", y=" + y + ", spotnum=" + spotnum
+				+ ", spotnm=" + spotnm + ", senter=" + senter + "]";
 	}
 	
+
 	
 	
 

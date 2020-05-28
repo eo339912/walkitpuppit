@@ -126,12 +126,9 @@ public class BoardDAO {
 			ResultSet rs = psmt.executeQuery();
 			while (rs.next()) {
 				BoardVO vo = new BoardVO();
-				vo.setId(rs.getString("id"));
 				vo.setRegdt(rs.getString("regdt"));
-				vo.setContents(rs.getString("contents"));
 				vo.setSeq(rs.getString("seq"));
 				vo.setTitle(rs.getString("title"));
-				vo.setStar(rs.getString("star"));
 
 				list.add(vo);
 			}
@@ -163,7 +160,6 @@ public class BoardDAO {
 			psmt = conn.prepareStatement(sql);
 
 			// 3. 실행
-			psmt.setString(1, board.getContents());
 			psmt.setString(2, board.getTitle());
 			psmt.setString(3, board.getSeq());
 			
@@ -238,7 +234,6 @@ public class BoardDAO {
 			ResultSet rs = psmt.executeQuery();
 			while (rs.next()) {
 				BoardVO vo = new BoardVO();
-				vo.setId(rs.getString("id"));
 				vo.setRegdt(rs.getString("regdt"));
 				vo.setTitle(rs.getString("title"));
 				vo.setSeq(rs.getString("seq"));
