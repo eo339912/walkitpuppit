@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
 
-<script> var tit02="Áß°í°Å·¡"</script>
+<script> var tit02="ì¤‘ê³ ê±°ëž˜"</script>
 
 <div id="sub_vis_wrap" class="sub04 page01">
    <%@include file="/common/sub_vis.jsp"%>
@@ -18,18 +18,18 @@
 
 <div id="sub_content_wrap"  class="sub0401 inner">
    <div class="inner" style="margin-bottom:10em">
-      <!-- °Ô½ÃÆÇ ¸ñ·Ï ½ÃÀÛ { -->
+      <!-- ê²Œì‹œíŒ ëª©ë¡ ì‹œìž‘ { -->
       <div id="bo_list" style="width:100%" class="sub_board">
         <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
           <div class="tbl_head01 tbl_wrap">
               <table>
-                 <caption>°Ô½ÃÆÇ ¸ñ·Ï</caption>
+                 <caption>ê²Œì‹œíŒ ëª©ë¡</caption>
                  <thead>
                  <tr>
-                     <th scope="col" width="15%">¼ø¹ø</th>
-                     <th scope="col">Á¦¸ñ</th>
-                     <th scope="col" width="15%">±Û¾´ÀÌ</th>
-                     <th scope="col" width="15%">ÀÛ¼ºÀÏÀÚ <i class="fa fa-sort" aria-hidden="true"></i></th>
+                     <th scope="col" width="15%">ìˆœë²ˆ</th>
+                     <th scope="col">ì œëª©</th>
+                     <th scope="col" width="15%">ê¸€ì“´ì´</th>
+                     <th scope="col" width="15%">ìž‘ì„±ì¼ìž <i class="fa fa-sort" aria-hidden="true"></i></th>
                  </tr>
                  </thead>
                  <tbody>
@@ -48,18 +48,18 @@
           </div>
           </form>
            
-             <!-- °Ô½ÃÆÇ °Ë»ö ½ÃÀÛ { -->
+             <!-- ê²Œì‹œíŒ ê²€ìƒ‰ ì‹œìž‘ { -->
           <fieldset id="bo_sch">
-              <legend>°Ô½Ã¹° °Ë»ö</legend>      
+              <legend>ê²Œì‹œë¬¼ ê²€ìƒ‰</legend>      
               <form name="fsearch" method="get">
-              <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="°Ë»ö¾î¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä">
-              <button type="submit" value="°Ë»ö" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>°Ë»ö</span></button>
+              <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="ê²€ìƒ‰ì–´ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”">
+              <button type="submit" value="ê²€ìƒ‰" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>ê²€ìƒ‰</span></button>
               </form>
           </fieldset>
-          <!-- } °Ô½ÃÆÇ °Ë»ö ³¡ -->   
+          <!-- } ê²Œì‹œíŒ ê²€ìƒ‰ ë -->   
       </div>
             
-      <!-- } °Ô½ÃÆÇ ¸ñ·Ï ³¡ -->
+      <!-- } ê²Œì‹œíŒ ëª©ë¡ ë -->
       </div>
 </div>
 
