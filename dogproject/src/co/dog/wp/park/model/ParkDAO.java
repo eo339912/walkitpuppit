@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import co.dog.wp.common.ConnectionManager;
 
 
+
 public class ParkDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
@@ -23,7 +24,7 @@ public class ParkDAO {
 			// 1. DB 연결
 			conn = ConnectionManager.getConnnect();
 			// 2. 쿼리 준비
-			String sql = "select * from park where spotnum = ? "; // 2.전체조회는 항상 오더바디 넣자
+			String sql = "select * from park where spotnum = ? order by seq"; // 2.전체조회는 항상 오더바디 넣자
 			psmt = conn.prepareStatement(sql);
 			// 3. statement 실행
 			psmt.setString(1, spotnum); // 첫번재 물음표 값이 id다  // 3. 단건에서의 ? 빠졌으니 set도 필요없음
@@ -45,5 +46,33 @@ public class ParkDAO {
 		}
 		return list;
 	}
+	
+	// 단건조회
+	public ParkVO getPark(String seq) {
+			ParkVO parkvo = new ParkVO();
+
+			try {
+				
+				conn = ConnectionManager.getConnnect();
+	
+				String sql = "select spotnm, senter from park where seq=?";
+				psmt = conn.prepareStatement(sql);
+				
+				psmt.setString(1, seq); 
+				ResultSet rs = psmt.executeQuery();
+				if (rs.next()) {
+					parkvo.setSeq(rs.getString("seq"));
+					parkvo.setSpotnm(rs.getString("spotnm"));
+					parkvo.setSenter(rs.getString("senter"));
+				
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				ConnectionManager.close(conn);
+			}
+			return parkvo;
+		}
 
 }

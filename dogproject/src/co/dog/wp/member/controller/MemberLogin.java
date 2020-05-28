@@ -17,7 +17,7 @@ import co.dog.wp.member.model.MemberVO;
  * Servlet implementation class Login
  */
 @WebServlet("/MemberLogin.do")
-public class MemberLogin extends HttpServlet {
+public class extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
