@@ -49,11 +49,11 @@ public class MarketList extends HttpServlet {
 	
 	int start = paging.getFirst();
 	int end = paging.getLast();
-	ArrayList<MarketVO> list = marketdao.getFMarketList();
+	//ArrayList<MarketVO> list = marketdao.getMarketList();
 	// 3.결과출력 또는 결과 저장해서 VIEW 포워드
 	response.setContentType("text/html; charset=UTF-8");
 	// 3.결과출력 or 결과 저장해서 view 포워드s
-	request.setAttribute("list",list);
+	//request.setAttribute("list",list);
 	request.getRequestDispatcher("/market/fmarketList.jsp").forward(request,response);
 }
 
