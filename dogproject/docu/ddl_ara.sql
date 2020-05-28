@@ -20,17 +20,3 @@ CONSTRAINT board_FK FOREIGN KEY (id) REFERENCES member(id)
 );
 
 alter table board add filename varchar2(100);
-
-
-create table market(
-seq number(20) constraint market_seq_pk primary key,
-title varchar2(100),
-content varchar2(1000),
-okays char(2),
-pimage varchar2(1000),
-sselect varchar2(500),
-regdt varchar2(60),
-id varchar2(20) constraint market_id_fk references member(id)
-);
-
-CREATE SEQUENCE seq_mol
