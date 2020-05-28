@@ -8,6 +8,7 @@ religion char(3),
 introduction varchar2(1000),
 regdt date);
 
+drop table member;
 --drop table board;
 CREATE SEQUENCE seq_board;
 create table board(
@@ -37,3 +38,6 @@ ALTER TABLE market ADD(fokays char(2));
 ALTER TABLE market ADD(fpimage varchar2(1000));
 ALTER TABLE market ADD(fsselect varchar2(500));
 ALTER TABLE market ADD(fregdt varchar2(60));
+
+
+insert into market (ftitle, fcontent, fpimage, )

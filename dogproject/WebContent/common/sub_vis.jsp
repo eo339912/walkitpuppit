@@ -3,7 +3,7 @@
 <div class="visual-area ">
 	<div class="visual-area-in">
 		<div class="visual-area-txt sub01 ">
-			<span>회원가입</span>
+			<span>산책로</span>
 		</div>
 
 		<div class="visual-area-txt sub02 ">

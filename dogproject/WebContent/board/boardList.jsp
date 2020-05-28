@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
@@ -31,14 +32,16 @@
 			        </tr>
 			        </thead>
 			        <tbody>
-			            <tr class="">
-			            	<td class="td_num2">1</td>
-				            <td class="td_subject" style="padding-left:0px">
-			                	<div class="bo_tit"><a href="#">2</a></div>
-							</td>
-			            	<td class="td_name sv_use"><span class="sv_member">3</span></td>
-			                <td class="td_datetime">4</td>
-			      	 	 </tr>
+			        	<c:forEach items="${board}" var="vo">
+							<tr>
+								<td class="td_num2"></td>
+					            <td class="td_subject" style="padding-left:0px">
+				             	  	<div class="bo_tit"><a href="#">${vo.title}</a></div>
+								</td>
+				            	<td class="td_name sv_use"><span class="sv_member">${vo.content}</span></td>
+				                <td class="td_datetime">${vo.regdt}</td>
+							</tr>
+						</c:forEach>
 			        </tbody>
 		        </table>
 		    </div>

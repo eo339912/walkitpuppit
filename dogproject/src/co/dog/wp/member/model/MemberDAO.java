@@ -22,7 +22,7 @@ public class MemberDAO {
 
 			// 2. sql구문 준비
 			String sql = "insert into member (seq, id, pwd, name, pbirth, pgender, pimage, pname, regdt)"
-					+ " values ( seq_member.nextval, ?, ?,?, TO_DATE(?, 'yyyymmdd'), ?, ?, ?, sysdate)";
+					+ " values (seq_member.nextval, ?, ?,?, TO_DATE(?, 'yyyymmdd'), ?, ?, ?, sysdate)";
 
 			psmt = conn.prepareStatement(sql);
 
