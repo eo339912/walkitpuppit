@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
 
-<script> var tit01="�޼���"</script>
+<script> var tit01="달서구"</script>
 
 <div id="sub_vis_wrap" class="sub01 page01">
 	<%@include file="/common/sub_vis.jsp"%>
@@ -17,16 +17,16 @@
 
 <div id="sub_content_wrap"  class="sub0101 inner">
 	<div class="inner" style="margin-bottom:10em">
-		<!-- �Խ��� ��� ���� { -->
+		<!-- 게시판 목록 시작 { -->
 		<div id="bo_list" style="width:100%" class="sub_board">
 		  <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
 		    <div class="tbl_head01 tbl_wrap">
 		        <table>
-			        <caption>�Խ��� ���</caption>
+			        <caption>게시판 목록</caption>
 			        <thead>
 			        <tr>
-			            <th scope="col">��ȣ</th>
-			            <th scope="col">����</th>
+			            <th scope="col">번호</th>
+			            <th scope="col">제목</th>
 			        </tr>
 			        </thead>
 			        <tbody>
@@ -41,18 +41,18 @@
 		    </div>
 		    </form>
 		     
-		       <!-- �Խ��� �˻� ���� { -->
+		       <!-- 게시판 검색 시작 { -->
 		    <fieldset id="bo_sch">
-		        <legend>�Խù� �˻�</legend>		
+		        <legend>게시물 검색</legend>		
 		        <form name="fsearch" method="get">
-		        <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="�˻�� �Է����ּ���">
-		        <button type="submit" value="�˻�" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>�˻�</span></button>
+		        <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
+		        <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
 		        </form>
 		    </fieldset>
-		    <!-- } �Խ��� �˻� �� -->   
+		    <!-- } 게시판 검색 끝 -->   
 		</div>
 				
-		<!-- } �Խ��� ��� �� -->
+		<!-- } 게시판 목록 끝 -->
 		</div>
 </div>
 

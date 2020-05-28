@@ -6,6 +6,15 @@
   <packaging>war</packaging>
   <name>dogproject</name>
    <dependencies>
+   
+   <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+	<dependency>
+	    <groupId>commons-beanutils</groupId>
+	    <artifactId>commons-beanutils</artifactId>
+	    <version>1.8.0</version>
+	</dependency>
+	   
+
   	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 	<dependency>
 	    <groupId>javax.servlet</groupId>

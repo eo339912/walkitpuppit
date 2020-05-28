@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <header id="hd_wrap">
@@ -16,11 +16,11 @@
 	
 	
 	<c:if test="${loginId == null}">
-	<a class="hd_btn" href="MemberLogin.do">�α���</a>
-	<a class="hd_btn" href="MemberInsert.do" style="right: 102px;">ȸ������</a>
+	<a class="hd_btn" href="MemberLogin.do">로그인</a>
+	<a class="hd_btn" href="MemberInsert.do" style="right: 102px;">회원가입</a>
 	</c:if>
 	<c:if test="${loginId != null}">
-	<a class="hd_btn" href="MemberLogout.do">�α׾ƿ�</a>
+	<a class="hd_btn" href="MemberLogout.do">로그아웃</a>
 	</c:if>
 	
 	<div class="hd_full mo">

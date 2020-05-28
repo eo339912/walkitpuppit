@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
 
-<script> var tit01="È¸¿ø°¡ÀÔ"</script>
+<script> var tit01="íšŒì›ê°€ìž…"</script>
 
 <div id="sub_vis_wrap" class="sub05 page01">
 	<%@include file="/common/sub_vis.jsp"%>
@@ -17,47 +17,47 @@
 <div id="sub_content_wrap"  class="sub0401 inner">
 	<div class="inner" style="margin-bottom:10em"><!-- skin : basic_voc -->
 		<section id="bo_w">
-	    <!-- °Ô½Ã¹° ÀÛ¼º/¼öÁ¤ ½ÃÀÛ { -->
+	    <!-- ê²Œì‹œë¬¼ ìž‘ì„±/ìˆ˜ì • ì‹œìž‘ { -->
 		  	<form action="${pageContext.request.contextPath}/MemberInsert.do" method="post" name="fwrite" id="fwrite">
 			    <div class="bo_w_info write_div3 half">
-			        <span>¾ÆÀÌµð</span>
-			        <input type="text" name="id" value="" id="id" required="" class="frm_input required" placeholder="¾ÆÀÌµð">
+			        <span>ì•„ì´ë””</span>
+			        <input type="text" name="id" value="" id="id" required="" class="frm_input required" placeholder="ì•„ì´ë””">
 				</div>
 				<div class="bo_w_info write_div3 half">
-			        <span>ºñ¹Ð¹øÈ£</span>
-			        <input type="password" name="pwd" id="pwd" required="" class="frm_input required" placeholder="ºñ¹Ð¹øÈ£">
+			        <span>ë¹„ë°€ë²ˆí˜¸</span>
+			        <input type="password" name="pwd" id="pwd" required="" class="frm_input required" placeholder="ë¹„ë°€ë²ˆí˜¸">
 				</div>
 				    		
 				<div class="bo_w_info write_div3 half">
-			            <span>È¸¿øÀÌ¸§</span>
-			            <input type="text" name="name" value="" id="name" class="frm_input required" required="" placeholder="È¸¿øÀÌ¸§">
+			            <span>íšŒì›ì´ë¦„</span>
+			            <input type="text" name="name" value="" id="name" class="frm_input required" required="" placeholder="íšŒì›ì´ë¦„">
 			    </div>
 				    
 				<div class="bo_w_info write_div2 half">
-					<span>°­¾ÆÁö ÀÌ¸§</span><input type="text" name="pname" value="" id="pname" class="frm_input required" required="" placeholder="°­¾ÆÁö ÀÌ¸§">
+					<span>ê°•ì•„ì§€ ì´ë¦„</span><input type="text" name="pname" value="" id="pname" class="frm_input required" required="" placeholder="ê°•ì•„ì§€ ì´ë¦„">
 				</div>
 				
 				<div class="bo_w_info write_div3 half">
-			            <span>°­¾ÆÁö »ýÀÏ</span>
-			            <input type="text" name="pbirth" value="" id="pbirth" class="frm_input required" required="" placeholder="°­¾ÆÁö»ýÀÏ">
+			            <span>ê°•ì•„ì§€ ìƒì¼</span>
+			            <input type="text" name="pbirth" value="" id="pbirth" class="frm_input required" required="" placeholder="ê°•ì•„ì§€ìƒì¼">
 			    </div>
 				    
 				<div class="bo_w_info write_div2 half">
-					<span>°­¾ÆÁö ¼ºº°</span>
+					<span>ê°•ì•„ì§€ ì„±ë³„</span>
 					<div style="margin-top:11.5px; padding-bottom:15px; font-size:0.9em">
-							 &nbsp;&nbsp;<input type="radio" value ="f" name="pgender" class="frm_input2"/> µþ³»¹Ì  &nbsp;&nbsp;
-							 &nbsp;&nbsp;<input type="radio" value ="m" name="pgender" class="frm_input2"/> ¾Æµé³»¹Ì
+							 &nbsp;&nbsp;<input type="radio" value ="f" name="pgender" class="frm_input2"/> ë”¸ë‚´ë¯¸  &nbsp;&nbsp;
+							 &nbsp;&nbsp;<input type="radio" value ="m" name="pgender" class="frm_input2"/> ì•„ë“¤ë‚´ë¯¸
 					</div>
 					
 				</div>
 				
 				<div class="clear"></div>
 				<div class="wr_box_wrap">
-					<span class="wr_t">°­¾ÆÁö »çÁø</span>
+					<span class="wr_t">ê°•ì•„ì§€ ì‚¬ì§„</span>
 					<div class="wr_c">
 		    		    <div class="bo_w_flie write_div">
 			  				<div class="file_wr write_div">
-								<label for="bf_file_1" class="lb_icon" style="padding: 5px 5px;">Ã·ºÎ</label>
+								<label for="bf_file_1" class="lb_icon"><i class="fa fa-download" aria-hidden="true"></i></label>
 								<input type="file" name="pimage" id="bf_file_1" class="frm_file ">
 			 				 </div>
 						</div>
@@ -67,12 +67,12 @@
 				
 		
 			    <div class="btn_confirm write_div">
-				        <input type="submit" value="º¸³»±â" id="btn_submit" accesskey="s" class="btn_submit btn fr">
+				        <input type="submit" value="ë³´ë‚´ê¸°" id="btn_submit" accesskey="s" class="btn_submit btn fr">
 			    </div>
 		    </form>
 	
 		</section>
-	<!-- } °Ô½Ã¹° ÀÛ¼º/¼öÁ¤ ³¡ -->
+	<!-- } ê²Œì‹œë¬¼ ìž‘ì„±/ìˆ˜ì • ë -->
 	</div><!--inner -->
 </div>
 

@@ -1,17 +1,12 @@
 package co.dog.wp.member.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import co.dog.wp.member.model.MemberDAO;
 import co.dog.wp.member.model.MemberVO;
@@ -52,11 +47,10 @@ public class MemberInsert extends HttpServlet {
 		member.setPname(pname);
 		memberDAO.memberInsert(member);
 		
-		//3. 회원목록으로 이동 forward, sendRedirect
-		
+		//3. 회원목록으로 이동 		
 		String contextPath = getServletContext().getContextPath();
 		response.sendRedirect(contextPath +"/MemberLogin.do");
-		//request.getRequestDispatcher(contextPath +"/MemberList.do").forward(request, response);
+		//request.getRequestDispatcher(contextPath +"/MemberLogin.do").forward(request, response);
 		
 	}
 

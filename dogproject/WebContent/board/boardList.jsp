@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
 
-<script> var tit01="°øÁö»çÇ×"</script>
+<script> var tit01="ê³µì§€ì‚¬í•­"</script>
 
 <div id="sub_vis_wrap" class="sub04 page01">
 	<%@include file="/common/sub_vis.jsp"%>
@@ -17,51 +19,81 @@
 
 <div id="sub_content_wrap"  class="sub0401 inner">
 	<div class="inner" style="margin-bottom:10em">
-		<!-- °Ô½ÃÆÇ ¸ñ·Ï ½ÃÀÛ { -->
+		<!-- ê²Œì‹œíŒ ëª©ë¡ ì‹œì‘ { -->
 		<div id="bo_list" style="width:100%" class="sub_board">
+			
+			<!-- ê²Œì‹œíŒ ê²€ìƒ‰ ì‹œì‘ { -->
+		    <fieldset id="bo_sch">
+		        <legend>ê²Œì‹œë¬¼ ê²€ìƒ‰</legend>		
+		        <form name="searchfrm" method="get">
+		        	<input name="p" value="1" type="hidden">
+		        	<input type="text" name="title" value="" id="title" class="sch_input" size="25" maxlength="20" placeholder="ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”">
+		       		<button type="submit" value="ê²€ìƒ‰" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>ê²€ìƒ‰</span></button>
+		        </form>
+		    </fieldset>
+		    <!-- } ê²Œì‹œíŒ ê²€ìƒ‰ ë -->  
+		
+	
 		  <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
 		    <div class="tbl_head01 tbl_wrap">
-		        <table>
-			        <caption>°Ô½ÃÆÇ ¸ñ·Ï</caption>
+		        <table style="text-align:center">
+			        <caption>ê²Œì‹œíŒ ëª©ë¡</caption>
 			        <thead>
 			        <tr>
-			            <th scope="col" width="15%">¹øÈ£</th>
-			            <th scope="col">Á¦¸ñ</th>
-			            <th scope="col" width="15%">±Û¾´ÀÌ</th>
-			            <th scope="col" width="15%">³¯Â¥  <i class="fa fa-sort" aria-hidden="true"></i></th>
+			            <th scope="col" width="15%">ë²ˆí˜¸</th>
+			            <th scope="col">ì œëª©</th>
+			            <th scope="col" width="15%">ê¸€ì“´ì´</th>
+			            <th scope="col" width="15%">ë‚ ì§œ  <i class="fa fa-sort" aria-hidden="true"></i></th>
 			        </tr>
 			        </thead>
 			        <tbody>
-			        	<c:forEach items="${board}" var="vo">
+			        	<c:forEach items="${board}" var="vo"  varStatus="status">
 							<tr>
-								<td class="td_num2"></td>
+								<td class="td_num2">${((paging.page) + status.index+1)}<%-- ${((paging.page-1) * 5 + status.index+1)} --%></td>
 					            <td class="td_subject" style="padding-left:0px">
-				             	  	<div class="bo_tit"><a href="#">${vo.title}</a></div>
+				             	  	<div class="bo_tit">
+				             	  		<a href="BoardView.do?seq=${vo.seq}">${vo.title}</a>
+				             	  		<c:if test="${loginId == 'admin'}">
+										    <div class="btn_confirm write_div">
+										    	<a href="${pageContext.request.contextPath}/BoardDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">ê¸€ì‚­ì œ</a>
+											</div>
+										</c:if>
+				             	  	</div>
 								</td>
-				            	<td class="td_name sv_use"><span class="sv_member">${vo.content}</span></td>
-				                <td class="td_datetime">${vo.regdt}</td>
+				            	<td class="td_name sv_use"><span class="sv_member">${vo.id}</span></td>
+				                
+				                <fmt:parseDate value="${vo.regdt}" var="sdate" pattern="yyyy-MM-dd HH:mm:ss"></fmt:parseDate>
+            					<fmt:formatDate pattern="yyyy-MM-dd" value="${sdate}" var="bd"/>
+				                
+				                <td class="td_datetime">${bd}</td>
 							</tr>
 						</c:forEach>
 			        </tbody>
 		        </table>
 		    </div>
 		    </form>
-		     
-		       <!-- °Ô½ÃÆÇ °Ë»ö ½ÃÀÛ { -->
-		    <fieldset id="bo_sch">
-		        <legend>°Ô½Ã¹° °Ë»ö</legend>		
-		        <form name="fsearch" method="get">
-		        <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="°Ë»ö¾î¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä">
-		        <button type="submit" value="°Ë»ö" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>°Ë»ö</span></button>
-		        </form>
-		    </fieldset>
-		    <!-- } °Ô½ÃÆÇ °Ë»ö ³¡ -->   
+		    
+		    <c:if test="${loginId == 'admin'}">
+		    <div class="btn_confirm write_div">
+		    	<a href="${pageContext.request.contextPath}/BoardInsert.do" id="btn_submit" class="btn_submit btn fr" >ê¸€ì‘ì„±</a>
+			</div>
+			</c:if>
+			
+	 
 		</div>
+		
+
 				
-		<!-- } °Ô½ÃÆÇ ¸ñ·Ï ³¡ -->
+		<!-- } ê²Œì‹œíŒ ëª©ë¡ ë -->
 		</div>
 </div>
 
-
+	<script>
+		function gopage(p){
+			document.searchfrm.p.value = p;
+			document.searchfrm.submit();
+		}
+	</script>
+	<my:paging paging="${paging}" jsfunc="gopage"></my:paging>
 
 <%@include file="/common/footer.jsp" %>

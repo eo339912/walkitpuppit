@@ -6,6 +6,23 @@ public class BoardVO {
 	String content;
 	String filename;
 	String regdt;
+	String id;
+	String cnt;
+	
+	
+	
+	public String getCnt() {
+		return cnt;
+	}
+	public void setCnt(String cnt) {
+		this.cnt = cnt;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getSeq() {
 		return seq;
 	}

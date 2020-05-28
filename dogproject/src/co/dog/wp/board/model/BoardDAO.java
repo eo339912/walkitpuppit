@@ -23,15 +23,15 @@ public class BoardDAO {
 			conn = ConnectionManager.getConnnect();
 
 			// 2. sql구문 준비
-			String sql = "insert into board (seq, title, contents, regdt, filename)"
-					+ " values (seq_board.nextval, ?, ?, sysdate, ?)";
+			String sql = "insert into board (seq, title, id ,content, regdt, filename, cnt)"
+					+ " values (seq_board.nextval, ?, ?, ?, sysdate, ?, 0)";
 			psmt = conn.prepareStatement(sql);
 
-			
 			// 3. 실행
 			psmt.setString(1, board.getTitle());
-			psmt.setString(2, board.getContent());
-			psmt.setString(3, board.getFilename());
+			psmt.setString(2, board.getId());
+			psmt.setString(3, board.getContent());
+			psmt.setString(4, board.getFilename());
 
 			r = psmt.executeUpdate();
 
@@ -65,6 +65,9 @@ public class BoardDAO {
 				vo.setRegdt(rs.getString("regdt"));
 				vo.setContent(rs.getString("content"));
 				vo.setTitle(rs.getString("title"));
+				vo.setId(rs.getString("id"));
+				vo.setSeq(rs.getString("seq"));
+				vo.setFilename(rs.getString("filename"));
 
 				list.add(vo);
 			}
@@ -98,6 +101,9 @@ public class BoardDAO {
 				vo.setContent(rs.getString("content"));
 				vo.setSeq(rs.getString("seq"));
 				vo.setTitle(rs.getString("title"));
+				vo.setId(rs.getString("id"));
+				vo.setFilename(rs.getString("filename"));
+				vo.setCnt(rs.getString("cnt"));
 			}
 			// 4. 결과저장
 
@@ -110,41 +116,30 @@ public class BoardDAO {
 
 		return vo;
 	}
-
-	// id에 해당하는 board 조회
-	public ArrayList<BoardVO> getBoardOneList(String id) {
-		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
-
+	//한건조회 조회수
+	public void increaseCnt(String seq) {
+		
 		try {
 			// 1. DB연결
 			conn = ConnectionManager.getConnnect();
 			// 2. 쿼리준비
-			String sql = "select * from board where id=? order by seq desc";
+			String sql = "update board set cnt = cnt+1 where seq = ?";
 			psmt = conn.prepareStatement(sql);
 			// 3. statement 실행
-			psmt.setString(1, id);
-			ResultSet rs = psmt.executeQuery();
-			while (rs.next()) {
-				BoardVO vo = new BoardVO();
-				vo.setRegdt(rs.getString("regdt"));
-				vo.setSeq(rs.getString("seq"));
-				vo.setTitle(rs.getString("title"));
-
-				list.add(vo);
-			}
+			psmt.setString(1, seq);
+			
+			psmt.executeUpdate();
+			psmt.close();
 			// 4. 결과저장
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			// 5. DB연결 해제
-			ConnectionManager.close(conn);
+			//ConnectionManager.close(conn);
 		}
-
-		return list;
 	}
 
-	
 	// 수정
 	public int boardUpdate(BoardVO board) {
 		int r = 0;
@@ -154,14 +149,16 @@ public class BoardDAO {
 			conn = ConnectionManager.getConnnect();
 
 			// 2. sql구문 준비
-			String sql = "update board set title=?, contents=?"
+			String sql = "update board set title=?, content=?, filename=?"
 					+ " where seq=?";
 
 			psmt = conn.prepareStatement(sql);
 
 			// 3. 실행
-			psmt.setString(2, board.getTitle());
-			psmt.setString(3, board.getSeq());
+			psmt.setString(1, board.getTitle());
+			psmt.setString(2, board.getContent());
+			psmt.setString(3, board.getFilename());
+			psmt.setString(4, board.getSeq());
 			
 			r = psmt.executeUpdate();
 

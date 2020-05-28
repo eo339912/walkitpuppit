@@ -359,7 +359,7 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 .td_group {width:80px;text-align:center}
 .td_mb_id {width:100px;text-align:center}
 .td_mng {width:80px;text-align:center}
-.td_name {width:100px;text-align:left}
+.td_name {width:100px;text-align:center}
 .td_nick {width:100px;text-align:center}
 .td_num {width:50px;text-align:center}
 .td_numbig {width:80px;text-align:center}

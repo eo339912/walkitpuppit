@@ -13,12 +13,16 @@ regdt date /*가입일자*/
 
 CREATE SEQUENCE seq_board;
 create table board(
-seq number(20) primary key, /*번호*/
-title varchar2(100) , /*내용*/
+seq number(20), /*번호*/
+title varchar2(100) , /*제목*/
 content varchar2(1000), /*내용*/
 filename varchar2(1000), /*파일업로드*/
-regdt date /*등록일자*/
+id varchar2(20) primary key, /*작성자*/
+regdt date, /*등록일자*/
+cnt number(20)
 );
+
+drop table board;
 
 --drop table board;
 CREATE SEQUENCE seq_board;

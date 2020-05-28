@@ -103,7 +103,7 @@
 #bo_list .td_group {width:100px;text-align:center}
 #bo_list .td_mb_id {width:100px;text-align:center}
 #bo_list .td_mng {width:80px;text-align:center}
-#bo_list .td_name {width:90px;text-align:left;padding:10px 0}
+#bo_list .td_name {width:90px;text-align:center;}
 #bo_list .td_nick {width:100px;text-align:center}
 #bo_list .td_num {width:50px;text-align:center}
 #bo_list .td_num2 {width:50px;text-align:center}
@@ -161,12 +161,12 @@ box-shadow: inset 0 2px 5px  rgba(255,255,255,0.3);}
 #bo_list .bo_tit .fa-lock{display: inline-block;line-height: 14px;width: 16px;font-size: 0.833em;color: #4f818c;background: #cbe3e8;text-align: center;border-radius: 2px;font-size: 12px;border:1px solid #a2c6ce}
 
 
-#bo_sch {float:left;border:1px solid #ccc;background:#fff;border-radius:3px}
+#bo_sch {float:left;border:1px solid #ccc;background:#fff;border-radius:3px; margin-bottom: 12px;}
 #bo_sch:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_sch legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 #bo_sch select{border:0;margin:9px 5px ;height:20px;float:left;border-right:1px solid #ddd;}
-#bo_sch .sch_input{height:38px;border:0;padding:0;background-color:transparent;float:left}
-#bo_sch .sch_btn{height:38px;float:left;background:none;border:0;width:40px;font-size:15px}
+#bo_sch .sch_input{height:38px;border:0;padding:0; padding-left: 10px; background-color:transparent;float:left}
+#bo_sch .sch_btn{height:38px;float:left;  background: #eee;;border:0;width:40px;font-size:15px}
 
 
 /* 게시판 쓰기 */
@@ -358,12 +358,12 @@ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);}
 /*글쓰기*/
 #bo_w .write_div{margin:0px 0;position:relative;clear: both;}
 #bo_w .write_div2{padding:15px 0; font-size:17px; font-weight:400; margin:0px 0;position:relative;width:100%;float:left;border-bottom:1px solid #ececec;}
-#bo_w .write_div2 span{float:left;border-radius:0px;padding:11.5px 0px;width:8%; font-size:17px; font-weight:500; padding-left:20px;}
+#bo_w .write_div2 span{float:left;border-radius:0px;padding:11.5px 0px;width:12%; font-size:17px; font-weight:500; padding-left:20px;}
 #bo_w .write_div2 .wr_content {width:88%; float:right; }
 #bo_w .write_div3{font-size:17px; font-weight:400; margin:0px 0;position:relative;width:100%;float:left;border-bottom:1px solid #ececec;}
 #bo_w .write_div3 span{float:left;border-radius:0px;padding:11.5px 0px;width:12%; font-size:17px; font-weight:500; padding-left:20px;}
 #bo_w .bo_w_info.half{width:50%; float:left; }
-#bo_w .bo_w_info.half span{width:17%}
+#bo_w .bo_w_info.half span{width: 23%;}
 #bo_w .bo_w_info.half  .frm_input	 {float:left; width:76%; padding-left: 13px; box-sizing: border-box;}
 
 #bo_w .bo_w_info.half1 {width:100%; float:none;}
@@ -373,7 +373,7 @@ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);}
 #bo_w .bo_w_info,
 #bo_w .write_div{padding:15px 0;}
 #bo_w .bo_w_info:after {display:block;visibility:hidden;clear:both;content:""}
-#bo_w .bo_w_info .frm_input{float:left;width:1032px;height:48px;border:0px;box-shadow:none;-webkit-box-shadow:none;background-color: #f9f9f9;  border: 1px solid #eee; font-size:17px; font-weight:400;}
+#bo_w .bo_w_info .frm_input{float:left;width:88%;height:48px;border:0px;box-shadow:none;-webkit-box-shadow:none;background-color: #f9f9f9;  border: 1px solid #eee; font-size:17px; font-weight:400;}
 #bo_w .bo_w_info {font-size:17px; font-weight:400;}
 /*#bo_w #wr_password{margin:0 0.5%  }*/
 #bo_w .wr_content.smarteditor2 iframe{background:#fff}
@@ -383,7 +383,7 @@ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);}
 #bo_w .bo_w_link label{position:absolute;top:0px;left:0px;border-radius:3px 0 0 3px;height:40px;line-height:40px;width:40px;background: #f9f9f9;text-align:center;color:#888; border: 1px solid #eee; font-size:17px; font-weight:400;}
 #bo_w .bo_w_link .frm_input{padding-left:50px}
 #bo_w .bo_w_flie .lb_icon{position:absolute;top:-1px;left:-1px;border-radius:3px 0 0 3px;height:40px;line-height:40px;width:40px;background:#f9f9f9;text-align:center;color:#888; border: 1px solid #eee;}
-#bo_w .bo_w_flie .frm_file{padding-left: 58px; padding-top: 8px;}
+#bo_w .bo_w_flie .frm_file{padding-left: 58px;}
 #bo_w .bo_w_flie .file_wr{border:1px solid #ccc;background:#fff;color:#000;vertical-align:middle;border-radius:3px;padding:5px;height:40px;margin:0}
 #bo_w .bo_w_flie .frm_input{margin:10px 0 0 }
 #bo_w .bo_w_flie .file_del{position:absolute;top:10px;right:10px;font-size:0.92em;color:#7d7d7d}
@@ -393,10 +393,10 @@ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);}
 #bo_w .bo_w_link{}
 
 #bo_w .wr_box_wrap {font-size:17px; font-weight:400;}
-#bo_w .wr_c{width:90%; float:right; padding:11.5px 0px;}
+#bo_w .wr_c{width:88%; float:right; padding:17.5px 0px;}
 #bo_w .wr_c .bo_w_link,
 #bo_w .wr_c .bo_w_flie{padding:0 0 5px;}
-#bo_w .wr_t{float:left;border-radius:0px;padding:28px 0px;width:8%; font-size:17px; font-weight:500; padding-left:20px;}
+#bo_w .wr_t{float:left;border-radius:0px;padding:28px 0px;width:11%; font-size:17px; font-weight:500; padding-left:20px;}
 #bo_w .btn_confirm{border-top:2px solid #000; padding:30px 0 0;}
 #bo_w  .btn_submit{font-size:17px; font-weight:500; height:55px; line-height:52px; width:200px; cursor:pointer; border-radius:0;}
 

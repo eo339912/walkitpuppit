@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <footer id="ft_Wrap">
 	<div class="ft_top_wrap">
@@ -8,11 +8,11 @@
 				<span class="tit">NOTICE</span>
 				<div class="con ft_slide">
 				
-					<div class="c1"><a href="#">ÇªµåÆÑÅä¸® 2019³â 01¿ù È¨ÆäÀÌÁö ¿ÀÇÂ ¾È³»1</a></div>
-					<div class="c1"><a href="#">ÇªµåÆÑÅä¸® 2019³â 01¿ù È¨ÆäÀÌÁö ¿ÀÇÂ ¾È³»2</a></div>
-					<div class="c1"><a href="#">ÇªµåÆÑÅä¸® 2019³â 01¿ù È¨ÆäÀÌÁö ¿ÀÇÂ ¾È³»3</a></div>
-					<div class="c1"><a href="#">ÇªµåÆÑÅä¸® 2019³â 01¿ù È¨ÆäÀÌÁö ¿ÀÇÂ ¾È³»4</a></div>
-					<div class="c1"><a href="#">ÇªµåÆÑÅä¸® 2019³â 01¿ù È¨ÆäÀÌÁö ¿ÀÇÂ ¾È³»5</a></div>
+					<div class="c1"><a href="#">í‘¸ë“œíŒ©í† ë¦¬ 2019ë…„ 01ì›” í™ˆíŽ˜ì´ì§€ ì˜¤í”ˆ ì•ˆë‚´1</a></div>
+					<div class="c1"><a href="#">í‘¸ë“œíŒ©í† ë¦¬ 2019ë…„ 01ì›” í™ˆíŽ˜ì´ì§€ ì˜¤í”ˆ ì•ˆë‚´2</a></div>
+					<div class="c1"><a href="#">í‘¸ë“œíŒ©í† ë¦¬ 2019ë…„ 01ì›” í™ˆíŽ˜ì´ì§€ ì˜¤í”ˆ ì•ˆë‚´3</a></div>
+					<div class="c1"><a href="#">í‘¸ë“œíŒ©í† ë¦¬ 2019ë…„ 01ì›” í™ˆíŽ˜ì´ì§€ ì˜¤í”ˆ ì•ˆë‚´4</a></div>
+					<div class="c1"><a href="#">í‘¸ë“œíŒ©í† ë¦¬ 2019ë…„ 01ì›” í™ˆíŽ˜ì´ì§€ ì˜¤í”ˆ ì•ˆë‚´5</a></div>
 				
 				</div>
 				<a class="link" href="javascript:GoPage('cs01')"><img src="${pageContext.request.contextPath}/images/common/icon_arw_1.png " /></a>
@@ -21,11 +21,11 @@
 				<span class="tit">NEWS</span>
 				<div class="con ft_slide">
 					
-					<div class="c1"><a href="#">[¾Æ¸®¶ûTV] ÇªµåÆÑÅä¸® °øÁ¤°úÁ¤ ¼Ò°³¿¡ ´ëÇÑ ¾È³»1</a></div>
-					<div class="c1"><a href="#">[¾Æ¸®¶ûTV] ÇªµåÆÑÅä¸® °øÁ¤°úÁ¤ ¼Ò°³¿¡ ´ëÇÑ ¾È³»2</a></div>
-					<div class="c1"><a href="#">[¾Æ¸®¶ûTV] ÇªµåÆÑÅä¸® °øÁ¤°úÁ¤ ¼Ò°³¿¡ ´ëÇÑ ¾È³»3</a></div>
-					<div class="c1"><a href="#">[¾Æ¸®¶ûTV] ÇªµåÆÑÅä¸® °øÁ¤°úÁ¤ ¼Ò°³¿¡ ´ëÇÑ ¾È³»4</a></div>
-					<div class="c1"><a href="#">[¾Æ¸®¶ûTV] ÇªµåÆÑÅä¸® °øÁ¤°úÁ¤ ¼Ò°³¿¡ ´ëÇÑ ¾È³»5</a></div>
+					<div class="c1"><a href="#">[ì•„ë¦¬ëž‘TV] í‘¸ë“œíŒ©í† ë¦¬ ê³µì •ê³¼ì • ì†Œê°œì— ëŒ€í•œ ì•ˆë‚´1</a></div>
+					<div class="c1"><a href="#">[ì•„ë¦¬ëž‘TV] í‘¸ë“œíŒ©í† ë¦¬ ê³µì •ê³¼ì • ì†Œê°œì— ëŒ€í•œ ì•ˆë‚´2</a></div>
+					<div class="c1"><a href="#">[ì•„ë¦¬ëž‘TV] í‘¸ë“œíŒ©í† ë¦¬ ê³µì •ê³¼ì • ì†Œê°œì— ëŒ€í•œ ì•ˆë‚´3</a></div>
+					<div class="c1"><a href="#">[ì•„ë¦¬ëž‘TV] í‘¸ë“œíŒ©í† ë¦¬ ê³µì •ê³¼ì • ì†Œê°œì— ëŒ€í•œ ì•ˆë‚´4</a></div>
+					<div class="c1"><a href="#">[ì•„ë¦¬ëž‘TV] í‘¸ë“œíŒ©í† ë¦¬ ê³µì •ê³¼ì • ì†Œê°œì— ëŒ€í•œ ì•ˆë‚´5</a></div>
 					
 				</div>
 				<a class="link" href="javascript:GoPage('cs02')"><img src="${pageContext.request.contextPath}/images/common/icon_arw_1.png " /></a>
@@ -36,11 +36,11 @@
 	<div class="Clear"></div>
 	<div class="w-inner ft_in_bx">
 		<div class="ft_mid_wrap">
-			<a href="javascript:GoPage('intro01')">È¸»ç¼Ò°³</a><span></span><a href="javascript:GoPage('mem01')">°³ÀÎÁ¤º¸Ã³¸®¹æÄ§</a><span></span><a href="javascript:GoPage('mem02')">ÀÌ¸ÞÀÏ¹«´Ü¼öÁý°ÅºÎ</a><span></span><a href="javascript:GoPage('cs04')">ÁÖ¹®ERP</a>
+			<a href="javascript:GoPage('intro01')">íšŒì‚¬ì†Œê°œ</a><span></span><a href="javascript:GoPage('mem01')">ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨</a><span></span><a href="javascript:GoPage('mem02')">ì´ë©”ì¼ë¬´ë‹¨ìˆ˜ì§‘ê±°ë¶€</a><span></span><a href="javascript:GoPage('cs04')">ì£¼ë¬¸ERP</a>
 		</div>
 		<div class="ft_bt_wrap ">
-			³ó¾÷È¸»ç¹ýÀÎ ÁÖ½ÄÈ¸»ç ÇªµåÆÑÅä¸®<span>¡¤</span>´ëÇ¥ÀÌ»ç ±è°æ¹Î<br class="mo"><span class="pc">¡¤</span>»ç¾÷ÀÚ¹øÈ£ 510-81-33410<span>¡¤</span>°æ»óºÏµµ ±èÃµ½Ã ¾ÆÆ÷À¾ ´ö°è±æ 137<br class="mo"><span class="pc">¡¤</span>TEL 054-434-3060<span>¡¤</span>FAX 054-437-3060<br>
-			<b class="copy">COPYRIGHT ¨Ï 2019 FOODFACTORY. ALL RIGHTS RESERVED.</b>
+			ë†ì—…íšŒì‚¬ë²•ì¸ ì£¼ì‹íšŒì‚¬ í‘¸ë“œíŒ©í† ë¦¬<span>Â·</span>ëŒ€í‘œì´ì‚¬ ê¹€ê²½ë¯¼<br class="mo"><span class="pc">Â·</span>ì‚¬ì—…ìžë²ˆí˜¸ 510-81-33410<span>Â·</span>ê²½ìƒë¶ë„ ê¹€ì²œì‹œ ì•„í¬ì ë•ê³„ê¸¸ 137<br class="mo"><span class="pc">Â·</span>TEL 054-434-3060<span>Â·</span>FAX 054-437-3060<br>
+			<b class="copy">COPYRIGHT â“’ 2019 FOODFACTORY. ALL RIGHTS RESERVED.</b>
 		</div>
 	</div>
 </footer>

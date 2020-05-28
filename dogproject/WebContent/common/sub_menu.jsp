@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <div class="sub_menu_wrap sub_menu_pc">
 	<div class="sub_menu_tit">
 		<script>document.write(tit01);</script>
@@ -7,34 +7,34 @@
 	</div>
 
 	<ul class="sub_menu_box sub01 ">
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro01')">Áß±¸</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro03')">´Þ¼­±¸</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro04')">¼ö¼º±¸</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro05')">µ¿±¸</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro06')">´Þ¼º±º</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">ºÏ±¸</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">³²±¸</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">¼­±¸</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro01')">ì¤‘êµ¬</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro03')">ë‹¬ì„œêµ¬</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro04')">ìˆ˜ì„±êµ¬</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro05')">ë™êµ¬</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro06')">ë‹¬ì„±êµ°</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">ë¶êµ¬</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">ë‚¨êµ¬</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro07')">ì„œêµ¬</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub02 ">
-         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">Áß°í°Å·¡</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">¹«·á³ª´®</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">ÈÄ±â°Ô½ÃÆÇ</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">ì¤‘ê³ ê±°ëž˜</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">ë¬´ë£Œë‚˜ëˆ”</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">í›„ê¸°ê²Œì‹œíŒ</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub03 ">
-         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">¸¶ÀÌÆäÀÌÁö</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">³» È÷½ºÅä¸®</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">ë§ˆì´íŽ˜ì´ì§€</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">ë‚´ ížˆìŠ¤í† ë¦¬</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub04 ">
-         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">°øÁö»çÇ×</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">ê³µì§€ì‚¬í•­</a></li>
 	</ul>
 	
 	<ul class="sub_menu_box sub05 ">
-        <li class="gnb_dp2"><a href="MemberInsert.do">È¸¿ø°¡ÀÔ</a></li>
-        <li class="gnb_dp2"><a href="MemberLogin.do">·Î±×ÀÎ</a></li>
+        <li class="gnb_dp2"><a href="MemberInsert.do">íšŒì›ê°€ìž…</a></li>
+        <li class="gnb_dp2"><a href="MemberLogin.do">ë¡œê·¸ì¸</a></li>
 	</ul>
 
 </div>

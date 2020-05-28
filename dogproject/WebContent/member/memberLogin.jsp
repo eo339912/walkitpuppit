@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
 
-<script> var tit01="·Î±×ÀÎ"</script>
+<script> var tit01="ë¡œê·¸ì¸"</script>
 
 <div id="sub_vis_wrap" class="sub05 page02">
 	<%@include file="/common/sub_vis.jsp"%>
@@ -17,27 +17,27 @@
 <div id="sub_content_wrap"  class="sub0401 inner inner_580">
 	<div class="inner inner_580" style="margin-bottom:10em"><!-- skin : basic_voc -->
 		<section id="bo_w">
-	    <!-- °Ô½Ã¹° ÀÛ¼º/¼öÁ¤ ½ÃÀÛ { -->
+	    <!-- ê²Œì‹œë¬¼ ì‘ì„±/ìˆ˜ì • ì‹œì‘ { -->
     		<form action="${pageContext.request.contextPath}/MemberLogin.do" method="post" name="fwrite" id="fwrite">
 			    <div class="bo_w_info write_div3 half1">
-			        <span>¾ÆÀÌµğ</span>
-			        <input type="text" name="id" value="" id="id" required="" class="frm_input required" placeholder="¾ÆÀÌµğ">
+			        <span>ì•„ì´ë””</span>
+			        <input type="text" name="id" value="" id="id" required="" class="frm_input required" placeholder="ì•„ì´ë””">
 				</div>
 				<div class="bo_w_info write_div3 half1">
-			        <span>ºñ¹Ğ¹øÈ£</span>
-			        <input type="password" name="pwd" id="pwd" required="" class="frm_input required" placeholder="ºñ¹Ğ¹øÈ£">
+			        <span>ë¹„ë°€ë²ˆí˜¸</span>
+			        <input type="password" name="pwd" id="pwd" required="" class="frm_input required" placeholder="ë¹„ë°€ë²ˆí˜¸">
 				</div>
 				    		
 				<div class="clear"></div>
 				
 		
 			    <div class="btn_confirm write_div">
-				        <input type="submit" value="·Î±×ÀÎ" id="btn_submit" accesskey="s" class="btn_submit btn" style="margin: 0 auto; display: block;">
+				        <input type="submit" value="ë¡œê·¸ì¸" id="btn_submit" accesskey="s" class="btn_submit btn" style="margin: 0 auto; display: block;">
 			    </div>
 		    </form>
 	
 		</section>
-	<!-- } °Ô½Ã¹° ÀÛ¼º/¼öÁ¤ ³¡ -->
+	<!-- } ê²Œì‹œë¬¼ ì‘ì„±/ìˆ˜ì • ë -->
 	</div><!--inner -->
 </div>
 
