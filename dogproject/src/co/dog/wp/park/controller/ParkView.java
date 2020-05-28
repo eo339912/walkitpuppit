@@ -21,14 +21,16 @@ public class ParkView extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String seq = (String) request.getParameter("seq");
-		
+		String seq = request.getParameter("seq");
+	
 		//서비스 로직 처리
 		ParkDAO parkdao  = new ParkDAO();
 		ParkVO parkvo = parkdao.getPark(seq);
  
 		//결과저장
 		request.setAttribute("park", parkvo);  
+		
+		
 		
 		request.getRequestDispatcher("/park/parkView.jsp")
 		   .forward(request, response); 

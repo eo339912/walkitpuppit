@@ -9,6 +9,8 @@ public class ParkVO {
 	String spotnum;
 	String spotnm;
 	String senter;
+	
+	
 	public String getSeq() {
 		return seq;
 	}

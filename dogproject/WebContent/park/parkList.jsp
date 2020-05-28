@@ -5,7 +5,7 @@
 <jsp:include page="/common/top.jsp"/>
 
 
-<script> var tit01="달서구"</script>
+<script> var tit01="산책로"</script>
 
 <div id="sub_vis_wrap" class="sub01 page01">
 	<%@include file="/common/sub_vis.jsp"%>
@@ -22,18 +22,19 @@
 		  <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
 		    <div class="tbl_head01 tbl_wrap">
 		        <table>
-			        <caption>게시판 목록</caption>
+			        <caption>게시판 목록 </caption>
 			        <thead>
 			        <tr>
-			            <th scope="col">번호</th>
-			            <th scope="col">제목</th>
+			            <th scope="col">공원이름</th>
+			            <th scope="col">산책중인 강아지(수)</th>
 			        </tr>
 			        </thead>
 			        <tbody>
 						<c:forEach items="${park}" var="vo">
-							<tr>
-								<td>${vo.sname}</td>
-								<td>${vo.senter}</td>
+							<tr> 
+								<td><a href="ParkView.do?seq=${vo.seq}">${vo.sname}</a></td>
+								<td><a href="#">${vo.senter}</a>
+								
 							</tr>
 						</c:forEach>
 			        </tbody>

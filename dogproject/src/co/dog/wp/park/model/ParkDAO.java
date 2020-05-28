@@ -55,7 +55,7 @@ public class ParkDAO {
 				
 				conn = ConnectionManager.getConnnect();
 	
-				String sql = "select spotnm, senter from park where seq=?";
+				String sql = "select * from park where seq=?";
 				psmt = conn.prepareStatement(sql);
 				
 				psmt.setString(1, seq); 
@@ -64,7 +64,9 @@ public class ParkDAO {
 					parkvo.setSeq(rs.getString("seq"));
 					parkvo.setSpotnm(rs.getString("spotnm"));
 					parkvo.setSenter(rs.getString("senter"));
-				
+					parkvo.setSname(rs.getString("sname"));
+					parkvo.setX(rs.getString("x"));
+					parkvo.setY(rs.getString("y"));
 				}
 				
 			} catch (Exception e) {
@@ -74,5 +76,100 @@ public class ParkDAO {
 			}
 			return parkvo;
 		}
+	
+	//-----------------------------댓글--------------------------------------------
+	
+	//댓글등록
+	public void ParkcoInsert(ParkcoVO parkco) {
+		
+		try {
+			// 1. DB 연결
+			conn = ConnectionManager.getConnnect();
+
+			// 2. sql구문 준비
+			String sql = "insert into parkcomments (seq ,pseq ,id, comments , regdt)"
+					+ " values ( seq_parkco.nextval,?, ?, ?, sysdate) ";
+				
+
+			psmt = conn.prepareStatement(sql);
+
+			// 3. 실행
+			psmt.setString(1, parkco.getPseq());
+			psmt.setString(2, parkco.getId());
+			psmt.setString(3, parkco.getComments());
+		
+			psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 5. 연결해제
+			ConnectionManager.close(conn);
+		}
+	}
+	
+	// 댓글리스트
+	public ArrayList<ParkcoVO> getParkco(String pseq) {
+		ArrayList<ParkcoVO> list = new ArrayList<ParkcoVO>(); // 1.어레이리스트에 담기
+
+
+		try {
+
+			conn = ConnectionManager.getConnnect();
+			
+			String sql = "select id, comments, seq, pseq from parkcomments where pseq = ? order by seq desc ";
+			psmt = conn.prepareStatement(sql);
+		
+			psmt.setString(1, pseq); 
+			ResultSet rs = psmt.executeQuery();
+			while (rs.next()) {
+				ParkcoVO parkcovo = new ParkcoVO();
+				parkcovo.setId(rs.getString("id"));
+				parkcovo.setComments(rs.getString("comments"));
+				parkcovo.setSeq(rs.getString("seq"));
+				parkcovo.setPseq(rs.getString("pseq"));
+				
+		
+				list.add(parkcovo); 
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionManager.close(conn);
+		}
+		return list;
+	}
+	
+	  //삭제
+	   public void deleteParkco(String pseq) {
+	      
+	      try {
+	         // 1. DB 연결
+	         conn = ConnectionManager.getConnnect();
+
+	         // 2. sql구문 준비
+	         String sql = "delete from parkcomments where pseq= ? ";
+
+	  
+	         psmt = conn.prepareStatement(sql);
+
+	         // 3. 실행
+	         psmt.setString(1, pseq);
+
+	         psmt.executeUpdate();
+
+	         // 4. 결과처리
+
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         // 5. 연결해제
+	         ConnectionManager.close(conn);
+	      }
+
+	   }
+
+	
 
 }
