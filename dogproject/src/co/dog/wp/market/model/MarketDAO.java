@@ -1,11 +1,10 @@
 package co.dog.wp.market.model;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
-
-	import java.sql.Connection;
-	import java.sql.PreparedStatement;
-	import java.sql.ResultSet;
-	import java.util.ArrayList;
-
+import co.dog.wp.board.model.BoardVO;
 import co.dog.wp.common.ConnectionManager;
 
 	public class MarketDAO {
@@ -20,8 +19,8 @@ import co.dog.wp.common.ConnectionManager;
 				// 1. DB 연결
 				conn = ConnectionManager.getConnnect();
 				// 2. sql구문 준비
-				String sql = "insert into market (seq, id, title, content, okays, pimage, sselect,regdt)"
-						+ " values (seq_mol.nextval, ?, ?, ?, ?, ?, ?, sysdate)";
+				String sql = "insert into market (seq, id, title, content, okays, filename, sselect,regdt,sell,price)"
+						+ " values (seq_mol.nextval, ?, ?, ?, ?, ?, ?, sysdate,?,?)";
 				psmt = conn.prepareStatement(sql);
 				// 3. 실행
 				psmt.setString(1, market.getSeq());
@@ -29,9 +28,10 @@ import co.dog.wp.common.ConnectionManager;
 				psmt.setString(3, market.getTitle());
 				psmt.setString(4, market.getContent());
 				psmt.setString(5, market.getOkays());
-				psmt.setString(6, market.getPimage());
+				psmt.setString(6, market.getFilename());
 				psmt.setString(7, market.getSselect());
 				psmt.setString(8, market.getRegdt());
+				psmt.setString(9, market.getSell());
 			
 				r = psmt.executeUpdate();
 				// 4. 결과처리
@@ -46,14 +46,26 @@ import co.dog.wp.common.ConnectionManager;
 			return r;
 		}
 		//전체조회
-			public ArrayList<MarketVO> getFMarketList() {
-				ArrayList<MarketVO> list = new ArrayList<>();
+			public ArrayList<MarketVO> getFmarketList(int start, int end, String ftitle) {
+				ArrayList<MarketVO> list = new ArrayList<MarketVO>();
 				try {
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
-					// 2. 쿼리 준비
-					sql = "select seq,id,ftitle,fcontent,fpimage,fsselect,fregdt from market where ftitle is not null";
+					
+					String strWhere = " where 1 = 1";//무조건 true
+					if(ftitle != null && ! ftitle.isEmpty()) {
+						strWhere += " and ftitle like '%' || ? || '%' ";				
+					}
+					
+					// 2. 쿼리준비
+					String sql = "select seq,id,ftitle,fcontent,filename,fsselect,fregdt,fsell,fprice from market where ftitle is not null";
 					psmt = conn.prepareStatement(sql);
+					int post = 1;
+					if(ftitle != null && ! ftitle.isEmpty()) {
+						psmt.setString(post++, ftitle);				
+					}
+					psmt.setInt(post++, start);
+					psmt.setInt(post++, end);
 					// 3. statement 실행
 					ResultSet rs = psmt.executeQuery();
 					while (rs.next()) {
@@ -62,17 +74,23 @@ import co.dog.wp.common.ConnectionManager;
 						vo.setId(rs.getString("id"));
 						vo.setFtitle(rs.getString("ftitle"));
 						vo.setFcontent(rs.getString("fcontent"));
-						vo.setFpimage(rs.getString("fpimage"));
+						vo.setFilename(rs.getString("filename"));
 						vo.setFsselect(rs.getString("fsselect"));
 						vo.setFregdt(rs.getString("fregdt"));
+						vo.setFsell(rs.getString("fsell"));
+						vo.setFsell(rs.getString("fprice"));
+
 						list.add(vo);
 					}
 					// 4. 결과저장
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				} finally {
+					// 5. DB연결 해제
 					ConnectionManager.close(conn);
 				}
+
 				return list;
 			}
 			//단건조회
@@ -88,13 +106,16 @@ import co.dog.wp.common.ConnectionManager;
 					psmt.setString(1, id );
 					ResultSet rs = psmt.executeQuery();
 					if (rs.next()) {
-						vo.setSeq(rs.getString("id"));
+						vo.setSeq(rs.getString("seq"));
 						vo.setId(rs.getString("id"));
 						vo.setTitle(rs.getString("title"));
 						vo.setContent(rs.getString("content"));
-						vo.setPimage(rs.getString("pimage"));
+						vo.setFilename(rs.getString("filename"));
 						vo.setSselect(rs.getString("sselect"));
 						vo.setRegdt(rs.getString("regdt"));
+						vo.setSell(rs.getString("sell"));
+						vo.setSell(rs.getString("price"));
+
 					}
 					// 4. 결과저장
 				} catch (Exception e) {
@@ -110,7 +131,7 @@ import co.dog.wp.common.ConnectionManager;
 				try {
 					conn = ConnectionManager.getConnnect();
 					// 2. sql구문 준비
-					sql = "update market set seq = ?, content = ?, title = ?,  okays = ?, pimage = ?, sselect = ?,  regdt = ?"
+					sql = "update market set seq = ?, content = ?, title = ?,  okays = ?, filename = ?, sselect = ?,  regdt = ?, sell = ?, price=?"
 							+ " where id = ? ";
 					psmt = conn.prepareStatement(sql);
 					// 3. 실행
@@ -118,10 +139,12 @@ import co.dog.wp.common.ConnectionManager;
 					psmt.setString(2, market.getContent());
 					psmt.setString(3, market.getTitle());
 					psmt.setString(4, market.getOkays());
-					psmt.setString(5, market.getPimage());
+					psmt.setString(5, market.getFilename());
 					psmt.setString(6, market.getSselect());
 					psmt.setString(7, market.getRegdt());
 					psmt.setString(8, market.getSeq());
+					psmt.setString(9, market.getSell());
+					psmt.setString(9, market.getPrice());
 				
 					r = psmt.executeUpdate();
 					// 4. 결과처리
@@ -155,7 +178,7 @@ import co.dog.wp.common.ConnectionManager;
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					// 2. 쿼리 준비
-					sql = "select seq,id,title,content,pimage,sselect,regdt from market where title is not null";
+					sql = "select seq,id,title,content,filename,sselect,regdt,sell,price from market where title is not null";
 					psmt = conn.prepareStatement(sql);
 					// 3. statement 실행
 					ResultSet rs = psmt.executeQuery();
@@ -163,11 +186,14 @@ import co.dog.wp.common.ConnectionManager;
 						MarketVO vo = new MarketVO();
 						vo.setSeq(rs.getString("seq"));
 						vo.setId(rs.getString("id"));
-						vo.setFtitle(rs.getString("title"));
-						vo.setFcontent(rs.getString("content"));
-						vo.setFpimage(rs.getString("pimage"));
-						vo.setFsselect(rs.getString("sselect"));
-						vo.setFregdt(rs.getString("regdt"));
+						vo.setTitle(rs.getString("title"));
+						vo.setContent(rs.getString("content"));
+						vo.setFilename(rs.getString("filename"));
+						vo.setSselect(rs.getString("sselect"));
+						vo.setRegdt(rs.getString("regdt"));
+						vo.setSell(rs.getString("sell"));
+						vo.setPrice(rs.getString("price"));
+						
 						list.add(vo);
 					}
 					// 4. 결과저장
@@ -194,9 +220,11 @@ import co.dog.wp.common.ConnectionManager;
 							vo.setId(rs.getString("id"));
 							vo.setFtitle(rs.getString("ftitle"));
 							vo.setFcontent(rs.getString("fcontent"));
-							vo.setFpimage(rs.getString("fpimage"));
+							vo.setFilename(rs.getString("filename"));
 							vo.setFsselect(rs.getString("fsselect"));
 							vo.setFregdt(rs.getString("fregdt"));
+							vo.setFsell(rs.getString("fsell"));
+							vo.setFsell(rs.getString("fprice"));
 						}
 						// 4. 결과저장
 					} catch (Exception e) {
@@ -207,7 +235,60 @@ import co.dog.wp.common.ConnectionManager;
 					return vo;
 				}
 			
-			
+				public int getCount(String id) {
+					int cnt = 0;
+					try {
+						conn = ConnectionManager.getConnnect();
+						
+						String strWhere = " where 1 = 1";//무조건 true
+						if(id != null && ! id.isEmpty()) {
+							strWhere += " and id like '%' || ? || '%' ";				
+						}
+						
+						String sql ="select count(*) from market" + strWhere;
+						psmt = conn.prepareStatement(sql);
+						
+						int post = 1;
+						if(id != null && ! id.isEmpty()) {
+							psmt.setString(post++, id);				
+						}
+						
+						rs = psmt.executeQuery();
+						if(rs.next()) {
+							cnt = rs.getInt(1);
+						}
+					}catch(Exception e) {
+						e.printStackTrace();
+					}finally {
+						ConnectionManager.close(rs, psmt, conn);
+					}
+					return cnt;
+				}
+				
+				//한건조회 조회수
+				public void increaseCnt(String seq) {
+					
+					try {
+						// 1. DB연결
+						conn = ConnectionManager.getConnnect();
+						// 2. 쿼리준비
+						String sql = "update market set cnt = cnt+1 where seq = ?";
+						psmt = conn.prepareStatement(sql);
+						// 3. statement 실행
+						psmt.setString(1, seq);
+						
+						psmt.executeUpdate();
+						psmt.close();
+						// 4. 결과저장
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						// 5. DB연결 해제
+						//ConnectionManager.close(conn);
+					}
+				}
+
 			
 			}
 	

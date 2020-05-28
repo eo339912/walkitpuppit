@@ -8,25 +8,29 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import co.dog.wp.common.Paging;
 import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
+import co.dog.wp.market.model.ReviewDAO;
+import co.dog.wp.market.model.ReviewVO;
 
 /**
- * Servlet implementation class MarketList
+ * Servlet implementation class ReviewList
  */
-@WebServlet("/MarketList.do")
-public class MarketList extends HttpServlet {
+@WebServlet("/ReviewList")
+public class ReviewList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//	HttpSession session = request.getSession();
-//	String id = (String) session.getAttribute("loginId");
-
-	// 1.파라미터
-	// 2.서비스(DAO 목록조회)
-	MarketDAO marketdao = new MarketDAO();
+	
+	   protected void doGet(HttpServletRequest request, HttpServletResponse response)
+		         throws ServletException, IOException {
+			  
+	//HttpSession session = request.getSession();
+	//String id = (String) session.getAttribute("loginId");
+	
+	//1.파라미터
+	//2.서비스(DAO 목록조회)
+	ReviewDAO reviewdao = new ReviewDAO();
 	String id = request.getParameter("id");
 	
 	//페이징처리
@@ -44,23 +48,24 @@ public class MarketList extends HttpServlet {
 	paging.setPageSize(3); //한페이지에 출력할 페이지 번호 수
 	paging.setPage(p); //현재페이지
 
-	paging.setTotalRecord(marketdao.getCount(id)); //전체 레코드 건수 조회
+	paging.setTotalRecord(reviewdao.getCount(id)); //전체 레코드 건수 조회
 	request.setAttribute("paging", paging);
 	
 	int start = paging.getFirst();
 	int end = paging.getLast();
-	ArrayList<MarketVO> list = marketdao.getFMarketList();
-	// 3.결과출력 또는 결과 저장해서 VIEW 포워드
+	ArrayList<ReviewVO> list = reviewdao.getReviewList();
+	//3.결과출력 또는 결과 저장해서 VIEW 포워드 
 	response.setContentType("text/html; charset=UTF-8");
-	// 3.결과출력 or 결과 저장해서 view 포워드s
-	request.setAttribute("list",list);
-	request.getRequestDispatcher("/market/fmarketList.jsp").forward(request,response);
+	//3.결과출력 or 결과 저장해서 view 포워드s
+	request.setAttribute("list", list);
+	request.getRequestDispatcher("/market/reviewtList.jsp")
+	.forward(request, response);
 }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	// TODO Auto-generated method stub
+	doGet(request, response);
+}
 
 }

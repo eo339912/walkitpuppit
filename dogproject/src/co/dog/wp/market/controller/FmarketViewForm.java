@@ -15,7 +15,7 @@ import co.dog.wp.market.model.MarketVO;
  * Servlet implementation class FmarketView
  */
 @WebServlet("/FmarketView.do")
-public class FmarketView extends HttpServlet {
+public class FmarketViewForm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	   // 수정페이지로이동

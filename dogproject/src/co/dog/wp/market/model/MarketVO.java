@@ -6,17 +6,43 @@ public class MarketVO {
 	String title;
 	String content;
 	String okays;
-	String pimage;
+	String filename;
 	String sselect;
 	String regdt;
 	String ftitle;
 	String fcontent;
 	String fokays;
-	String fpimage;
 	String fsselect;
 	String fregdt;
+    String fsell;
+    String sell;
+    String price;
+    String fprice;
 
-
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getFprice() {
+		return fprice;
+	}
+	public void setFprice(String fprice) {
+		this.fprice = fprice;
+	}
+	public String getFsell() {
+		return fsell;
+	}
+	public void setFsell(String fsell) {
+		this.fsell = fsell;
+	}
+	public String getSell() {
+		return sell;
+	}
+	public void setSell(String sell) {
+		this.sell = sell;
+	}
 	public String getFtitle() {
 		return ftitle;
 	}
@@ -34,12 +60,6 @@ public class MarketVO {
 	}
 	public void setFokays(String fokays) {
 		this.fokays = fokays;
-	}
-	public String getFpimage() {
-		return fpimage;
-	}
-	public void setFpimage(String fpimage) {
-		this.fpimage = fpimage;
 	}
 	public String getFsselect() {
 		return fsselect;
@@ -85,11 +105,11 @@ public class MarketVO {
 	public void setOkays(String okays) {
 		this.okays = okays;
 	}
-	public String getPimage() {
-		return pimage;
+	public String getFilename() {
+		return filename;
 	}
-	public void setPimage(String pimage) {
-		this.pimage = pimage;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	public String getSselect() {
 		return sselect;
