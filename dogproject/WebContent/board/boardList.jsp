@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
+
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
@@ -34,7 +35,6 @@
 		    <!-- } 게시판 검색 끝 -->  
 		
 	
-		  <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
 		    <div class="tbl_head01 tbl_wrap">
 		        <table style="text-align:center">
 			        <caption>게시판 목록</caption>
@@ -49,7 +49,7 @@
 			        <tbody>
 			        	<c:forEach items="${board}" var="vo"  varStatus="status">
 							<tr>
-								<td class="td_num2">${((paging.page) + status.index+1)}<%-- ${((paging.page-1) * 5 + status.index+1)} --%></td>
+								<td class="td_num2"> ${((paging.page-1) * 5 + status.index+1)}</td>
 					            <td class="td_subject" style="padding-left:0px">
 				             	  	<div class="bo_tit">
 				             	  		<a href="BoardView.do?seq=${vo.seq}">${vo.title}</a>
@@ -71,13 +71,20 @@
 			        </tbody>
 		        </table>
 		    </div>
-		    </form>
 		    
 		    <c:if test="${loginId == 'admin'}">
 		    <div class="btn_confirm write_div">
 		    	<a href="${pageContext.request.contextPath}/BoardInsert.do" id="btn_submit" class="btn_submit btn fr" >글작성</a>
 			</div>
 			</c:if>
+			
+			<script>
+				function gopage(p){
+					document.searchfrm.p.value = p;
+					document.searchfrm.submit();
+				}
+			</script>
+			<my:paging paging="${paging}" jsfunc="gopage"></my:paging>
 			
 	 
 		</div>
@@ -88,12 +95,6 @@
 		</div>
 </div>
 
-	<script>
-		function gopage(p){
-			document.searchfrm.p.value = p;
-			document.searchfrm.submit();
-		}
-	</script>
-	<my:paging paging="${paging}" jsfunc="gopage"></my:paging>
+	
 
 <%@include file="/common/footer.jsp" %>

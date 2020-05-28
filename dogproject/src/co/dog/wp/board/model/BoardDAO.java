@@ -205,25 +205,25 @@ public class BoardDAO {
 	
 	
 	// 전체조회
-	public ArrayList<BoardVO> getBoardList(int start, int end, String id) {
+	public ArrayList<BoardVO> getBoardList(int start, int end, String title) {
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		try {
 			// 1. DB연결
 			conn = ConnectionManager.getConnnect();
 			
 			String strWhere = " where 1 = 1";//무조건 true
-			if(id != null && ! id.isEmpty()) {
-				strWhere += " and id like '%' || ? || '%' ";				
+			if(title != null && ! title.isEmpty()) {
+				strWhere += " and title like '%' || ? || '%' ";				
 			}
 			
 			// 2. 쿼리준비
 			String sql = "select B.* from( select A.*, rownum RN from("
-					+ "select * from board "+ strWhere+ " order by star desc, seq"
+					+ "select * from board "+ strWhere+ " order by seq desc"
 					+ " ) A ) B where RN between ? and ?";
 			psmt = conn.prepareStatement(sql);
 			int post = 1;
-			if(id != null && ! id.isEmpty()) {
-				psmt.setString(post++, id);				
+			if(title != null && ! title.isEmpty()) {
+				psmt.setString(post++, title);				
 			}
 			psmt.setInt(post++, start);
 			psmt.setInt(post++, end);
@@ -232,8 +232,12 @@ public class BoardDAO {
 			while (rs.next()) {
 				BoardVO vo = new BoardVO();
 				vo.setRegdt(rs.getString("regdt"));
-				vo.setTitle(rs.getString("title"));
+				vo.setContent(rs.getString("content"));
 				vo.setSeq(rs.getString("seq"));
+				vo.setTitle(rs.getString("title"));
+				vo.setId(rs.getString("id"));
+				vo.setFilename(rs.getString("filename"));
+				vo.setCnt(rs.getString("cnt"));
 
 				list.add(vo);
 			}
@@ -249,22 +253,22 @@ public class BoardDAO {
 		return list;
 	}
 	//페이징 전체 건수
-	public int getCount(String id) {
+	public int getCount(String title) {
 		int cnt = 0;
 		try {
 			conn = ConnectionManager.getConnnect();
 			
 			String strWhere = " where 1 = 1";//무조건 true
-			if(id != null && ! id.isEmpty()) {
-				strWhere += " and id like '%' || ? || '%' ";				
+			if(title != null && ! title.isEmpty()) {
+				strWhere += " and title like '%' || ? || '%' ";				
 			}
 			
 			String sql ="select count(*) from board" + strWhere;
 			psmt = conn.prepareStatement(sql);
 			
 			int post = 1;
-			if(id != null && ! id.isEmpty()) {
-				psmt.setString(post++, id);				
+			if(title != null && ! title.isEmpty()) {
+				psmt.setString(post++, title);				
 			}
 			
 			rs = psmt.executeQuery();

@@ -1,7 +1,6 @@
 package co.dog.wp.board.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -44,7 +43,7 @@ public class BoardList extends HttpServlet {
 
 		//페이징 객체를  생성
 		Paging paging = new Paging();
-		paging.setPageUnit(2); //한페이지에 출력할 레코드 건수/ default = 10
+		paging.setPageUnit(4); //한페이지에 출력할 레코드 건수/ default = 10
 		paging.setPageSize(3); //한페이지에 출력할 페이지 번호 수
 		paging.setPage(p); //현재페이지
 
