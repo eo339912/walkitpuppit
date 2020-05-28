@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <header id="hd_wrap">
 	<div class="hd_logo">
@@ -12,10 +13,16 @@
 	<div id="gnb_pc" class="hd_menu">
 		<%@include file="/common/menu.jsp"%>
 	</div>
-
-	<a class="hd_btn" href="javascript:GoPage('cs03')">로그인</a>
-	<a class="hd_btn" href="javascript:GoPage('cs03')" style="right: 102px;">회원가입</a>
-
+	
+	
+	<c:if test="${loginId == null}">
+	<a class="hd_btn" href="MemberLogin.do">로그인</a>
+	<a class="hd_btn" href="MemberInsert.do" style="right: 102px;">회원가입</a>
+	</c:if>
+	<c:if test="${loginId != null}">
+	<a class="hd_btn" href="MemberLogout.do">로그아웃</a>
+	</c:if>
+	
 	<div class="hd_full mo">
 		<span></span>
 	</div>

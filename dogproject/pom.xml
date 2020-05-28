@@ -25,11 +25,7 @@
 	    <groupId>org.apache.tiles</groupId>
 	    <artifactId>tiles-core</artifactId>
 	    <version>3.0.8</version>
-	</dependency>
-		
-	
-	
-	
+	</dependency>	
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>

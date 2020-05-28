@@ -5,6 +5,7 @@
 @import url(head.css);
 @import url(sub.css);
 @import url(font.css);
+@import url(member.css);
 /*@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'); font-family: 'Roboto', sans-serif;*/
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');/*font-family: 'Poppins', sans-serif;*/
 
@@ -56,11 +57,16 @@ a:hover{text-decoration:none;  transition-duration: 300ms;   transition-property
 
 .w-inner {position:relative;width:1400px; margin-right:auto; margin-left:auto;}
 .inner {position:relative;width:1200px; margin-right:auto; margin-left:auto;}
+.inner_580{width:580px;}
 @media all and (max-width:1400px) {
 	.w-inner {width:98%;}
 }
 @media all and (max-width:1200px) {
 	.inner {width:96%;}
+	.inner_580 {width:580px;}
+}
+@media all and (max-width:600px) {
+	.inner_580 {width:96%;}
 }
 
 

@@ -3,23 +3,23 @@
 <div class="visual-area ">
 	<div class="visual-area-in">
 		<div class="visual-area-txt sub01 ">
-			<span>회사소개</span>
+			<span>회원가입</span>
 		</div>
 
 		<div class="visual-area-txt sub02 ">
-			<span>제조공정</span>
+			<span>퍼핏마켓</span>
 		</div>
 
 		<div class="visual-area-txt sub03 ">
-			<span>제품소개</span>
+			<span>내 정보</span>
 		</div>
 
 		<div class="visual-area-txt sub04 ">
-			<span>고객지원</span>
+			<span>공지사항</span>
 		</div>
 		
 		<div class="visual-area-txt sub05 ">
-			<span>멤버쉽</span>
+			<span>MEMBER</span>
 		</div>
 
 	</div>
