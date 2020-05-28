@@ -32,7 +32,6 @@ public class MarketInsert extends HttpServlet {
 		String id = request.getParameter("id");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		String okays = request.getParameter("okays");
 		String pimage = request.getParameter("pimage");
 		String sselect = request.getParameter("sselect");
 		String regdt = request.getParameter("regdt");
@@ -44,7 +43,6 @@ public class MarketInsert extends HttpServlet {
 		market.setId(id);
 		market.setTitle(title);
 		market.setContent(content);
-		market.setOkays(okays);
 		market.setPimage(pimage);
 		market.setSselect(sselect);
 		market.setRegdt(regdt);
