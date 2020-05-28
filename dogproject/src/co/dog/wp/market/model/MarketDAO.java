@@ -52,7 +52,7 @@ import co.dog.wp.common.ConnectionManager;
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					// 2. 쿼리 준비
-					sql = "select seq,id,ftitle,fcontent,fpimage,fsselect,fregdt from market";
+					sql = "select seq,id,ftitle,fcontent,fpimage,fsselect,fregdt from market where ftitle is not null";
 					psmt = conn.prepareStatement(sql);
 					// 3. statement 실행
 					ResultSet rs = psmt.executeQuery();
@@ -156,7 +156,7 @@ import co.dog.wp.common.ConnectionManager;
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					// 2. 쿼리 준비
-					sql = "select seq,id,title,content,pimage,sselect,regdt from market";
+					sql = "select seq,id,title,content,pimage,sselect,regdt from market where title is not null";
 					psmt = conn.prepareStatement(sql);
 					// 3. statement 실행
 					ResultSet rs = psmt.executeQuery();
