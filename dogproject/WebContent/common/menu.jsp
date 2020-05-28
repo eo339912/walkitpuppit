@@ -5,8 +5,8 @@
    <li class="gnb_dp1">
       <div><span>산책로</span></div>
       <ul class="gnb_dp2_wrap">
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro01')">중구</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('intro03')">달서구</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3470000">달서구</a></li>
+         <li class="gnb_dp2"><a href="javascript:GoPage('intro03')">중구</a></li>
          <li class="gnb_dp2"><a href="javascript:GoPage('intro04')">수성구</a></li>
          <li class="gnb_dp2"><a href="javascript:GoPage('intro05')">동구</a></li>
          <li class="gnb_dp2"><a href="javascript:GoPage('intro06')">달성군</a></li>
