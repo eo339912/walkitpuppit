@@ -30,7 +30,7 @@
 					<div class="main_vis_txt_wrap">
 						<div class="txt_wrap">
 							<div class="t0"><img src="${pageContext.request.contextPath}/images/main/main_vis_icon.png" /></div>
-							<div class="t1">월킷퍼피와 함께<br>즐겁게 산책해요!</div>
+							<div class="t1">워킷퍼피와 함께<br>즐겁게 산책해요!</div>
 						</div>
 					</div>
 				</div>
@@ -101,8 +101,8 @@
 	<div class="section" id="section2">
 		<div class="main_sec_wrap dot">
 			<div class="main_tit_wrap">
-				<div class="tit"><b>MARKET</b><br class="mo"><span class="pc"> : </span>월킷퍼핏 마켓</div>
-				<div class="con">월킷퍼핏 마켓에서 애견 상품을 구경하세요.<br>월킷퍼핏에서 인증하는 안전한 판매자들로 믿을 수 있어요.</div>
+				<div class="tit"><b>MARKET</b><br class="mo"><span class="pc"> : </span>워킷퍼핏 마켓</div>
+				<div class="con">워킷퍼핏 마켓에서 애견 상품을 구경하세요.<br>워킷퍼핏에서 인증하는 안전한 판매자들로 믿을 수 있어요.</div>
 			</div>
 			<div class="sec02_con_wrap  w-inner">
 				
