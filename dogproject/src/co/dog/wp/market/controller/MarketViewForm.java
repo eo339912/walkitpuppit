@@ -10,7 +10,7 @@ import co.dog.wp.common.Command;
 import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
 
-public class MarketView implements Command {
+public class MarketViewForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

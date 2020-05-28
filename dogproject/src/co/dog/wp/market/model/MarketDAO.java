@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import co.dog.wp.board.model.BoardVO;
 import co.dog.wp.common.ConnectionManager;
 
 	public class MarketDAO {
@@ -172,14 +171,26 @@ import co.dog.wp.common.ConnectionManager;
 					ConnectionManager.close(conn);
 				}
 			}
-			public ArrayList<MarketVO> getMarketList(String id) {
-				ArrayList<MarketVO> list = new ArrayList<>();
+			public ArrayList<MarketVO> getMarketList(int start, int end, String id) {
+				ArrayList<MarketVO> list = new ArrayList<MarketVO>();
 				try {
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
-					// 2. 쿼리 준비
-					sql = "select seq,id,title,content,filename,sselect,regdt,sell,price from market where title is not null";
+					
+					String strWhere = " where 1 = 1";//무조건 true
+					if(id != null && ! id.isEmpty()) {
+						strWhere += " and id like '%' || ? || '%' ";				
+					}
+					
+					// 2. 쿼리준비
+					String sql = "select seq,id,title,content,filename,sselect,regdt,sell,price from market where title is not null";
 					psmt = conn.prepareStatement(sql);
+					int post = 1;
+					if(id != null && ! id.isEmpty()) {
+						psmt.setString(post++, id);				
+					}
+					psmt.setInt(post++, start);
+					psmt.setInt(post++, end);
 					// 3. statement 실행
 					ResultSet rs = psmt.executeQuery();
 					while (rs.next()) {
@@ -193,15 +204,18 @@ import co.dog.wp.common.ConnectionManager;
 						vo.setRegdt(rs.getString("regdt"));
 						vo.setSell(rs.getString("sell"));
 						vo.setPrice(rs.getString("price"));
-						
+
 						list.add(vo);
 					}
 					// 4. 결과저장
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				} finally {
+					// 5. DB연결 해제
 					ConnectionManager.close(conn);
 				}
+
 				return list;
 			}
 				public MarketVO getFmarket(String id) {
@@ -289,7 +303,33 @@ import co.dog.wp.common.ConnectionManager;
 					}
 				}
 
-			
+				//삭제
+				public void deleteMarket(String seq) {
+					
+					try {
+						// 1. DB 연결
+						conn = ConnectionManager.getConnnect();
+
+						// 2. sql구문 준비
+						String sql = "delete from market where seq= ? ";
+
+						psmt = conn.prepareStatement(sql);
+
+						// 3. 실행
+						psmt.setString(1, seq);
+
+						psmt.executeUpdate();
+
+						// 4. 결과처리
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						// 5. 연결해제
+						ConnectionManager.close(conn);
+					}
+
+				}
 			}
 	
 

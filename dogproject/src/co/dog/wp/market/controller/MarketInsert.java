@@ -5,34 +5,25 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import co.dog.wp.common.Command;
 import co.dog.wp.common.FileRenamePolicy;
 import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
 
-/**
- * Servlet implementation class MarketInsert
- */
-@WebServlet("/MarketInsert.do")
-public class MarketInsert extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//응답결과 인코딩 - utf-8형식으로 변환. -> 한글 안 깨지게
+
+public class MarketInsert implements Command {
+
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		//요청정보 인코딩
 		request.setCharacterEncoding("UTF-8");
 		//1.파라미터받기
-//		  HttpSession session = request.getSession();
-//		String logInNb = (String) session.getAttribute("loginGradeNb");
-//		
+
 		String seq = request.getParameter("seq");
 		String id = request.getParameter("id");
 		String title = request.getParameter("title");
@@ -67,15 +58,8 @@ public class MarketInsert extends HttpServlet {
 		}
 				
 		marketDAO.MarketInsert(market);
-		
-		response.sendRedirect(request.getContextPath() + "/MarketList.do");
+		return "market/marketInsert.jsp";
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/board/boardInsert.jsp").forward(request, response);
-	}
-	
-	//Content-Disposition: form-data; name="datafiled1"; filename="b.gif"
 	private String getFileName(Part part) throws UnsupportedEncodingException {
 		for (String cd : part.getHeader("Content-Disposition").split(";")) {
 			if (cd.trim().startsWith("filename")) {

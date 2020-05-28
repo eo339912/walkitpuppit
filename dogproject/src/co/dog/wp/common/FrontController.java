@@ -18,10 +18,22 @@ import co.dog.wp.board.controller.BoardListForm;
 import co.dog.wp.board.controller.BoardView;
 import co.dog.wp.board.controller.BoardViewForm;
 import co.dog.wp.board.controller.CommentsDelete;
+import co.dog.wp.market.controller.FmarketDelete;
 import co.dog.wp.market.controller.FmarketInsert;
 import co.dog.wp.market.controller.FmarketInsertForm;
 import co.dog.wp.market.controller.FmarketList;
+import co.dog.wp.market.controller.FmarketView;
+import co.dog.wp.market.controller.FmarketViewForm;
+import co.dog.wp.market.controller.MarketDelete;
 import co.dog.wp.market.controller.MarketInsert;
+import co.dog.wp.market.controller.MarketInsertForm;
+import co.dog.wp.market.controller.MarketList;
+import co.dog.wp.market.controller.MarketView;
+import co.dog.wp.market.controller.MarketViewForm;
+import co.dog.wp.market.controller.ReviewDelete;
+import co.dog.wp.market.controller.ReviewInsert;
+import co.dog.wp.market.controller.ReviewInsertForm;
+import co.dog.wp.market.controller.ReviewList;
 import co.dog.wp.member.controller.MemberInsert;
 import co.dog.wp.member.controller.MemberInsertForm;
 import co.dog.wp.member.controller.MemberLogin;
@@ -52,10 +64,26 @@ public class FrontController extends HttpServlet {
 		comm.put("/MemberLoginForm.do", new MemberLoginForm());
 		comm.put("/MemberLogout.do", new MemberLogout());
 		
+		comm.put("/FmarketDelete.do", new FmarketDelete());
 		comm.put("/FmarketInsert.do", new FmarketInsert());
 		comm.put("/FmarketInsertForm.do", new FmarketInsertForm());
 		comm.put("/FmarketInsert.do", new FmarketInsert());
 		comm.put("/FmarketList.do", new FmarketList());
+		comm.put("/FmarketView.do", new FmarketView());
+		comm.put("/FmarketViewForm.do", new FmarketViewForm());
+		comm.put("/MarketDelete.do", new MarketDelete());
+		comm.put("/MarketInsert.do", new MarketInsert());
+		comm.put("/MarketInsertForm.do", new MarketInsertForm());
+		comm.put("/MarketList.do", new MarketList());
+		comm.put("/MarketView.do", new MarketView());
+		comm.put("/MarketViewForm.do", new MarketViewForm());
+		comm.put("/ReviewDelete.do", new ReviewDelete());
+		comm.put("/ReviewList.do", new ReviewList());
+		comm.put("/ReviewInsert.do", new ReviewInsert());
+		comm.put("/ReviewInsertForm.do", new ReviewInsertForm());
+		comm.put("/ReviewView.do", new FmarketView());
+		comm.put("/ReviewViewForm.do", new FmarketViewForm());
+		
 	}
 
 	/**
