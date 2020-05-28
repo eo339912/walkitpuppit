@@ -82,17 +82,16 @@ import co.dog.wp.common.ConnectionManager;
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					// 2. 쿼리 준비
-					sql = "select * from boad where id = ?";
+					sql = "select * from market where id = ?";
 					psmt = conn.prepareStatement(sql);
 					// 3. statement 실행
 					psmt.setString(1, id );
 					ResultSet rs = psmt.executeQuery();
 					if (rs.next()) {
 						vo.setSeq(rs.getString("id"));
-						vo.setId(rs.getString("seq"));
+						vo.setId(rs.getString("id"));
 						vo.setTitle(rs.getString("title"));
 						vo.setContent(rs.getString("content"));
-						vo.setOkays(rs.getString("okays"));
 						vo.setPimage(rs.getString("pimage"));
 						vo.setSselect(rs.getString("sselect"));
 						vo.setRegdt(rs.getString("regdt"));
@@ -179,6 +178,38 @@ import co.dog.wp.common.ConnectionManager;
 				}
 				return list;
 			}
-	}
+				public MarketVO getFmarket(String id) {
+					MarketVO vo = new MarketVO();
+					try {
+						// 1. DB연결
+						conn = ConnectionManager.getConnnect();
+						// 2. 쿼리 준비
+						sql = "select * from market where id = ?";
+						psmt = conn.prepareStatement(sql);
+						// 3. statement 실행
+						psmt.setString(1, id);
+						ResultSet rs = psmt.executeQuery();
+						if (rs.next()) {
+							vo.setSeq(rs.getString("seq"));
+							vo.setId(rs.getString("id"));
+							vo.setFtitle(rs.getString("ftitle"));
+							vo.setFcontent(rs.getString("fcontent"));
+							vo.setFpimage(rs.getString("fpimage"));
+							vo.setFsselect(rs.getString("fsselect"));
+							vo.setFregdt(rs.getString("fregdt"));
+						}
+						// 4. 결과저장
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						ConnectionManager.close(conn);
+					}
+					return vo;
+				}
+			
+			
+			
+			}
+	
 
 

@@ -6,7 +6,7 @@
 <jsp:include page="/common/top.jsp"/>
 
 
-<script> var tit02="무료나눔"</script>
+<script> var tit02="중고거래"</script>
 
 <div id="sub_vis_wrap" class="sub04 page01">
    <%@include file="/common/sub_vis.jsp"%>
@@ -37,10 +37,10 @@
                     <tr>
                         <td class="td_num2"></td>
                         <td class="td_subject" style="padding-left:0px">
-                            <div class="bo_tit"><a href="#">${vo.ftitle}</a></div>
+                            <div class="bo_tit"><a href="#">${vo.title}</a></div>
                      </td>
                         <td class="td_name sv_use"><span class="sv_member">${vo.id}</span></td>
-                         <td class="td_datetime">${vo.fregdt}</td>
+                         <td class="td_datetime">${vo.regdt}</td>
                        </tr>
                        </c:forEach>
                  </tbody>

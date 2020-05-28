@@ -1,7 +1,6 @@
 package co.dog.wp.market.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -18,11 +17,9 @@ import co.dog.wp.market.model.MarketVO;
 /**
  * Servlet implementation class fmarketList
  */
-@WebServlet("/fmarketList.do")
+@WebServlet("/FmarketList.do")
 public class FmarketList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	   
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			HttpSession session = request.getSession();
 			String id = (String) session.getAttribute("loginId");
@@ -38,6 +35,8 @@ public class FmarketList extends HttpServlet {
 			request.getRequestDispatcher("/market/fmarketList.jsp")
 			.forward(request, response);
 		}
+		
+
 		
 
 
