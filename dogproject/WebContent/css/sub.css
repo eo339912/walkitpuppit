@@ -4,7 +4,7 @@
 #sub_vis_wrap{position:relative; width:100%; clear:both}
 	.visual-area {margin-top:0px; position:relative; width:100%; line-height:1.4; box-sizing:border-box;overflow:hidden;  background:repeat-x 50% 0; background-size:cover; -webkit-animation:animate_background 20s linear;-moz-animation:animate_background 20s linear;-o-animation:animate_background 20s linear;animation:animate_background 20s linear;}
 	.visual-area .visual-area-in{ position:relative;display:table;width:100%; height:auto;  z-index:2}
-	.visual-area .visual-area-txt {display:none;width:100%; vertical-align:middle; text-align:center; box-sizing:border-box;color:#fff; height:30em }
+	.visual-area .visual-area-txt {display:none;width:100%; vertical-align:middle; text-align:center; box-sizing:border-box;color:#fff; height: 23em; }
 	.visual-area .visual-area-txt span {font-family: 'yg-jalnan', 'crd'; font-size:3em; font-weight:600; display:inline-block;}
 
 #sub_vis_wrap.sub01 .visual-area .visual-area-txt.sub01,

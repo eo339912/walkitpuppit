@@ -4,7 +4,7 @@
 
 <header id="hd_wrap">
 	<div class="hd_logo">
-		<a href="/">
+		<a href="${pageContext.request.contextPath}/">
 			<img class="pc" src="${pageContext.request.contextPath}/images/common/hd_logo.png"  alt="" />
 			<img class="mo" src="${pageContext.request.contextPath}/images/common/hd_logo_on.png"  alt="" />
 		</a>
