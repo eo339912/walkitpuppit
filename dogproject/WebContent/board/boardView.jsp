@@ -77,9 +77,11 @@
 			<!-- 댓글 출력 -->
 			<div class="cmt_contents">
 				<p>${co.commentsO}</p>
+				<c:if test="${loginId == co.id}">
 			    <ul class="bo_vc_act">
-					<li><a href="CommentsDelete.do?seq=${co.seq}%b_seq=${param.seq}" class="btn_b03">삭제</a></li>
+					<li><a href="CommentsDelete.do?seq=${co.seq}&b_seq=${param.seq}" class="btn_b03">삭제</a></li>
 				</ul>
+				</c:if>
 			</div>
 			</article>
 			</c:forEach>

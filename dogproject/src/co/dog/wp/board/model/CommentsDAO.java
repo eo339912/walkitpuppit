@@ -55,7 +55,7 @@ public class CommentsDAO {
 			// 1. DB연결
 			conn = ConnectionManager.getConnnect();
 			// 2. 쿼리준비
-			String sql = "select * from Comments where b_seq = ? order by seq desc";
+			String sql = "select * from comments where b_seq = ? order by seq desc";
 			psmt = conn.prepareStatement(sql);
 			
 			psmt.setString(1, bseq);
@@ -66,6 +66,7 @@ public class CommentsDAO {
 				vo.setId(rs.getString("id"));
 				vo.setRegdt(rs.getString("regdt"));
 				vo.setCommentsO(rs.getString("commentsO"));
+				vo.setSeq(rs.getString("seq"));
 				list.add(vo);
 			}
 			// 4. 결과저장
