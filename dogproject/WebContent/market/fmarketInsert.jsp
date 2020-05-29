@@ -45,6 +45,7 @@
 			<option value="강아지 옷"> 강아지 옷 
 			<option value="강아지 생필품"> 강아지 생필품
 			<option value="강아지  간식"> 강아지  간식
+			<option value="기타" > 기타
 			</option>
 			</select><br />
 				</div>

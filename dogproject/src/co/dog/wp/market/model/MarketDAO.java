@@ -10,7 +10,6 @@ import co.dog.wp.common.ConnectionManager;
 		Connection conn;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
-		String sql;
 		
 		public int MarketInsert(MarketVO market) {
 			int r = 0;
@@ -99,7 +98,7 @@ import co.dog.wp.common.ConnectionManager;
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					// 2. 쿼리 준비
-					sql = "select * from market where id = ?";
+					String sql = "select * from market where id = ?";
 					psmt = conn.prepareStatement(sql);
 					// 3. statement 실행
 					psmt.setString(1, id );
@@ -130,7 +129,7 @@ import co.dog.wp.common.ConnectionManager;
 				try {
 					conn = ConnectionManager.getConnnect();
 					// 2. sql구문 준비
-					sql = "update market set seq = ?, content = ?, title = ?,  okays = ?, filename = ?, sselect = ?,  regdt = ?, sell = ?, price=?"
+					String sql = "update market set seq = ?, content = ?, title = ?,  okays = ?, filename = ?, sselect = ?,  regdt = ?, sell = ?, price=?"
 							+ " where id = ? ";
 					psmt = conn.prepareStatement(sql);
 					// 3. 실행
@@ -176,12 +175,10 @@ import co.dog.wp.common.ConnectionManager;
 				try {
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
-					
 					String strWhere = " where 1 = 1";//무조건 true
 					if(id != null && ! id.isEmpty()) {
 						strWhere += " and id like '%' || ? || '%' ";				
-					}
-					
+					}	
 					// 2. 쿼리준비
 					String sql = "select seq,id,title,content,filename,sselect,regdt,sell,price from market where title is not null";
 					psmt = conn.prepareStatement(sql);
@@ -224,7 +221,7 @@ import co.dog.wp.common.ConnectionManager;
 						// 1. DB연결
 						conn = ConnectionManager.getConnnect();
 						// 2. 쿼리 준비
-						sql = "select * from market where id = ?";
+						String sql = "select * from market where id = ?";
 						psmt = conn.prepareStatement(sql);
 						// 3. statement 실행
 						psmt.setString(1, id);

@@ -20,6 +20,15 @@
    <div class="inner" style="margin-bottom:10em">
       <!-- 게시판 목록 시작 { -->
       <div id="bo_list" style="width:100%" class="sub_board">
+       <!-- 게시판 검색 시작 { -->
+          <fieldset id="bo_sch">
+              <legend>게시물 검색</legend>      
+              <form name="fsearch" method="get">
+              <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
+              <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
+              </form>
+          </fieldset>
+          <!-- } 게시판 검색 끝 -->   
         <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
           <div class="tbl_head01 tbl_wrap">
               <table>
@@ -45,18 +54,12 @@
                        </c:forEach>
                  </tbody>
               </table>
+              <ul class="btn_confirm write_div">
+    	    <li class="btn_submit btn fr"><a href="MarketInsertForm.do">글작성</a></li>
+			</ul>
           </div>
           </form>
-           
-             <!-- 게시판 검색 시작 { -->
-          <fieldset id="bo_sch">
-              <legend>게시물 검색</legend>      
-              <form name="fsearch" method="get">
-              <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
-              <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
-              </form>
-          </fieldset>
-          <!-- } 게시판 검색 끝 -->   
+ 
       </div>
             
       <!-- } 게시판 목록 끝 -->

@@ -54,7 +54,7 @@ public class FmarketInsert implements Command {
 		//첨부파일 처리
 		Part part = request.getPart("filename");
 		String fileName = getFileName(part);
-		String path = "d:/upload";
+		String path = "C:\\Users\\User\\git\\walkitpuppit\\dogproject\\WebContent\\upload\\img";
 		if(fileName != null && !fileName.isEmpty()) {
 			File f = FileRenamePolicy.rename(new File(path, fileName));
 			part.write(f.getAbsolutePath()); //업로드 폴더에 파일 저장 ,전체파일이름명
