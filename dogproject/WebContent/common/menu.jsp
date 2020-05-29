@@ -20,8 +20,8 @@
    <li class="gnb_dp1">
       <div><span>퍼핏마켓</span></div>
       <ul class="gnb_dp2_wrap">
-         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">중고거래</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">무료나눔</a></li>
+         <li class="gnb_dp2"><a href="MarketList.do">중고거래</a></li>
+         <li class="gnb_dp2"><a  href="FmarketList.do">무료나눔</a></li>
          <li class="gnb_dp2"><a href="javascript:GoPage('process01')">후기게시판</a></li>
       </ul>
    </li>
