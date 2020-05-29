@@ -12,7 +12,12 @@
 	<jsp:include page="/common/sub_menu.jsp"/>
 </div>
 <div class="sub_tit_wrap">
-	<span><script>document.write(tit01);</script></span>
+	<span>
+		<c:forEach items="${park}" end="0" var="vo">
+			${vo.spotnm}
+		</c:forEach>
+		<script>document.write(tit01);</script>
+	</span>
 </div>
 
 <div id="sub_content_wrap"  class="sub0101 inner">
