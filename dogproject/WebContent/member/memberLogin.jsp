@@ -18,7 +18,7 @@
 	<div class="inner inner_580" style="margin-bottom:10em"><!-- skin : basic_voc -->
 		<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-    		<form action="${pageContext.request.contextPath}/MemberLogin.do" method="post" name="fwrite" id="fwrite">
+    		<form action="MemberLogin.do" method="post" name="fwrite" id="fwrite">
 			    <div class="bo_w_info write_div3 half1">
 			        <span>아이디</span>
 			        <input type="text" name="id" value="" id="id" required="" class="frm_input required" placeholder="아이디">

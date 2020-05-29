@@ -4,31 +4,18 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.dog.wp.board.model.BoardDAO;
 import co.dog.wp.board.model.BoardVO;
+import co.dog.wp.common.Command;
 import co.dog.wp.common.Paging;
 
 
-
-/**
- * Servlet implementation class Login
- */
-@WebServlet("/BoardList.do")
-public class BoardList extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	//list처리
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	}
-
-	//list페이지로 이동
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class BoardListForm  implements Command {
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDAO dao = new BoardDAO();
 		String title = request.getParameter("title");
 		
@@ -58,7 +45,10 @@ public class BoardList extends HttpServlet {
 		List<BoardVO> list = dao.getBoardList(start, end, title);
 		//view page에 forward
 		request.setAttribute("board", list);
-		request.getRequestDispatcher("/board/boardList.jsp").forward(request, response);
+		
+		return "board/boardList.jsp";
 	}
+
+	
 
 }

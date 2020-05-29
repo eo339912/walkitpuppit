@@ -52,10 +52,10 @@
 								<td class="td_num2"> ${((paging.page-1) * 5 + status.index+1)}</td>
 					            <td class="td_subject" style="padding-left:0px">
 				             	  	<div class="bo_tit">
-				             	  		<a href="BoardView.do?seq=${vo.seq}">${vo.title}</a>
+				             	  		<a href="BoardViewForm.do?seq=${vo.seq}">${vo.title}</a>
 				             	  		<c:if test="${loginId == 'admin'}">
 										    <div class="btn_confirm write_div" style="display: inline;">
-										    	<a href="${pageContext.request.contextPath}/BoardDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+										    	<a href="BoardDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
 											</div>
 										</c:if>
 				             	  	</div>
@@ -74,7 +74,7 @@
 		    
 		    <c:if test="${loginId == 'admin'}">
 		    <div class="btn_confirm write_div">
-		    	<a href="${pageContext.request.contextPath}/BoardInsert.do" id="btn_submit" class="btn_submit btn fr" >글작성</a>
+		    	<a href="BoardInsertForm.do" class="btn_submit btn fr" >글작성</a>
 			</div>
 			</c:if>
 			

@@ -11,8 +11,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.min.common.board.BoardGetList;
-import co.min.common.commend.MainCommand;
+import co.dog.wp.board.controller.BoardDelete;
+import co.dog.wp.board.controller.BoardInsert;
+import co.dog.wp.board.controller.BoardInsertForm;
+import co.dog.wp.board.controller.BoardListForm;
+import co.dog.wp.board.controller.BoardView;
+import co.dog.wp.board.controller.BoardViewForm;
+import co.dog.wp.board.controller.CommentsDelete;
+import co.dog.wp.member.controller.MemberInsert;
+import co.dog.wp.member.controller.MemberInsertForm;
+import co.dog.wp.member.controller.MemberLogin;
+import co.dog.wp.member.controller.MemberLoginForm;
+import co.dog.wp.member.controller.MemberLogout;
 
 /**
  * Servlet implementation class FrontController
@@ -24,8 +34,19 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// 수행할 명령(command)객체의 집합 
 		comm = new HashMap<String , Command>();
-		comm.put("/main.do", new MainCommand());
-		comm.put("/BoardList.do", new BoardGetList());
+		comm.put("/BoardDelete.do", new BoardDelete());
+		comm.put("/BoardInsertForm.do", new BoardInsertForm());
+		comm.put("/BoardInsert.do", new BoardInsert());
+		comm.put("/BoardList.do", new BoardListForm());
+		comm.put("/BoardView.do", new BoardView());
+		comm.put("/BoardViewForm.do", new BoardViewForm());
+		comm.put("/CommentsDelete.do", new CommentsDelete());
+		
+		comm.put("/MemberInsert.do", new MemberInsert());
+		comm.put("/MemberInsertForm.do", new MemberInsertForm());
+		comm.put("/MemberLogin.do", new MemberLogin());
+		comm.put("/MemberLoginForm.do", new MemberLoginForm());
+		comm.put("/MemberLogout.do", new MemberLogout());
 	}
 
 	/**

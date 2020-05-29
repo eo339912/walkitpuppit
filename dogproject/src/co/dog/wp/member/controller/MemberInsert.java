@@ -8,24 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.dog.wp.common.Command;
 import co.dog.wp.member.model.MemberDAO;
 import co.dog.wp.member.model.MemberVO;
 
 
-/**
- * Servlet implementation class Login
- */
-@WebServlet("/MemberInsert.do")
-public class MemberInsert extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class MemberInsert implements Command {
 
-	//Insert 처리
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//응답결과 인코딩
-		response.setContentType("text/html; charset=UTF-8");
-		//요청정보 인코딩
-		request.setCharacterEncoding("utf-8");
-		
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1 파라미터 받기		
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
@@ -48,16 +39,11 @@ public class MemberInsert extends HttpServlet {
 		memberDAO.memberInsert(member);
 		
 		//3. 회원목록으로 이동 		
-		String contextPath = getServletContext().getContextPath();
-		response.sendRedirect(contextPath +"/MemberLogin.do");
+		//String contextPath = getServletContext().getContextPath();
+		//response.sendRedirect(contextPath +"/MemberLogin.do");
 		//request.getRequestDispatcher(contextPath +"/MemberLogin.do").forward(request, response);
 		
-	}
-
-	//Insert페이지로 이동
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Insert페이지로 포워드
-		request.getRequestDispatcher("/member/memberInsert.jsp").forward(request, response);
+		return "member/memberLogin.jsp";
 	}
 
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import co.dog.wp.common.ConnectionManager;
 
-public class CommentsDAO {
+public class CommentsDAO{
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;

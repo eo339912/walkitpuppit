@@ -29,12 +29,12 @@
 	</ul>
 
 	<ul class="sub_menu_box sub04 ">
-         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">공지사항</a></li>
+         <li class="gnb_dp2"><a href="BoardList.do">공지사항</a></li>
 	</ul>
 	
 	<ul class="sub_menu_box sub05 ">
-        <li class="gnb_dp2"><a href="MemberInsert.do">회원가입</a></li>
-        <li class="gnb_dp2"><a href="MemberLogin.do">로그인</a></li>
+        <li class="gnb_dp2"><a href="MemberInsertForm.do">회원가입</a></li>
+        <li class="gnb_dp2"><a href="MemberLoginForm.do">로그인</a></li>
 	</ul>
 
 </div>

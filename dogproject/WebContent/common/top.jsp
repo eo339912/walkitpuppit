@@ -16,8 +16,8 @@
 	
 	
 	<c:if test="${loginId == null}">
-	<a class="hd_btn" href="MemberLogin.do">로그인</a>
-	<a class="hd_btn" href="MemberInsert.do" style="right: 102px;">회원가입</a>
+	<a class="hd_btn" href="MemberLoginForm.do">로그인</a>
+	<a class="hd_btn" href="MemberInsertForm.do" style="right: 102px;">회원가입</a>
 	</c:if>
 	<c:if test="${loginId != null}">
 	<a class="hd_btn" href="MemberLogout.do">로그아웃</a>

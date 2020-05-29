@@ -4,34 +4,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import co.dog.wp.common.Command;
 import co.dog.wp.member.model.MemberDAO;
 import co.dog.wp.member.model.MemberVO;
 
-/**
- * Servlet implementation class Login
- */
-@WebServlet("/MemberLogin.do")
-public class MemberLogin extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MemberLogin() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class MemberLogin implements Command {
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//1. 파라미터 받기
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
@@ -55,18 +38,13 @@ public class MemberLogin extends HttpServlet {
 			session.setAttribute("loginId", id);
 			session.setAttribute("loginMember", vo);
 			
-			String ContextPath= request.getContextPath();
-			response.sendRedirect(ContextPath + "/");
+			//String ContextPath= request.getContextPath();
+			//response.sendRedirect(ContextPath + "/");
+			
 		}
-		//3. 결과저장
+		return "/";
 		
-		//4. 뷰페이지로 포워드
-	}
-
-	//로그인페이지로 이동
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//로그인페이지로 포워드
-		request.getRequestDispatcher("/member/memberLogin.jsp").forward(request, response);
+		
 	}
 
 }
