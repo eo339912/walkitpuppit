@@ -39,7 +39,6 @@ public class BoardList extends HttpServlet {
 		if(strPage != null && !strPage.isEmpty()) {
 			p = Integer.parseInt(strPage);
 		}
-		
 
 		//페이징 객체를  생성
 		Paging paging = new Paging();

@@ -136,7 +136,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		} finally {
 			// 5. DB연결 해제
-			//ConnectionManager.close(conn);
+			ConnectionManager.close(conn);
 		}
 	}
 

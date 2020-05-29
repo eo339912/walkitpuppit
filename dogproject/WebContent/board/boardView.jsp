@@ -5,7 +5,6 @@
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
-
 <script> var tit01="공지사항"</script>
 
 <div id="sub_vis_wrap" class="sub04 page01">
@@ -18,23 +17,19 @@
 
 <div id="sub_content_wrap"  class="sub0401 inner">
 	<div class="inner" style="margin-bottom:10em">
-		<script src="http://foodfactory.webtro.kr/pg/js/viewimageresize.js"></script>
-		
+
 		<!-- 게시물 읽기 시작 { -->
-		<input type="hidden" name="seq" value="${param.seq}">
-		
 		<article id="bo_v" style="width:100%">
 		    <header>
 		        <h2 id="bo_v_title">
 		        	<span class="bo_v_tit">${board.title}</span>
-		        	
 		        </h2>
 		    </header>
 		    
 		    <c:if test="${loginId == 'admin'}">
-				    <div class="btn_confirm write_div">
-				    	<a href="${pageContext.request.contextPath}/BoardDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
-					</div>
+				<div class="btn_confirm write_div">
+					<a href="BoardDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+				</div>
 			</c:if>
 		
 		    <section id="bo_v_info">
@@ -47,68 +42,68 @@
 		
 		    <section id="bo_v_atc">
 		        <h2 id="bo_v_atc_title">본문</h2>
-		        <div id="bo_v_img"></div>
+		        <c:if test="${board.filename.isEmpty()}">
+		        <div id="bo_v_img"><img src="/dogproject/upload/img/${board.filename}"></div>
+				</c:if>
 				${board.content}
-		        <!-- 본문 내용 시작 { -->
-		        <div id="bo_v_con">
-		        	<p>
-		        		<img title=""  width="531"><br style="clear:both;">
-		        		&nbsp;
-		        	</p>
-		        </div>
-		         <!-- } 본문 내용 끝 -->
 		    </section>
-		
-		    
 		    
 		    <!-- 게시물 상단 버튼 시작 { -->
 		    <div id="bo_v_top">
-		        <ul class="bo_v_left"></ul>
 		        <ul class="bo_v_com">
 	    	       <li><a href="BoardList.do" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
 	    	    </ul>
-	            <!-- <ul class="bo_v_nb"><li class="btn_prv"><span class="nb_tit"><i class="fa fa-caret-up" aria-hidden="true"></i> 이전글</span><a href="./board.php?bo_table=comm01&amp;wr_id=133">[푸드팩토리] 코로나19 컵과일 후원_구미순천향병원_컵과일 700개</a> <span class="nb_date">20.03.20</span></li>
-	         	   <li class="btn_next"><span class="nb_tit"><i class="fa fa-caret-down" aria-hidden="true"></i> 다음글</span><a href="./board.php?bo_table=comm01&amp;wr_id=131">[푸드팩토리] 코로나19 컵과일 후원_구미보건소_컵과일 100개</a>  <span class="nb_date">20.03.20</span></li>
-	            </ul> -->
             </div>
 		    <!-- } 게시물 상단 버튼 끝 -->
-		
 
 		<button type="button" class="cmt_btn"><i class="fa fa-commenting-o" aria-hidden="true"></i> 댓글목록</button>
-		<!-- 댓글 시작 { -->
+		
+		<!-- 댓글 시작 { -->   
 		<section id="bo_vc">
-		    <h2>댓글목록</h2>
-		        <p id="bo_vc_empty">등록된 댓글이 없습니다.</p>
+			<h2>댓글목록</h2>
+			<c:if test="${comments.isEmpty()}">
+				<p id="bo_vc_empty">등록된 댓글이 없습니다.</p>		
+			</c:if>
+			<c:forEach items="${comments}" var="co">
+			<article>
+				<header style="z-index:2">
+			    	<h2>${co.id}님의  댓글</h2>
+			        <span class="guest">${co.id}</span>
+			        <span class="sound_only">작성일</span>
+			        <span class="bo_vc_hdinfo"><i class="fa fa-clock-o" aria-hidden="true"></i>
+			        <time datetime="2020-05-29T11:32:00+09:00">${co.regdt}</time></span>
+			    </header>
+			
+			<!-- 댓글 출력 -->
+			<div class="cmt_contents">
+				<p>${co.commentsO}</p>
+			    <ul class="bo_vc_act">
+					<li><a href="CommentsDelete.do?seq=${co.seq}%b_seq=${param.seq}" class="btn_b03">삭제</a></li>
+				</ul>
+			</div>
+			</article>
+			</c:forEach>
 		</section>
 		<!-- } 댓글 끝 -->
 		
 		<!-- 댓글 쓰기 시작 { -->
 		<aside id="bo_vc_w" class="bo_vc_w">
 		    <h2>댓글쓰기</h2>
-		<form name="fviewcomment" id="fviewcomment" action="" onsubmit="return fviewcomment_submit(this);" method="post" autocomplete="off">
-		    <span class="sound_only">내용</span>
-		        <textarea id="wr_content" name="wr_content" maxlength="10000" required="" class="required" title="내용" placeholder="댓글내용을 입력해주세요"></textarea>
-		        <script>
-				    $(document).on("keyup change", "textarea#wr_content[maxlength]", function() {
-				        var str = $(this).val()
-				        var mx = parseInt($(this).attr("maxlength"))
-				        if (str.length > mx) {
-				            $(this).val(str.substr(0, mx));
-				            return false;
-				        }
-				    });
-		    	</script>
-		    <div class="bo_vc_w_wr">
-		        <div class="btn_confirm">
-		            <input type="submit" id="btn_submit" class="btn_submit" value="댓글등록">
-		        </div>
-		    </div>
-		    </form></aside>
+			<form name="fviewcomment" id="fviewcomment" action="${pageContext.request.contextPath}/BoardView.do?seq=${board.seq}" method="post">
+			    <span class="sound_only">내용</span>
+			        <textarea id="commentsO" name="commentsO" maxlength="10000" required class="required" title="내용" placeholder="댓글내용을 입력해주세요"></textarea>
+			    <div class="bo_vc_w_wr">
+			        <div class="btn_confirm">
+			            <input type="submit" id="btn_submit" class="btn_submit" value="댓글등록">
+			        </div>
+			    </div>
+			</form>
+		</aside>
 		
 		<script>
 		
 		$(function() {            
-		    //댓글열기
+		    /*댓글열기*/
 		    $(".cmt_btn").click(function(){
 		        $(this).toggleClass("cmt_btn_op");
 		        $("#bo_vc").toggle();
@@ -117,12 +112,11 @@
 		</script>
 		<!-- } 댓글 쓰기 끝 -->
 		
-		
 		</article>
 		<!-- } 게시판 읽기 끝 -->
 		
 		
-		</div>
+	</div>
 </div>
 
 

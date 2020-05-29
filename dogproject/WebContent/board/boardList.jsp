@@ -54,7 +54,7 @@
 				             	  	<div class="bo_tit">
 				             	  		<a href="BoardView.do?seq=${vo.seq}">${vo.title}</a>
 				             	  		<c:if test="${loginId == 'admin'}">
-										    <div class="btn_confirm write_div">
+										    <div class="btn_confirm write_div" style="display: inline;">
 										    	<a href="${pageContext.request.contextPath}/BoardDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
 											</div>
 										</c:if>

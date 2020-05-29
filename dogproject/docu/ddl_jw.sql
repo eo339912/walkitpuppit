@@ -22,20 +22,18 @@ regdt date, /*등록일자*/
 cnt number(20)
 );
 
-drop table board;
-
---drop table board;
-CREATE SEQUENCE seq_board;
-create table board(
-seq number(20) primary key,
-title varchar2(100),
-contents varchar2(1000),
-regdt date,
+CREATE SEQUENCE seq_comments;
+create table comments(
 id varchar2(20),
-CONSTRAINT board_FK FOREIGN KEY (id) REFERENCES member(id)
+regdt date,
+seq number(20) primary key,
+b_seq number(20),
+commentsO varchar2(1000),
+CONSTRAINT comment_FK FOREIGN KEY (b_seq) REFERENCES board(seq) on delete cascade
 );
 
-alter table board add filename varchar2(100);
+drop table board;
+drop table member;
 
 
 
