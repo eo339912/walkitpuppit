@@ -80,7 +80,8 @@ public class ParkDAO {
 	//-----------------------------댓글--------------------------------------------
 	
 	//댓글등록
-	public void ParkcoInsert(ParkcoVO parkco) {
+	public int ParkcoInsert(ParkcoVO parkco) {
+		int r = 0;
 		
 		try {
 			// 1. DB 연결
@@ -88,9 +89,7 @@ public class ParkDAO {
 
 			// 2. sql구문 준비
 			String sql = "insert into parkcomments (seq ,pseq ,id, comments , regdt)"
-					+ " values ( seq_parkco.nextval,?, ?, ?, sysdate) ";
-				
-
+					+ " values ( seq_parkco.nextval,?, ?, ?, sysdate)";
 			psmt = conn.prepareStatement(sql);
 
 			// 3. 실행
@@ -98,7 +97,9 @@ public class ParkDAO {
 			psmt.setString(2, parkco.getId());
 			psmt.setString(3, parkco.getComments());
 		
-			psmt.executeUpdate();
+			r = psmt.executeUpdate();
+			
+			System.out.println(r + " 건이 등록됨.");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -106,10 +107,11 @@ public class ParkDAO {
 			// 5. 연결해제
 			ConnectionManager.close(conn);
 		}
+		return r;
 	}
 	
 	// 댓글리스트
-	public ArrayList<ParkcoVO> getParkco(String pseq) {
+	public ArrayList<ParkcoVO> getParkcoList(String pseq) {
 		ArrayList<ParkcoVO> list = new ArrayList<ParkcoVO>(); // 1.어레이리스트에 담기
 
 
@@ -117,7 +119,7 @@ public class ParkDAO {
 
 			conn = ConnectionManager.getConnnect();
 			
-			String sql = "select id, comments, seq, pseq from parkcomments where pseq = ? order by seq desc ";
+			String sql = "select * from parkcomments where pseq = ? order by seq desc";
 			psmt = conn.prepareStatement(sql);
 		
 			psmt.setString(1, pseq); 
@@ -128,8 +130,8 @@ public class ParkDAO {
 				parkcovo.setComments(rs.getString("comments"));
 				parkcovo.setSeq(rs.getString("seq"));
 				parkcovo.setPseq(rs.getString("pseq"));
-				
-		
+				parkcovo.setRegdt(rs.getString("regdt"));
+
 				list.add(parkcovo); 
 			}
 
@@ -141,21 +143,21 @@ public class ParkDAO {
 		return list;
 	}
 	
-	  //삭제
-	   public void deleteParkco(String pseq) {
+	  //댓글 삭제
+	   public void deleteParkco(String seq) {
 	      
 	      try {
 	         // 1. DB 연결
 	         conn = ConnectionManager.getConnnect();
 
 	         // 2. sql구문 준비
-	         String sql = "delete from parkcomments where pseq= ? ";
+	         String sql = "delete from parkcomments where seq= ? ";
 
 	  
 	         psmt = conn.prepareStatement(sql);
 
 	         // 3. 실행
-	         psmt.setString(1, pseq);
+	         psmt.setString(1, seq);
 
 	         psmt.executeUpdate();
 
@@ -170,6 +172,36 @@ public class ParkDAO {
 
 	   }
 
+		//페이징 전체 건수
+		public int getCount(String sname) {
+			int cnt = 0;
+			try {
+				conn = ConnectionManager.getConnnect();
+				
+				String strWhere = " where 1 = 1";//무조건 true
+				if(sname != null && ! sname.isEmpty()) {
+					strWhere += " and title like '%' || ? || '%' ";				
+				}
+				
+				String sql ="select count(*) from board" + strWhere;
+				psmt = conn.prepareStatement(sql);
+				
+				int post = 1;
+				if(sname != null && ! sname.isEmpty()) {
+					psmt.setString(post++, sname);				
+				}
+				
+				ResultSet rs = psmt.executeQuery();			
+				if(rs.next()) {
+					cnt = rs.getInt(1);
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				ConnectionManager.close(conn);
+			}
+			return cnt;
+		}
 	
 
 }

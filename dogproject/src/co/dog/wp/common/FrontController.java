@@ -39,6 +39,9 @@ import co.dog.wp.member.controller.MemberInsertForm;
 import co.dog.wp.member.controller.MemberLogin;
 import co.dog.wp.member.controller.MemberLoginForm;
 import co.dog.wp.member.controller.MemberLogout;
+import co.dog.wp.park.controller.ParkList;
+import co.dog.wp.park.controller.ParkView;
+import co.dog.wp.park.controller.ParkcoInsert;
 
 /**
  * Servlet implementation class FrontController
@@ -84,6 +87,9 @@ public class FrontController extends HttpServlet {
 		comm.put("/ReviewView.do", new FmarketView());
 		comm.put("/ReviewViewForm.do", new FmarketViewForm());
 		
+		comm.put("/ParkView.do", new ParkView());
+		comm.put("/ParkList.do", new ParkList());
+		comm.put("/ParkcoInsert.do", new ParkcoInsert());
 	}
 
 	/**
