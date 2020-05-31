@@ -524,3 +524,40 @@
 	.sub03_cau_bx1>div.txt .c li{margin-bottom:10px;}
 	.sub03_cau_bx1>div.txt .c a{width:180px; padding:10px 0px; margin-top:5px;}
 }
+
+.mySec{width:48%;margin: 1%;overflow:hidden;}
+.mySec1{}
+.mySec1 .myInfo{border:1px solid #dfdfdf;padding:20px 30px;box-sizing: border-box;float: left;width: 100%;margin-bottom:3%;}
+.mySec1 .myInfo .myImg{border-radius : 50%;background:#eee;width: 132px;height: 132px;overflow: hidden;}
+.myContents{width:calc(100% - 172px);}
+.myContents span{line-height: 8vw;font-size:30px;}
+.myContents button{padding: 5px 23px;border-radius: 50px;border: 1px solid #dfdfdf;}
+.mySec1 .myBtnWrap{border:1px solid #dfdfdf;box-sizing: border-box;float: left;width: 100%;}
+.mySec1 .myBtnWrap div{width:100%;}
+.mySec1 .myBtnWrap div:nth-child(2){border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.mySec1 .myBtnWrap div a{padding:10px 0;width:100%;text-align:center;display: inline-block;padding: 16px 0;}
+.mySec2 {border: 1px solid #dfdfdf;height: 366px;}
+.mySec2 .myHeader{padding: 16px 0;border-bottom:1px solid #dfdfdf; display:inline-block; width:100%; text-align:center}
+.mySec2 .myMessage{width:100%; padding:3% 2%;overflow: scroll; height: 100%;}
+.mySec2 .myMessage p{width:100%; margin-bottom:1%; padding:2% 3%; background-color:#eee; border-radius:20px; box-sizing:border-box;}
+.mySec3{border: 1px solid #dfdfdf;margin: 1%;overflow:hidden;box-sizing:border-box;}
+.mySec3 .myHeader{padding: 16px 0;border-bottom:1px solid #dfdfdf; display:inline-block; width:100%; text-align:center}
+.mySec3 .dogInfoWrap {width:100%; padding:3% 2%;overflow: scroll; height: 308px;}
+.mySec3 .dogInfoWrap ul{overflow:hidden}
+.mySec3 .dogInfoWrap ul li{float:left; width: calc(33.3% - 2%); margin: 0 1% 2%; }
+.mySec3 .dogInfoWrap ul li .dogInfo{padding:15px;overflow: hidden; border:1px solid #dfdfdf; border-bottom:none;}
+.mySec3 .dogInfoWrap ul li .dogInfo .dogImg{width:100px; height:100px; background:#333; border-radius:50%;}
+.mySec3 .dogInfoWrap ul li .dogInfo .pname{width: calc(100% - 120px); float: right;line-height: 100px;}
+.mySec3 .dogInfoWrap ul li .dogInfo .pname span{font-size: 0.8em; margin-left: 10px; color: #ffa300;}
+.mySec3 .dogInfoWrap ul li .dogInfo2{padding:15px; border:1px solid #eee; overflow: hidden;} 
+
+@media all and (max-width:700px) {
+	.mySec { width: 100%;margin: 1% 0;}
+	.mySec3 {margin:0}
+	.mySec3 .dogInfoWrap ul li {width: calc(50% - 2%);}
+	.mySec2 {height: 300px;}
+}
+@media all and (max-width:650px) {
+	.mySec3 .dogInfoWrap ul li {width: 100%; margin: 0 0 2%;;}
+}
+

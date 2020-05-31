@@ -19,7 +19,6 @@
 		<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
 		    <form name="fwrite" id="fwrite" action="http://www.food-factory.kr/pg/bbs/write_update.php" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off" style="width:100%">
-		  
 			    <div class="bo_w_info write_div3 half">
 			        <span>아이디</span>
 			        <input type="text" name="wr_name" value="" id="name" required="" class="frm_input required" placeholder="아이디">
@@ -34,7 +33,7 @@
 			            <input type="text" name="name" value="" id="name" class="frm_input required" required="" placeholder="회원이름">
 			    </div>
 				    
-				<div class="bo_w_info write_div2 half">
+				<div class="bo_w_info write_div3 half">
 					<span>강아지 이름</span><input type="text" name="pname" value="" id="pname" class="frm_input required" required="" placeholder="강아지 이름">
 				</div>
 				
@@ -43,7 +42,7 @@
 			            <input type="text" name="pbirth" value="" id="pbirth" class="frm_input required" required="" placeholder="강아지생일">
 			    </div>
 				    
-				<div class="bo_w_info write_div2 half">
+				<div class="bo_w_info write_div3 half">
 					<span>강아지 성별</span>
 					<div style="margin-top:11.5px; padding-bottom:15px; font-size:0.9em">
 							 &nbsp;&nbsp;<input type="radio" value ="f" name="pgender" class="frm_input2"/> 딸내미  &nbsp;&nbsp;
