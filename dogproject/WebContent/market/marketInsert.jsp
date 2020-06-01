@@ -51,7 +51,7 @@
 				</div>
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 					<span>가격입력</span>
-            		<input type="text" name="price" value="" id="price" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="가격입력하세요">
+            		<input type="text" name="price" value="" id="price" required class="frm_input full_input required" size="50" maxlength="255" placeholder="가격입력하세요">
 				</div>
 				
 				<div class="write_div  bo_w_info write_div2">

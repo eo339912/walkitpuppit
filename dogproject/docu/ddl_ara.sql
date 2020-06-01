@@ -20,6 +20,8 @@ price varchar2(30),
 id varchar2(20) constraint market_id_fk references member(id)
 );
 
+drop table market;
+
 create table review(
 seq number(20) constraint review_seq_pk primary key,
 title varchar2(100),
@@ -37,6 +39,9 @@ seq number(20) primary key,
 m_seq number(20),
 mcomment varchar2(1000),
 CONSTRAINT mcomment_FK FOREIGN KEY (m_seq) REFERENCES market(seq) on delete cascade);
+
+drop table mcomment;
+drop table review;
 
 CREATE SEQUENCE seq_market;
 CREATE SEQUENCE seq_review;

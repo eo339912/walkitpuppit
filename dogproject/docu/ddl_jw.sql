@@ -11,6 +11,8 @@ pimage varchar2(1000), /*강아지사진*/
 regdt date /*가입일자*/
 );
 
+drop table member;
+
 CREATE SEQUENCE seq_board;
 create table board(
 seq number(20) primary key, /*번호*/
