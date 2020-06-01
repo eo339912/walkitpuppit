@@ -36,7 +36,6 @@
                  <thead>
                  <tr>
                      <th scope="col" width="15%">순번</th>
-                     <th scope="col" width="15%">상품</th>
                      <th scope="col">제목</th>
                      <th scope="col"  width="8%">판매상태</th>
                      <th scope="col" width="15%">글쓴이</th>
@@ -47,17 +46,12 @@
                  <c:forEach items="${list}" var="vo" varStatus="status">
                     <tr>
                         <td class="td_num2">${((paging.page-1) * 5 + status.index+1)}</td>
-                        <td>
-                        	<c:if test="${!vo.filename.isEmpty() && vo.filename != null}">
-					       	 <div id="bo_v_img"><img src="./upload/img/${vo.filename}"></div>
-							</c:if>
-                        </td>
-                        <td class="td_subject" style="padding-left:0px; position:relative">
-                           <div class="bo_tit" style="display: inline;"><a href="MarketViewForm.do?seq=${vo.seq}">${vo.title}</a></div>
+                        <td class="td_subject" style="padding-left:0px">
+                           <div class="bo_tit"><a href="MarketViewForm.do?seq=${vo.seq}">${vo.title}</a></div>
                             
                             <c:if test="${loginId == vo.id}">
 										    <div class="btn_confirm write_div" style="display: inline;">
-										    	<a href="MarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="position: absolute;right: 0;">글삭제</a>
+										    	<a href="MarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
 											</div>
 											</c:if>
                      </td>

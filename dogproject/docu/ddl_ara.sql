@@ -43,6 +43,6 @@ CREATE SEQUENCE seq_market;
 CREATE SEQUENCE seq_review;
 CREATE SEQUENCE seq_member;
 CREATE SEQUENCE seq_mcomment;
-
+CREATE SEQUENCE seq_mol;
 
 

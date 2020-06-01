@@ -32,7 +32,7 @@
 		        <form name="searchfrm" method="get">
 		        	<input name="p" value="1" type="hidden">
 		        	<input name="spotnum" value="${param.spotnum}" type="hidden">
-		        	<input name="sname2" value="${param.sname}">
+		        	<input name="sname2" value="${param.sname}" type="hidden">
 		        	<input type="text" name="sname" value="" id="sname" class="sch_input" size="25" maxlength="20" placeholder="장소를 입력해주세요">
 		       		<button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
 		        </form>
