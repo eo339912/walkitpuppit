@@ -18,6 +18,7 @@ import co.dog.wp.board.controller.BoardListForm;
 import co.dog.wp.board.controller.BoardView;
 import co.dog.wp.board.controller.BoardViewForm;
 import co.dog.wp.board.controller.CommentsDelete;
+import co.dog.wp.main.controller.Main;
 import co.dog.wp.market.controller.FmarketDelete;
 import co.dog.wp.market.controller.FmarketInsert;
 import co.dog.wp.market.controller.FmarketInsertForm;
@@ -39,6 +40,7 @@ import co.dog.wp.member.controller.MemberInsertForm;
 import co.dog.wp.member.controller.MemberLogin;
 import co.dog.wp.member.controller.MemberLoginForm;
 import co.dog.wp.member.controller.MemberLogout;
+import co.dog.wp.mypage.controller.Mypage;
 import co.dog.wp.park.controller.ParkList;
 import co.dog.wp.park.controller.ParkView;
 import co.dog.wp.park.controller.ParkcoInsert;
@@ -53,6 +55,10 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// 수행할 명령(command)객체의 집합 
 		comm = new HashMap<String , Command>();
+		comm.put("/Main.do", new Main());
+		
+		comm.put("/Mypage.do", new Mypage());
+
 		comm.put("/BoardDelete.do", new BoardDelete());
 		comm.put("/BoardInsertForm.do", new BoardInsertForm());
 		comm.put("/BoardInsert.do", new BoardInsert());

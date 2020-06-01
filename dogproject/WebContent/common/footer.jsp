@@ -13,7 +13,7 @@
 					<div class="c1"><a href="#">[아리랑TV] 푸드팩토리 공정과정 소개에 대한 안내4</a></div>
 					<div class="c1"><a href="#">[아리랑TV] 푸드팩토리 공정과정 소개에 대한 안내5</a></div>
 				</div>
-				<a class="link" href="javascript:GoPage('cs01')"><img src="${pageContext.request.contextPath}/images/common/icon_arw_1.png " /></a>
+				<a class="link" href="javascript:GoPage('cs01')"><img src="./images/common/icon_arw_1.png " /></a>
 			</div>
 			<div class="ft_top_bx">
 				<span class="tit">NEWS</span>
@@ -24,7 +24,7 @@
 					<div class="c1"><a href="#">[아리랑TV] 푸드팩토리 공정과정 소개에 대한 안내4</a></div>
 					<div class="c1"><a href="#">[아리랑TV] 푸드팩토리 공정과정 소개에 대한 안내5</a></div>
 				</div>
-				<a class="link" href="javascript:GoPage('cs02')"><img src="${pageContext.request.contextPath}/images/common/icon_arw_1.png " /></a>
+				<a class="link" href="javascript:GoPage('cs02')"><img src="./images/common/icon_arw_1.png " /></a>
 			</div>
 		</div>
 	</div>

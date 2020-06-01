@@ -21,10 +21,7 @@ public class MemberInsert implements Command {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		String name = request.getParameter("name");
-		String pbirth = request.getParameter("pbirth");
-		String pgender = request.getParameter("pgender");
-		String pimage = request.getParameter("pimage");
-		String pname = request.getParameter("pname");
+		String thumd = request.getParameter("thumd");
 
 		//2. 서비스 로직 처리(DAO)
 		MemberDAO memberDAO = new MemberDAO();
@@ -32,10 +29,7 @@ public class MemberInsert implements Command {
 		member.setPwd(pwd);
 		member.setName(name);
 		member.setId(id);
-		member.setPbirth(pbirth);
-		member.setPgender(pgender);
-		member.setPimage(pimage);
-		member.setPname(pname);
+		member.setThumd(thumd);
 		memberDAO.memberInsert(member);
 		
 		//3. 회원목록으로 이동 		

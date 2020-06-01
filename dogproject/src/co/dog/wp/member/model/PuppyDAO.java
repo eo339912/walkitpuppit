@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import co.dog.wp.common.ConnectionManager;
 
-public class MemberDAO {
+public class PuppyDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
@@ -21,8 +21,8 @@ public class MemberDAO {
 			conn = ConnectionManager.getConnnect();
 
 			// 2. sql구문 준비
-			String sql = "insert into member (seq, id, pwd, name, thumd, regdt)"
-					+ " values (seq_member.nextval, ?, ?, ?, ?, sysdate)";
+			String sql = "insert into member (seq, id, pwd, name, thumb, regdt)"
+					+ " values (seq_member.nextval, ?, ?, ?, TO_DATE(?, 'yyyymmdd'), ?, ?, ?, sysdate)";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -30,7 +30,6 @@ public class MemberDAO {
 			psmt.setString(1, member.getId());
 			psmt.setString(2, member.getPwd());
 			psmt.setString(3, member.getName());
-			psmt.setString(4, member.getThumd());
 
 			r = psmt.executeUpdate();
 
