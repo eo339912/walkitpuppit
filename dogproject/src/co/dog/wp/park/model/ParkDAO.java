@@ -15,19 +15,33 @@ public class ParkDAO {
 	ResultSet rs = null;
 	
 	// 전체조회
-	public ArrayList<ParkVO> getParkList(String spotnum) {
+	public ArrayList<ParkVO> getParkList(int start, int end,String spotnum) {
 		ArrayList<ParkVO> list = new ArrayList<ParkVO>(); // 1.어레이리스트에 담기
-
-		Connection conn = null;
-		PreparedStatement psmt = null;
+			
+		
+		
 		try {
 			// 1. DB 연결
 			conn = ConnectionManager.getConnnect();
+			
+			String strWhere = " where 1 = 1";
+			if(spotnum != null && ! spotnum.isEmpty()) {
+				strWhere += " and spotnum like '%' || ? || '%' ";	
+			}
+			
 			// 2. 쿼리 준비
-			String sql = "select * from park where spotnum = ? order by seq"; // 2.전체조회는 항상 오더바디 넣자
+			String sql = "select B.* from( select A.*, rownum RN from("
+					+ "select * from park" + strWhere+ "order by seq desc"
+							+ " )A ) B where RN between ? and ?"; // 2.전체조회는 항상 오더바디 넣자
 			psmt = conn.prepareStatement(sql);
+			int post = 1;
+			if(spotnum != null && ! spotnum.isEmpty()) {
+				psmt.setString(post++, spotnum);				
+			}
+			psmt.setInt(post++, start);
+			psmt.setInt(post++, end);
+			
 			// 3. statement 실행
-			psmt.setString(1, spotnum); // 첫번재 물음표 값이 id다  // 3. 단건에서의 ? 빠졌으니 set도 필요없음
 			ResultSet rs = psmt.executeQuery();
 			while (rs.next()) {
 				ParkVO vo = new ParkVO(); // 4. 위치 while 안으로
@@ -35,10 +49,11 @@ public class ParkDAO {
 				vo.setSenter(rs.getString("senter"));
 				vo.setSeq(rs.getString("seq"));
 				vo.setSpotnm(rs.getString("spotnm"));// 결과값에 담기
+				
 				list.add(vo); // 5.리스트에 담기
 			}
 			// 4. 결과 저장
-		} catch (Exception e) {
+			} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			// 5. 연결해제
@@ -173,13 +188,13 @@ public class ParkDAO {
 	   }
 
 		//페이징 전체 건수
-		public int getCount(String sname) {
+		public int getCount(String spotnum) {
 			int cnt = 0;
 			try {
 				conn = ConnectionManager.getConnnect();
 				
 				String strWhere = " where 1 = 1";//무조건 true
-				if(sname != null && ! sname.isEmpty()) {
+				if(spotnum != null && ! spotnum.isEmpty()) {
 					strWhere += " and sname like '%' || ? || '%' ";				
 				}
 				
@@ -187,8 +202,8 @@ public class ParkDAO {
 				psmt = conn.prepareStatement(sql);
 				
 				int post = 1;
-				if(sname != null && ! sname.isEmpty()) {
-					psmt.setString(post++, sname);				
+				if(spotnum != null && ! spotnum.isEmpty()) {
+					psmt.setString(post++, spotnum);				
 				}
 				
 				rs = psmt.executeQuery();			

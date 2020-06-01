@@ -23,5 +23,18 @@ CONSTRAINT comments_PK PRIMARY KEY (seq),
 CONSTRAINT comments_FK FOREIGN KEY (pseq) REFERENCES park(seq)
 )
 
+CREATE SEQUENCE seq_walk;
+create table walk(
+w_seq number(20),
+w_id varchar2(20),
+inpark date ,
+outpark  date,
+w_spotnum VARCHAR2(30),
+CONSTRAINT walk_PK PRIMARY KEY (w_seq),
+CONSTRAINT walk_FK FOREIGN KEY (w_id) REFERENCES member(id),
+CONSTRAINT w_seq_FK FOREIGN KEY (w_seq) REFERENCES park(seq)
+);
+
+select * from walk
 
   

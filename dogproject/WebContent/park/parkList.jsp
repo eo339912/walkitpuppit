@@ -29,15 +29,16 @@
 		  <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
 		    <div class="tbl_head01 tbl_wrap">
 		    
-		       <!-- 게시판 검색 시작 { -->
+			<!-- 게시판 검색 시작 { -->
 		    <fieldset id="bo_sch">
 		        <legend>게시물 검색</legend>		
-		        <form name="fsearch" method="get">
-		        <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
-		        <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
+		        <form name="searchfrm" method="get">
+		        	<input name="p" value="1" type="hidden">
+		        	<input type="text" name="title" value="" id="title" class="sch_input" size="25" maxlength="20" placeholder="장소를 입력해주세요">
+		       		<button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
 		        </form>
 		    </fieldset>
-		    <!-- } 게시판 검색 끝 -->   
+		    <!-- } 게시판 검색 끝 -->  
 		    
 		        <table>
 			        <caption>게시판 목록 </caption>
@@ -50,6 +51,7 @@
 			        <tbody>
 						<c:forEach items="${park}" var="vo">
 							<tr> 
+						
 								<td><a href="ParkView.do?seq=${vo.seq}">${vo.sname}</a></td>
 								<td><a href="#">${vo.senter}</a>
 								

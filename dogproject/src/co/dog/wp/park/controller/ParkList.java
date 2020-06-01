@@ -21,7 +21,7 @@ public class ParkList implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ParkDAO parkdao = new ParkDAO();
-		String sname = request.getParameter("sname");
+		String spotnum = request.getParameter("spotnum");
 		//페이징처리
 		//현재 페이지 파라미터 받기
 		String strPage = request.getParameter("p");
@@ -36,7 +36,7 @@ public class ParkList implements Command {
 		paging.setPageSize(3); //한페이지에 출력할 페이지 번호 수
 		paging.setPage(p); //현재페이지
 	
-		paging.setTotalRecord(parkdao.getCount(sname)); //전체 레코드 건수 조회
+		paging.setTotalRecord(parkdao.getCount(spotnum)); //전체 레코드 건수 조회
 		request.setAttribute("paging", paging);
 					
 		int start = paging.getFirst();
@@ -46,7 +46,7 @@ public class ParkList implements Command {
 	 	String seq = request.getParameter("seq");
 	 	
 		//리스트
-		ArrayList<ParkVO> list = parkdao.getParkList(spotnm);
+		ArrayList<ParkVO> list = parkdao.getParkList(start, end,spotnm);
 			
 		//결과저장
 		request.setAttribute("park", list); 
