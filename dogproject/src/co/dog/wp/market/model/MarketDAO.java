@@ -17,8 +17,8 @@ import co.dog.wp.common.ConnectionManager;
 				// 1. DB 연결
 				conn = ConnectionManager.getConnnect();
 				// 2. sql구문 준비
-				String sql = "insert into market (seq, id, title, content, filename, sselect,regdt,sell,price)"
-						+ " values (seq_mol.nextval, ?, ?, ?, ?,?, sysdate,?,?)";
+				String sql = "insert into market (seq, id, title, content, filename, sselect,regdt,sell,price,cnt)"
+						+ " values (seq_mol.nextval, ?, ?, ?, ?,?, sysdate,?,?,0)";
 				psmt = conn.prepareStatement(sql);
 				// 3. 실행
 			
@@ -48,8 +48,8 @@ import co.dog.wp.common.ConnectionManager;
 				// 1. DB 연결
 				conn = ConnectionManager.getConnnect();
 				// 2. sql구문 준비
-				String sql = "insert into market (seq, id, ftitle, fcontent, filename, fsselect,fregdt,fsell,fprice)"
-						+ " values (seq_mol.nextval, ?, ?, ?, ?,?, sysdate,?,?)";
+				String sql = "insert into market (seq, id, ftitle, fcontent, filename, fsselect,fregdt,fsell,fprice,cnt)"
+						+ " values (seq_mol.nextval, ?, ?, ?, ?,?, sysdate,?,?,0)";
 				psmt = conn.prepareStatement(sql);
 				// 3. 실행
 			
@@ -145,6 +145,7 @@ import co.dog.wp.common.ConnectionManager;
 						vo.setRegdt(rs.getString("regdt"));
 						vo.setSell(rs.getString("sell"));
 						vo.setPrice(rs.getString("price"));
+						vo.setCnt(rs.getString("cnt"));
 
 					}
 					// 4. 결과저장
@@ -270,6 +271,7 @@ import co.dog.wp.common.ConnectionManager;
 							vo.setFsselect(rs.getString("fsselect"));
 							vo.setRegdt(rs.getString("regdt"));
 							vo.setFsell(rs.getString("fsell"));
+							vo.setCnt(rs.getString("cnt"));
 
 						}
 						// 4. 결과저장
@@ -331,7 +333,7 @@ import co.dog.wp.common.ConnectionManager;
 						e.printStackTrace();
 					} finally {
 						// 5. DB연결 해제
-						//ConnectionManager.close(conn);
+						ConnectionManager.close(conn);
 					}
 				}
 

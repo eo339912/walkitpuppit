@@ -25,7 +25,7 @@ public class MarketViewForm implements Command {
 	      // 서비스 로직처리 (회원정보 1건 조회)
 	      MarketDAO marketdao = new MarketDAO();
 	      marketdao.increaseCnt(seq);
-	      MarketVO vo = marketdao.getFmarket(seq);
+	      MarketVO vo = marketdao.getMarket(seq);
 	      // 결과저장
 	      McommentDAO mcommentdao = new McommentDAO();
 		  ArrayList<McommentVO> mcommentList = mcommentdao.getMcommentList(seq);

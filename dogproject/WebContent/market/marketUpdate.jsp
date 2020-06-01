@@ -34,28 +34,27 @@
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매상태</span>
 <div style="margin-top:11.5px; padding-bottom:15px; font-size:0.9em">
-							 &nbsp;&nbsp;<input type="radio" value ="sale" name="sselect" <c:if test="${fn:contains(market.sselect,'sale')}">checked="checked"</c:if> class="frm_input2"/> 판매중  &nbsp;&nbsp;
-							 &nbsp;&nbsp;<input type="radio" value ="sold out" name="sselect" <c:if test="${fn:contains(market.sselect,'sold out')}">checked="checked"</c:if> class="frm_input2"/> 판매완료
+							 &nbsp;&nbsp;<input type="radio" value ="판매중" name="sselect" <c:if test="${fn:contains(market.sselect,'판매중')}">checked="checked"</c:if> class="frm_input2"/> 판매중  &nbsp;&nbsp;
+							 &nbsp;&nbsp;<input type="radio" value ="판매완료" name="sselect" <c:if test="${fn:contains(market.sselect,'판매완료')}">checked="checked"</c:if> class="frm_input2"/> 판매완료
 					</div>
 				</div>
 					
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매물품</span>
 				     <select name="sell"> 
-			<option value="sell">==========선택=============
+			<option value="sell">==========선택=============</option>
 			<option value="강아지  산책물품"
-			<c:if test="${fn:contains(market.sell,'강아지 산책물품')}">selected="selected"</c:if>/> 강아지  산책물품</option>
+			<c:if test="${fn:contains(market.sell,'강아지 산책물품')}">selected="selected"</c:if>> 강아지  산책물품</option>
 			<option value="강아지 옷"
-			<c:if test="${fn:contains(market.sell,'강아지 옷')}">selected="selected"</c:if>/> 강아지 옷  </option>
+			<c:if test="${fn:contains(market.sell,'강아지 옷')}">selected="selected"</c:if>> 강아지 옷  </option>
 			<option value="강아지 생필품"
-			<c:if test="${fn:contains(market.sell,'강아지 생필품')}">selected="selected"</c:if>/> 강아지 생필품 </option>
+			<c:if test="${fn:contains(market.sell,'강아지 생필품')}">selected="selected"</c:if>> 강아지 생필품 </option>
 			<option value="강아지  간식"
-			<c:if test="${fn:contains(market.sell,'강아지  간식')}">selected="selected"</c:if>/> 강아지  간식 </option>
+			<c:if test="${fn:contains(market.sell,'강아지  간식')}">selected="selected"</c:if>> 강아지  간식 </option>
 			<option value="기타"
-			<c:if test="${fn:contains(market.sell,'기타')}">selected="selected"</c:if>/> 기타 </option>
-			
-			
+			<c:if test="${fn:contains(market.sell,'기타')}">selected="selected"</c:if>> 기타 </option>
 			</select><br />
+			
 				</div>
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 					<span>가격입력</span>
