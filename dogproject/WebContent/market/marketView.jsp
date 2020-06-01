@@ -59,6 +59,11 @@
 	    	       <li><a href="MarketList.do" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
 	    	    </ul>
 		        </div>
+		        <div id="bo_v_top">
+		        	 <ul class="bo_v_com">
+	    	       <li><a href="MarketUpdateForm.do?seq=${param.seq}" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i>수정</a></li>
+	    	    </ul>
+		        </div>
 		         <!-- } 본문 내용 끝 -->
 		  
 		    <!-- 게시물 상단 버튼 시작 { -->
