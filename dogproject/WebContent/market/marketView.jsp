@@ -67,7 +67,7 @@
 		    <div id="bo_v_top">
 		        <ul class="bo_v_left"></ul>
 		        <ul class="bo_v_com">
-	    	       <li><a href="BoardList.do" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
+	    	       <li><a href="MarkList.do" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
 	    	    </ul>
 	            <!-- <ul class="bo_v_nb"><li class="btn_prv"><span class="nb_tit"><i class="fa fa-caret-up" aria-hidden="true"></i> 이전글</span><a href="./board.php?bo_table=comm01&amp;wr_id=133">[푸드팩토리] 코로나19 컵과일 후원_구미순천향병원_컵과일 700개</a> <span class="nb_date">20.03.20</span></li>
 	         	   <li class="btn_next"><span class="nb_tit"><i class="fa fa-caret-down" aria-hidden="true"></i> 다음글</span><a href="./board.php?bo_table=comm01&amp;wr_id=131">[푸드팩토리] 코로나19 컵과일 후원_구미보건소_컵과일 100개</a>  <span class="nb_date">20.03.20</span></li>
