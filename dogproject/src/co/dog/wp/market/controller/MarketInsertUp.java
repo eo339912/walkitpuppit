@@ -55,13 +55,22 @@ public class MarketInsertUp extends HttpServlet {
 		// 1 파라미터 받기
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		
+		String sselect = request.getParameter("sselect");
+		String regdt = request.getParameter("regdt");
+		String sell = request.getParameter("sell");
+		String price = request.getParameter("price");
+	
 		// 2. 서비스 로직 처리(DAO)
+	
 		MarketDAO marketDAO = new MarketDAO();
 		MarketVO market = new MarketVO();
 		market.setContent(content);
 		market.setTitle(title);
+		market.setSselect(sselect);
 		market.setId(id);
+		market.setRegdt(regdt);
+		market.setSell(sell);
+		market.setPrice(price);
 		
 		//첨부파일 처리
 		Part part = request.getPart("filename");

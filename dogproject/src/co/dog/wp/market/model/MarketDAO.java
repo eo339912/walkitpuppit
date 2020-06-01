@@ -91,16 +91,16 @@ import co.dog.wp.common.ConnectionManager;
 				return list;
 			}
 			//단건조회
-			public MarketVO getMarket(String id) {
+			public MarketVO getMarket(String seq) {
 				MarketVO vo = new MarketVO();
 				try {
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					// 2. 쿼리 준비
-					String sql = "select * from market where id = ?";
+					String sql = "select * from market where seq = ?";
 					psmt = conn.prepareStatement(sql);
 					// 3. statement 실행
-					psmt.setString(1, id );
+					psmt.setString(1, seq);
 					ResultSet rs = psmt.executeQuery();
 					if (rs.next()) {
 						vo.setSeq(rs.getString("seq"));
@@ -111,7 +111,7 @@ import co.dog.wp.common.ConnectionManager;
 						vo.setSselect(rs.getString("sselect"));
 						vo.setRegdt(rs.getString("regdt"));
 						vo.setSell(rs.getString("sell"));
-						vo.setSell(rs.getString("price"));
+						vo.setPrice(rs.getString("price"));
 
 					}
 					// 4. 결과저장

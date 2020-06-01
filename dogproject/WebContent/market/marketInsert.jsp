@@ -32,14 +32,14 @@
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매상태</span>
 <div style="margin-top:11.5px; padding-bottom:15px; font-size:0.9em">
-							 &nbsp;&nbsp;<input type="radio" value ="판매중" name="sselect" class="frm_input2"/> 판매중  &nbsp;&nbsp;
-							 &nbsp;&nbsp;<input type="radio" value ="판매완료" name="sselect" class="frm_input2"/> 판매완료
+							 &nbsp;&nbsp;<input type="radio" value ="sale" name="sselect" class="frm_input2"/> 판매중  &nbsp;&nbsp;
+							 &nbsp;&nbsp;<input type="radio" value ="sold out" name="sselect" class="frm_input2"/> 판매완료
 					</div>
 				</div>
 					
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매물품</span>
-				     <select name=""> 
+				     <select name="sell"> 
 			<option value="fsell">==========선택=============
 			<option value="강아지  산책물품"> 강아지  산책물품
 			<option value="강아지 옷"> 강아지 옷 

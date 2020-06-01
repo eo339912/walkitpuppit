@@ -17,6 +17,7 @@ sell varchar2(30),
 fsell varchar2(30),
 fprice varchar2(30),
 price varchar2(30),
+cnt number(20),
 id varchar2(20) constraint market_id_fk references member(id)
 );
 
@@ -42,3 +43,6 @@ CREATE SEQUENCE seq_market;
 CREATE SEQUENCE seq_review;
 CREATE SEQUENCE seq_member;
 CREATE SEQUENCE seq_mcomment;
+
+
+

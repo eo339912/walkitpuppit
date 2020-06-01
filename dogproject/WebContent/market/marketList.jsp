@@ -8,7 +8,7 @@
 
 <script> var tit02="중고거래"</script>
 
-<div id="sub_vis_wrap" class="sub04 page01">
+<div id="sub_vis_wrap" class="sub02 page01">
    <%@include file="/common/sub_vis.jsp"%>
    <jsp:include page="/common/sub_menu.jsp"/>
 </div>
@@ -16,7 +16,7 @@
    <span><script>document.write(tit02);</script></span>
 </div>
 
-<div id="sub_content_wrap"  class="sub0401 inner">
+<div id="sub_content_wrap"  class="sub0201 inner">
    <div class="inner" style="margin-bottom:10em">
       <!-- 게시판 목록 시작 { -->
       <div id="bo_list" style="width:100%" class="sub_board">
@@ -31,15 +31,15 @@
           </fieldset>
           <!-- } 게시판 검색 끝 -->   
           <div class="tbl_head01 tbl_wrap">
-              <table>
+              <table style="text-align:center;">
                  <caption>게시판 목록</caption>
                  <thead>
                  <tr>
                      <th scope="col" width="15%">순번</th>
                      <th scope="col">제목</th>
-                     <th scope="col">판매상태</th>
+                     <th scope="col"  width="8%">판매상태</th>
                      <th scope="col" width="15%">글쓴이</th>
-                     <th scope="col" width="15%">작성일자 <i class="fa fa-sort" aria-hidden="true"></i></th>
+                     <th scope="col" width="20%">작성일자 <i class="fa fa-sort" aria-hidden="true"></i></th>
                  </tr>
                  </thead>
                  <tbody>
@@ -47,8 +47,8 @@
                     <tr>
                         <td class="td_num2">${((paging.page-1) * 5 + status.index+1)}</td>
                         <td class="td_subject" style="padding-left:0px">
-                            <div class="bo_tit"><a href="#">${vo.title}</a></div>
-                            <a href="MarketViewForm.do?seq=${vo.seq}">${vo.title}</a>
+                           <div class="bo_tit"><a href="MarketViewForm.do?seq=${vo.seq}">${vo.title}</a></div>
+                            
                             <c:if test="${loginId == vo.id}">
 										    <div class="btn_confirm write_div" style="display: inline;">
 										    	<a href="MarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
@@ -56,7 +56,7 @@
 											</c:if>
                      </td>
                         <td><div class="bo_tit"><a href="#">${vo.sselect}</a></div></td>
-                        <td><class="td_name sv_use"><span class="sv_member">${vo.id}</span></td>
+                        <td class="td_name sv_use"><span class="sv_member">${vo.id}</span></td>
                          <td class="td_datetime">${vo.regdt}</td>
                        </tr>
                        </c:forEach>

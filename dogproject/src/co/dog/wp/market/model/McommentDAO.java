@@ -30,8 +30,8 @@ public class McommentDAO{
 			psmt.setString(1, mcomment.getId());
 			psmt.setString(2, mcomment.getMcomment());
 			psmt.setString(3, mcomment.getM_seq());
-			psmt.setString(4, mcomment.getRegdt());
-			psmt.setString(5, mcomment.getSeq());
+
+		
 			
 			r = psmt.executeUpdate();
 

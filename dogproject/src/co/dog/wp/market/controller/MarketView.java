@@ -21,7 +21,9 @@ public class MarketView implements Command {
 
 		   // 파라미터 받기
 		   String seq = request.getParameter("seq");
-		   String id = request.getParameter("id");
+		   String id = (String) request.getSession().getAttribute("loginId");
+		
+
 			
 		   String mcomment = request.getParameter("mcomment");
 

@@ -18,7 +18,14 @@ public class MarketVO {
     String sell;
     String price;
     String fprice;
-
+    String cnt;
+    
+	public String getCnt() {
+		return cnt;
+	}
+	public void setCnt(String cnt) {
+		this.cnt = cnt;
+	}
 	public String getPrice() {
 		return price;
 	}
