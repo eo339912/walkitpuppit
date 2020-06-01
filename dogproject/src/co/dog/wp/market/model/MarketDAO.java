@@ -162,7 +162,7 @@ import co.dog.wp.common.ConnectionManager;
 				try {
 					conn = ConnectionManager.getConnnect();
 					// 2. sql구문 준비
-					String sql = "update market set content = ?, title = ?, filename = ?, sselect = ?,  regdt = ?, sell = ?, price=?"
+					String sql = "update market set content = ?, title = ?, filename = ?, sselect = ?, sell = ?, price=?"
 							+ " where seq = ? ";
 					psmt = conn.prepareStatement(sql);
 					// 3. 실행
@@ -170,10 +170,9 @@ import co.dog.wp.common.ConnectionManager;
 					psmt.setString(2, market.getTitle());
 					psmt.setString(3, market.getFilename());
 					psmt.setString(4, market.getSselect());
-					psmt.setString(5, market.getRegdt());
-					psmt.setString(6, market.getSell());
-					psmt.setString(7, market.getPrice());
-					psmt.setString(8, market.getSeq());
+					psmt.setString(5, market.getSell());
+					psmt.setString(6, market.getPrice());
+					psmt.setString(7, market.getSeq());
 				
 					r = psmt.executeUpdate();
 					// 4. 결과처리
