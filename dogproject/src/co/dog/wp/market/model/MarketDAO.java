@@ -42,24 +42,57 @@ import co.dog.wp.common.ConnectionManager;
 			}
 			return r;
 		}
+		public int FmarketInsert(MarketVO market) {
+			int r = 0;
+			try {
+				// 1. DB 연결
+				conn = ConnectionManager.getConnnect();
+				// 2. sql구문 준비
+				String sql = "insert into market (seq, id, ftitle, fcontent, filename, fsselect,fregdt,fsell,fprice)"
+						+ " values (seq_mol.nextval, ?, ?, ?, ?,?, sysdate,?,?)";
+				psmt = conn.prepareStatement(sql);
+				// 3. 실행
+			
+				psmt.setString(1, market.getId());
+				psmt.setString(2, market.getFtitle());
+				psmt.setString(3, market.getFcontent());
+				psmt.setString(4, market.getFilename());
+				psmt.setString(5, market.getFsselect());
+				psmt.setString(6, market.getFsell());
+				psmt.setString(7, market.getFprice());
+			
+				r = psmt.executeUpdate();
+				// 4. 결과처리
+				System.out.println(r + " 건이 등록됨.");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				// 5. 연결해제
+				ConnectionManager.close(conn);
+			}
+			return r;
+		}
 		//전체조회
-			public ArrayList<MarketVO> getFmarketList(int start, int end, String ftitle) {
+			public ArrayList<MarketVO> getFmarketList(int start, int end, String id) {
 				ArrayList<MarketVO> list = new ArrayList<MarketVO>();
 				try {
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					
-					String strWhere = " where 1 = 1";//무조건 true
-					if(ftitle != null && ! ftitle.isEmpty()) {
-						strWhere += " and ftitle like '%' || ? || '%' ";				
+					String strWhere = " where ftitle is not null";//무조건 true
+					if(id != null && ! id.isEmpty()) {
+						strWhere += " and id like '%' || ? || '%' ";				
 					}
 					
 					// 2. 쿼리준비
-					String sql = "select seq,id,ftitle,fcontent,filename,fsselect,fregdt,fsell,fprice from market where ftitle is not null";
+					String sql = "select B.* from( select A.*, rownum RN from("
+							+ "select seq,id,ftitle,fcontent,filename,fsselect,fregdt,fsell from market "+ strWhere+ " order by seq desc"
+							+ " ) A ) B where RN between ? and ?";
 					psmt = conn.prepareStatement(sql);
 					int post = 1;
-					if(ftitle != null && ! ftitle.isEmpty()) {
-						psmt.setString(post++, ftitle);				
+					if(id != null && ! id.isEmpty()) {
+						psmt.setString(post++, id);				
 					}
 					psmt.setInt(post++, start);
 					psmt.setInt(post++, end);
@@ -75,7 +108,7 @@ import co.dog.wp.common.ConnectionManager;
 						vo.setFsselect(rs.getString("fsselect"));
 						vo.setFregdt(rs.getString("fregdt"));
 						vo.setFsell(rs.getString("fsell"));
-						vo.setFsell(rs.getString("fprice"));
+						
 
 						list.add(vo);
 					}

@@ -19,7 +19,7 @@ public class FmarketList implements Command {
 			//1.파라미터
 			//2.서비스(DAO 목록조회)
 			MarketDAO marketdao = new MarketDAO();
-			String ftitle = request.getParameter("ftitle");
+			String id = request.getParameter("id");
 			
 			//페이징처리
 			//현재 페이지 파라미터 받기
@@ -36,13 +36,13 @@ public class FmarketList implements Command {
 			paging.setPageSize(3); //한페이지에 출력할 페이지 번호 수
 			paging.setPage(p); //현재페이지
 
-			paging.setTotalRecord(marketdao.getCount(ftitle)); //전체 레코드 건수 조회
+			paging.setTotalRecord(marketdao.getCount(id)); //전체 레코드 건수 조회
 			request.setAttribute("paging", paging);
 			
 			int start = paging.getFirst();
 			int end = paging.getLast();
 			
-			ArrayList<MarketVO> list = marketdao.getFmarketList(start, end, ftitle);
+			ArrayList<MarketVO> list = marketdao.getFmarketList(start, end, id);
 			//3.결과출력 또는 결과 저장해서 VIEW 포워드 
 			response.setContentType("text/html; charset=UTF-8");
 			//3.결과출력 or 결과 저장해서 view 포워드s

@@ -18,7 +18,7 @@
 	<div class="inner" style="margin-bottom:10em"><!-- skin : basic_voc -->
 				<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-		  	<form action="FmarketInsert.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
+		  	<form action="FmarketInsertUp.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
 			    <div class="bo_w_info write_div3">
 			        <span>아이디</span>
 			        <input type="text" name="id" value="${loginId}" id="id" class="frm_input required" readonly>
@@ -26,20 +26,20 @@
 				
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 					<span>제목</span>
-            		<input type="text" name="title" value="" id="title" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="제목">
+            		<input type="text" name="ftitle" value="" id="ftitle" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="제목">
 				</div>
 				
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매상태</span>
 <div style="margin-top:11.5px; padding-bottom:15px; font-size:0.9em">
-							 &nbsp;&nbsp;<input type="radio" value ="판매중" name="sselect" class="frm_input2"/> 판매중  &nbsp;&nbsp;
-							 &nbsp;&nbsp;<input type="radio" value ="판매완료" name="sselect" class="frm_input2"/> 판매완료
+							 &nbsp;&nbsp;<input type="radio" value ="판매중" name="fsselect" class="frm_input2"/> 판매중  &nbsp;&nbsp;
+							 &nbsp;&nbsp;<input type="radio" value ="판매완료" name="fsselect" class="frm_input2"/> 판매완료
 					</div>
 				</div>
 					
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매물품</span>
-				     <select name=""> 
+				     <select name="fsell"> 
 			<option value="fsell">==========선택=============
 			<option value="강아지  산책물품"> 강아지  산책물품
 			<option value="강아지 옷"> 강아지 옷 
@@ -52,7 +52,7 @@
 				<div class="write_div  bo_w_info write_div2">
 					<span>내용</span>
 			        <div style="" class="wr_content">
-						<textarea id="content" name="content" maxlength="65536" style="width: 100%; height: 300px;"></textarea>
+						<textarea id="fcontent" name="fcontent" maxlength="65536" style="width: 100%; height: 300px;"></textarea>
 		            </div>
 			    </div>
 			    

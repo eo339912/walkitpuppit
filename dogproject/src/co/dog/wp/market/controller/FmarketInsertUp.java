@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import co.dog.wp.board.model.BoardDAO;
-import co.dog.wp.board.model.BoardVO;
+
 import co.dog.wp.common.FileRenamePolicy;
 import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
@@ -22,15 +20,15 @@ import co.dog.wp.market.model.MarketVO;
 /**
  * Servlet implementation class BoardInsertUp
  */
-@WebServlet("/MarketInsertUp.do")
+@WebServlet("/FmarketInsertUp.do")
 @MultipartConfig(location="c:/upload")
-public class MarketInsertUp extends HttpServlet {
+public class FmarketInsertUp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MarketInsertUp() {
+    public FmarketInsertUp() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,7 +38,7 @@ public class MarketInsertUp extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//목록으로 페이지 이동
-		request.getRequestDispatcher("/market/marketInsert.jsp").forward(request, response);
+		request.getRequestDispatcher("/market/fmarketInsert.jsp").forward(request, response);
 	}
 
 	/**
@@ -53,24 +51,24 @@ public class MarketInsertUp extends HttpServlet {
 		String id = (String) request.getSession().getAttribute("loginId");
 
 		// 1 파라미터 받기
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
-		String sselect = request.getParameter("sselect");
-		String regdt = request.getParameter("regdt");
-		String sell = request.getParameter("sell");
-		String price = request.getParameter("price");
+		String ftitle = request.getParameter("ftitle");
+		String fcontent = request.getParameter("fcontent");
+		String fsselect = request.getParameter("fsselect");
+		String fregdt = request.getParameter("fregdt");
+		String fsell = request.getParameter("fsell");
+		String fprice = request.getParameter("fprice");
 	
 		// 2. 서비스 로직 처리(DAO)
 	
 		MarketDAO marketDAO = new MarketDAO();
 		MarketVO market = new MarketVO();
-		market.setContent(content);
-		market.setTitle(title);
-		market.setSselect(sselect);
+		market.setFcontent(fcontent);
+		market.setFtitle(ftitle);
+		market.setFsselect(fsselect);
 		market.setId(id);
-		market.setRegdt(regdt);
-		market.setSell(sell);
-		market.setPrice(price);
+		market.setFregdt(fregdt);
+		market.setFsell(fsell);
+		market.setFprice(fprice);
 		
 		//첨부파일 처리
 		Part part = request.getPart("filename");
@@ -86,9 +84,9 @@ public class MarketInsertUp extends HttpServlet {
 			market.setFilename(f.getName()); //파일명을 vo에 담기
 		}
 				
-		marketDAO.MarketInsert(market);
+		marketDAO.FmarketInsert(market);
 		
-		response.sendRedirect(request.getContextPath()+ "/MarketList.do");
+		response.sendRedirect(request.getContextPath()+ "/FmarketList.do");
 	}
 	
 	private String getFileName(Part part) throws UnsupportedEncodingException {

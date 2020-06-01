@@ -19,6 +19,7 @@ import co.dog.wp.board.controller.BoardView;
 import co.dog.wp.board.controller.BoardViewForm;
 import co.dog.wp.board.controller.CommentsDelete;
 import co.dog.wp.main.controller.Main;
+import co.dog.wp.market.controller.CommentDelete;
 import co.dog.wp.market.controller.FmarketDelete;
 import co.dog.wp.market.controller.FmarketInsert;
 import co.dog.wp.market.controller.FmarketInsertForm;
@@ -82,6 +83,7 @@ public class FrontController extends HttpServlet {
 		comm.put("/FmarketList.do", new FmarketList());
 		comm.put("/FmarketView.do", new FmarketView());
 		comm.put("/FmarketViewForm.do", new FmarketViewForm());
+		
 		comm.put("/MarketDelete.do", new MarketDelete());
 		comm.put("/MarketInsert.do", new MarketInsert());
 		comm.put("/MarketInsertForm.do", new MarketInsertForm());
@@ -90,6 +92,8 @@ public class FrontController extends HttpServlet {
 		comm.put("/MarketViewForm.do", new MarketViewForm());
 		comm.put("/MarketUpdate.do", new MarketUpdate());
 		comm.put("/MarketUpdateForm.do", new MarketUpdateForm());
+		comm.put("/CommentDelete.do", new CommentDelete());
+		
 		comm.put("/ReviewDelete.do", new ReviewDelete());
 		comm.put("/ReviewList.do", new ReviewList());
 		comm.put("/ReviewInsert.do", new ReviewInsert());

@@ -90,7 +90,7 @@
 				<p>${co.mcomment}</p>
 				<c:if test="${loginId == co.id}">
 			    <ul class="bo_vc_act">
-					<li><a href="MarketDelete.do?seq=${co.seq}&b_seq=${param.seq}" class="btn_b03">삭제</a></li>
+					<li><a href="CommentDelete.do?seq=${co.seq}&b_seq=${param.seq}" class="btn_b03">삭제</a></li>
 				</ul>
 				</c:if>
 			</div>
