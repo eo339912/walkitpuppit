@@ -3,7 +3,36 @@
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
-
+<script>
+	function idDupCheck(){
+		//1. xhr 객체 생성
+		  var xhttp = new XMLHttpRequest();
+		//2. 콜백함수지정
+		  xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 ) {	//응답완료
+		    	if( this.status == 200){	//정상실행
+		    		console.log("ajax 요청완료");
+		     		 document.getElementById("result").innerHTML =
+		     									 this.responseText;
+		    	}else{
+		    		document.getElementById("result").innerHTML = 
+		    											this.status + this.statusText
+		    	}	    		
+		    }else {
+		    	//로딩중
+		    	 document.getElementById("result").innerHTML = "로딩중";
+		    }
+		  };
+		  //3. 서버연결
+		  var param = "id=" +document.fwrite.id.value;		  
+		  xhttp.open("POST", "idDupCheck.do?", true); //.디폴트가 트루 대부분이 비동기임 동기식의 경우 꼭 순착적 결과까지 확인하고 넘어감  (비동기여부체크)f & t
+		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		  //4.서버 전송
+		  xhttp.send(param); //get방식이면 위에 do 옆에 +param . post방식이면 ()안에 넣기
+		console.log("ajax 요청시작");
+	}
+	
+</script>
 <script> var tit01="회원가입"</script>
 
 <div id="sub_vis_wrap" class="sub05 page01">
@@ -21,15 +50,21 @@
 		  	<form action="MemberInsert.do" method="post" name="fwrite" id="fwrite">
 			    <div class="bo_w_info write_div3 half1">
 			        <span>아이디</span>
-			        <input type="text" name="id" value="" id="id" required="" class="frm_input required" placeholder="아이디">
+			        <input type="text" name="id" value=""  onchange="idDupCheck()" id="id" required="" class="frm_input required" placeholder="아이디">
+			        <span id="result"></span>
 				</div>
 				<div class="bo_w_info write_div3 half1">
 			        <span>비밀번호</span>
 			        <input type="password" name="pwd" id="pwd" required="" class="frm_input required" placeholder="비밀번호">
 				</div>
+				
+				<div class="bo_w_info write_div3 half1">
+			        <span>비번확인</span>
+			        <input type="password" name="pwdcf" id="pwd" required="" class="frm_input required" placeholder="비밀번호">
+				</div>
 				    		
 				<div class="bo_w_info write_div3 half1">
-			            <span>회원이름</span>
+			            <span>회원이름</span> 
 			            <input type="text" name="name" value="" id="name" class="frm_input required" required="" placeholder="회원이름">
 			    </div>
 		

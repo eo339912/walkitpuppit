@@ -26,19 +26,21 @@
 	<div class="inner" style="margin-bottom:10em">
 		<!-- 게시판 목록 시작 { -->
 		<div id="bo_list" style="width:100%" class="sub_board">
-		  <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
-		    <div class="tbl_head01 tbl_wrap">
-		    
-			<!-- 게시판 검색 시작 { -->
+		  <!-- 게시판 검색 시작 { -->
 		    <fieldset id="bo_sch">
 		        <legend>게시물 검색</legend>		
 		        <form name="searchfrm" method="get">
 		        	<input name="p" value="1" type="hidden">
-		        	<input type="text" name="title" value="" id="title" class="sch_input" size="25" maxlength="20" placeholder="장소를 입력해주세요">
+		        	<input name="spotnum" value="${param.spotnum}" type="hidden">
+		        	<input name="sname2" value="${param.sname}">
+		        	<input type="text" name="sname" value="" id="sname" class="sch_input" size="25" maxlength="20" placeholder="장소를 입력해주세요">
 		       		<button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
 		        </form>
 		    </fieldset>
 		    <!-- } 게시판 검색 끝 -->  
+		    <div class="tbl_head01 tbl_wrap">
+		    
+			
 		    
 		        <table>
 			        <caption>게시판 목록 </caption>
@@ -60,7 +62,6 @@
 			        </tbody>
 		        </table>
 		    </div>
-		    </form>
 		     
 		     <script>
 				function gopage(p){

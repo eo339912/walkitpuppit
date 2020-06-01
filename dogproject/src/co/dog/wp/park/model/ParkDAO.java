@@ -141,14 +141,14 @@ public class ParkDAO {
 	   }
 	   
 	// 전체조회
-		public ArrayList<ParkVO> getParkList(int start, int end, String sname) {
+		public ArrayList<ParkVO> getParkList(int start, int end, String sname, String spotnum) {
 			ArrayList<ParkVO> list = new ArrayList<ParkVO>(); // 1.어레이리스트에 담기
 
 			try {
 				// 1. DB 연결
 				conn = ConnectionManager.getConnnect();
 				
-				String strWhere = " where 1 = 1";
+				String strWhere = " where spotnum = ?";
 				if(sname != null && ! sname.isEmpty()) {
 					strWhere += " and sname like '%' || ? || '%' ";	
 				} 
@@ -159,6 +159,7 @@ public class ParkDAO {
 								+ " )A ) B where RN between ? and ?"; // 2.전체조회는 항상 오더바디 넣자
 				psmt = conn.prepareStatement(sql);
 				int post = 1;
+				psmt.setString(post++, spotnum);
 				if(sname != null && ! sname.isEmpty()) {
 					psmt.setString(post++, sname);				
 				}
@@ -187,12 +188,12 @@ public class ParkDAO {
 		}
 
 		//페이징 전체 건수
-		public int getCount(String sname) {
+		public int getCount(String sname, String spotnum) {
 			int cnt = 0;
 			try {
 				conn = ConnectionManager.getConnnect();
 				
-				String strWhere = " where 1 = 1";//무조건 true
+				String strWhere = " where spotnum = ?";//무조건 true
 				if(sname != null && ! sname.isEmpty()) {
 					strWhere += " and sname like '%' || ? || '%' ";				
 				}
@@ -201,6 +202,7 @@ public class ParkDAO {
 				psmt = conn.prepareStatement(sql);
 				
 				int post = 1;
+				psmt.setString(post++, spotnum);
 				if(sname != null && ! sname.isEmpty()) {
 					psmt.setString(post++, sname);				
 				}

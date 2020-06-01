@@ -7,14 +7,14 @@
 	</div>
 
 	<ul class="sub_menu_box sub01 ">
-         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3470000">달서구</a></li>
-         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3440000">남구</a></li>
-         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3480000">달성군</a></li>
-         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3420000">동구</a></li>
-         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3450000">북구</a></li>
-         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3430000">서구</a></li>
-         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3460000">수성구</a></li>
-         <li class="gnb_dp2"><a href="ParkList.do?spotnm=3410000">중구</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnum=3470000">달서구</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnum=3440000">남구</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnum=3480000">달성군</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnum=3420000">동구</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnum=3450000">북구</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnum=3430000">서구</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnum=3460000">수성구</a></li>
+         <li class="gnb_dp2"><a href="ParkList.do?spotnum=3410000">중구</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub02 ">
