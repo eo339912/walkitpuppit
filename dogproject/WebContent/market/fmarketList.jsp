@@ -8,9 +8,9 @@
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 
-<script> var tit02="무료나눔"</script>
+<script> var tit01="무료나눔"</script>
 
-<div id="sub_vis_wrap" class="sub02 page01">
+<div id="sub_vis_wrap" class="sub02 page02">
    <%@include file="/common/sub_vis.jsp"%>
    <jsp:include page="/common/sub_menu.jsp"/>
 </div>
@@ -18,7 +18,7 @@
    <span><script>document.write(tit01);</script></span>
 </div>
 
-<div id="sub_content_wrap"  class="sub0201 inner">
+<div id="sub_content_wrap"  class="sub0202 inner">
    <div class="inner" style="margin-bottom:10em">
       <!-- 게시판 목록 시작 { -->
       <div id="bo_list" style="width:100%" class="sub_board">
@@ -54,7 +54,7 @@
                          <td class="td_datetime">${vo.fregdt}</td>
                          <c:if test="${loginId == 'admin'}">
 										    <div class="btn_confirm write_div">
-										    	<a href="${pageContext.request.contextPath}/MarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+										    	<a href="MarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
 											</div>
 										</c:if>
 				    
@@ -71,7 +71,7 @@
           </div>
             <c:if test="${loginId == 'admin'}">
 		    <div class="btn_confirm write_div">
-		    <a href="${pageContext.request.contextPath}/FmarketInsert.do" id="btn_submit" class="btn_submit btn fr" >글작성</a>
+		    <a href="FmarketInsert.do" id="btn_submit" class="btn_submit btn fr" >글작성</a>
 			</div>
 			</c:if>
 			

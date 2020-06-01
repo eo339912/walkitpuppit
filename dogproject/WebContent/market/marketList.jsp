@@ -8,7 +8,7 @@
 
 <script> var tit02="중고거래"</script>
 
-<div id="sub_vis_wrap" class="sub04 page01">
+<div id="sub_vis_wrap" class="sub02 page01">
    <%@include file="/common/sub_vis.jsp"%>
    <jsp:include page="/common/sub_menu.jsp"/>
 </div>
@@ -16,7 +16,7 @@
    <span><script>document.write(tit02);</script></span>
 </div>
 
-<div id="sub_content_wrap"  class="sub0401 inner">
+<div id="sub_content_wrap"  class="sub0201 inner">
    <div class="inner" style="margin-bottom:10em">
       <!-- 게시판 목록 시작 { -->
       <div id="bo_list" style="width:100%" class="sub_board">

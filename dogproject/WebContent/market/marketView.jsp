@@ -8,12 +8,12 @@
 
 <script> var tit01="${market.title}"</script>
 
-<div id="sub_vis_wrap" class="sub04 page01">
+<div id="sub_vis_wrap" class="sub02 page01">
 	<%@include file="/common/sub_vis.jsp"%>
 	<jsp:include page="/common/sub_menu.jsp"/>
 </div>
 <div class="sub_tit_wrap">
-	<span><script>document.write(tit01);</script></span>
+	<span><script>document.write(tit02);</script></span>
 </div>
 
 <div id="sub_content_wrap"  class="sub0401 inner">
