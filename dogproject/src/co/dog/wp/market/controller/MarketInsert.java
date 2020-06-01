@@ -15,6 +15,7 @@ import co.dog.wp.common.FileRenamePolicy;
 import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
 
+
 @MultipartConfig(location="d:/upload")
 public class MarketInsert implements Command {
 

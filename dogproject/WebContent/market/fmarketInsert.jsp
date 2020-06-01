@@ -6,7 +6,7 @@
 
 <script> var tit01="글쓰기"</script>
 
-<div id="sub_vis_wrap" class="sub04 page01">
+<div id="sub_vis_wrap" class="sub02 page02">
 	<%@include file="/common/sub_vis.jsp"%>
 	<jsp:include page="/common/sub_menu.jsp"/>
 </div>
@@ -14,11 +14,11 @@
 	<span><script>document.write(tit01);</script></span>
 </div>
 
-<div id="sub_content_wrap"  class="sub0401 inner">
+<div id="sub_content_wrap"  class="sub0202 inner">
 	<div class="inner" style="margin-bottom:10em"><!-- skin : basic_voc -->
 				<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-		  	<form action="BoardInsert.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
+		  	<form action="FmarketInsert.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
 			    <div class="bo_w_info write_div3">
 			        <span>아이디</span>
 			        <input type="text" name="id" value="${loginId}" id="id" class="frm_input required" readonly>
@@ -49,11 +49,6 @@
 			</option>
 			</select><br />
 				</div>
-				<div class="bo_w_tit write_div bo_w_info write_div2">
-					<span>가격입력</span>
-            		<input type="text" name="price" value="" id="price" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="가격입력하세요">
-				</div>
-				
 				<div class="write_div  bo_w_info write_div2">
 					<span>내용</span>
 			        <div style="" class="wr_content">

@@ -23,10 +23,7 @@ public class FmarketInsert implements Command {
 		response.setContentType("text/html; charset=UTF-8");
 		//요청정보 인코딩
 		request.setCharacterEncoding("UTF-8");
-		//1.파라미터받기
-//		HttpSession session = request.getSession();
-//		String logInNb = (String) session.getAttribute("loginGradeNb");
-//		
+
 		String seq = request.getParameter("seq");
 		String id = request.getParameter("id");
 		String ftitle = request.getParameter("ftitle");
@@ -62,11 +59,9 @@ public class FmarketInsert implements Command {
 		}
 				
 		marketDAO.MarketInsert(market);
-		
 		return "market/fmarketList.jsp";
 	}
-		
-		//Content-Disposition: form-data; name="datafiled1"; filename="b.gif"
+			//Content-Disposition: form-data; name="datafiled1"; filename="b.gif"
 		private String getFileName(Part part) throws UnsupportedEncodingException {
 			for (String cd : part.getHeader("Content-Disposition").split(";")) {
 				if (cd.trim().startsWith("filename")) {

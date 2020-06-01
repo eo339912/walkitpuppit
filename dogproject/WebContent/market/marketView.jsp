@@ -31,9 +31,9 @@
 		        </h2>
 		    </header>
 		    
-		    <c:if test="${loginId == 'admin'}">
+		    <c:if test="${loginId == market.id}">
 				    <div class="btn_confirm write_div">
-				    	<a href="BoardDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+				    	<a href="MarketDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
 					</div>
 			</c:if>
 		
