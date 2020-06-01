@@ -17,19 +17,18 @@ import co.dog.wp.common.ConnectionManager;
 				// 1. DB 연결
 				conn = ConnectionManager.getConnnect();
 				// 2. sql구문 준비
-				String sql = "insert into market (seq, id, title, content, okays, filename, sselect,regdt,sell,price)"
-						+ " values (seq_mol.nextval, ?, ?, ?, ?, ?, ?, sysdate,?,?)";
+				String sql = "insert into market (seq, id, title, content, filename, sselect,regdt,sell,price)"
+						+ " values (seq_mol.nextval, ?, ?, ?, ?,?, sysdate,?,?)";
 				psmt = conn.prepareStatement(sql);
 				// 3. 실행
-				psmt.setString(1, market.getSeq());
-				psmt.setString(2, market.getId());
-				psmt.setString(3, market.getTitle());
-				psmt.setString(4, market.getContent());
-				psmt.setString(5, market.getOkays());
-				psmt.setString(6, market.getFilename());
-				psmt.setString(7, market.getSselect());
-				psmt.setString(8, market.getRegdt());
-				psmt.setString(9, market.getSell());
+			
+				psmt.setString(1, market.getId());
+				psmt.setString(2, market.getTitle());
+				psmt.setString(3, market.getContent());
+				psmt.setString(4, market.getFilename());
+				psmt.setString(5, market.getSselect());
+				psmt.setString(6, market.getSell());
+				psmt.setString(7, market.getPrice());
 			
 				r = psmt.executeUpdate();
 				// 4. 결과처리
@@ -175,12 +174,15 @@ import co.dog.wp.common.ConnectionManager;
 				try {
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
-					String strWhere = " where 1 = 1";//무조건 true
+					String strWhere = " where title is not null";//무조건 true
 					if(id != null && ! id.isEmpty()) {
 						strWhere += " and id like '%' || ? || '%' ";				
 					}	
 					// 2. 쿼리준비
-					String sql = "select seq,id,title,content,filename,sselect,regdt,sell,price from market where title is not null";
+					String sql = "select B.* from( select A.*, rownum RN from("
+							+ "select seq,id,title,content,filename,sselect,regdt,sell,price from market "+ strWhere+ " order by seq desc"
+							+ " ) A ) B where RN between ? and ?";
+					
 					psmt = conn.prepareStatement(sql);
 					int post = 1;
 					if(id != null && ! id.isEmpty()) {
@@ -251,7 +253,7 @@ import co.dog.wp.common.ConnectionManager;
 					try {
 						conn = ConnectionManager.getConnnect();
 						
-						String strWhere = " where 1 = 1";//무조건 true
+						String strWhere = " where title is not null";//무조건 true
 						if(id != null && ! id.isEmpty()) {
 							strWhere += " and id like '%' || ? || '%' ";				
 						}
