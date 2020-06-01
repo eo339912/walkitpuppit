@@ -12,7 +12,7 @@ import co.dog.wp.common.ConnectionManager;
 public class ParkDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
-	
+	ResultSet rs = null;
 	
 	// 전체조회
 	public ArrayList<ParkVO> getParkList(String spotnum) {
@@ -180,10 +180,10 @@ public class ParkDAO {
 				
 				String strWhere = " where 1 = 1";//무조건 true
 				if(sname != null && ! sname.isEmpty()) {
-					strWhere += " and title like '%' || ? || '%' ";				
+					strWhere += " and sname like '%' || ? || '%' ";				
 				}
 				
-				String sql ="select count(*) from board" + strWhere;
+				String sql ="select count(*) from park" + strWhere;
 				psmt = conn.prepareStatement(sql);
 				
 				int post = 1;
@@ -191,14 +191,14 @@ public class ParkDAO {
 					psmt.setString(post++, sname);				
 				}
 				
-				ResultSet rs = psmt.executeQuery();			
+				rs = psmt.executeQuery();			
 				if(rs.next()) {
 					cnt = rs.getInt(1);
 				}
 			}catch(Exception e) {
 				e.printStackTrace();
 			}finally {
-				ConnectionManager.close(conn);
+				ConnectionManager.close(rs, psmt,conn);
 			}
 			return cnt;
 		}

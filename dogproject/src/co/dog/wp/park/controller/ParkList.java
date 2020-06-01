@@ -27,7 +27,7 @@ public class ParkList implements Command {
 		String strPage = request.getParameter("p");
 		int p = 1;
 		if(strPage != null && !strPage.isEmpty()) {
-		p = Integer.parseInt(strPage);
+			p = Integer.parseInt(strPage);
 		}
 	
 		//페이징 객체를  생성
