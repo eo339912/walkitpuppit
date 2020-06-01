@@ -57,7 +57,7 @@ public class ReviewDAO {
 				}
 				
 				// 2. 쿼리준비
-				String sql = "select * from wp.review order by id";
+				String sql = "select * from review order by id";
 				psmt = conn.prepareStatement(sql);
 				int post = 1;
 				if(id != null && ! id.isEmpty()) {
@@ -74,7 +74,6 @@ public class ReviewDAO {
 					vo.setTitle(rs.getString("title"));
 					vo.setContent(rs.getString("content"));
 					vo.setFilename(rs.getString("filename"));
-					vo.setOkays(rs.getString("okays"));
 					vo.setRegdt(rs.getString("regdt"));
 					list.add(vo);
 				}

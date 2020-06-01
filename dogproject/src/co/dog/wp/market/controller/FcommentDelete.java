@@ -11,7 +11,7 @@ import co.dog.wp.board.model.CommentsDAO;
 import co.dog.wp.common.Command;
 import co.dog.wp.market.model.McommentDAO;
 
-public class CommentDelete  implements Command {
+public class FcommentDelete  implements Command {
 	
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +22,7 @@ public class CommentDelete  implements Command {
 		McommentDAO mcommentDao = new McommentDAO();
 		mcommentDao.deleteComments(seq);
 		
-		return "MarketViewForm.do?seq=" + m_seq;
+		return "FmarketViewForm.do?seq=" + m_seq;
 	}
 
 
