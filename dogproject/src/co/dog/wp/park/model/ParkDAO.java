@@ -14,53 +14,6 @@ public class ParkDAO {
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 	
-	// 전체조회
-	public ArrayList<ParkVO> getParkList(int start, int end,String spotnum) {
-		ArrayList<ParkVO> list = new ArrayList<ParkVO>(); // 1.어레이리스트에 담기
-			
-		
-		
-		try {
-			// 1. DB 연결
-			conn = ConnectionManager.getConnnect();
-			
-			String strWhere = " where 1 = 1";
-			if(spotnum != null && ! spotnum.isEmpty()) {
-				strWhere += " and spotnum like '%' || ? || '%' ";	
-			}
-			
-			// 2. 쿼리 준비
-			String sql = "select B.* from( select A.*, rownum RN from("
-					+ "select * from park" + strWhere+ "order by seq desc"
-							+ " )A ) B where RN between ? and ?"; // 2.전체조회는 항상 오더바디 넣자
-			psmt = conn.prepareStatement(sql);
-			int post = 1;
-			if(spotnum != null && ! spotnum.isEmpty()) {
-				psmt.setString(post++, spotnum);				
-			}
-			psmt.setInt(post++, start);
-			psmt.setInt(post++, end);
-			
-			// 3. statement 실행
-			ResultSet rs = psmt.executeQuery();
-			while (rs.next()) {
-				ParkVO vo = new ParkVO(); // 4. 위치 while 안으로
-				vo.setSname(rs.getString("sname"));
-				vo.setSenter(rs.getString("senter"));
-				vo.setSeq(rs.getString("seq"));
-				vo.setSpotnm(rs.getString("spotnm"));// 결과값에 담기
-				
-				list.add(vo); // 5.리스트에 담기
-			}
-			// 4. 결과 저장
-			} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			// 5. 연결해제
-			ConnectionManager.close(conn);
-		}
-		return list;
-	}
 	
 	// 단건조회
 	public ParkVO getPark(String seq) {
@@ -186,15 +139,61 @@ public class ParkDAO {
 	      }
 
 	   }
+	   
+	// 전체조회
+		public ArrayList<ParkVO> getParkList(int start, int end, String sname) {
+			ArrayList<ParkVO> list = new ArrayList<ParkVO>(); // 1.어레이리스트에 담기
+
+			try {
+				// 1. DB 연결
+				conn = ConnectionManager.getConnnect();
+				
+				String strWhere = " where 1 = 1";
+				if(sname != null && ! sname.isEmpty()) {
+					strWhere += " and sname like '%' || ? || '%' ";	
+				} 
+				
+				// 2. 쿼리 준비
+				String sql = "select B.* from( select A.*, rownum RN from("
+						+ "select * from park" + strWhere+ "order by seq desc"
+								+ " )A ) B where RN between ? and ?"; // 2.전체조회는 항상 오더바디 넣자
+				psmt = conn.prepareStatement(sql);
+				int post = 1;
+				if(sname != null && ! sname.isEmpty()) {
+					psmt.setString(post++, sname);				
+				}
+				psmt.setInt(post++, start);
+				psmt.setInt(post++, end);                    
+				
+				// 3. statement 실행
+				ResultSet rs = psmt.executeQuery();
+				while (rs.next()) {
+					ParkVO vo = new ParkVO(); // 4. 위치 while 안으로
+					vo.setSname(rs.getString("sname"));
+					vo.setSenter(rs.getString("senter"));
+					vo.setSeq(rs.getString("seq"));
+					vo.setSpotnm(rs.getString("spotnm"));// 결과값에 담기
+					
+					list.add(vo); // 5.리스트에 담기
+				}
+				// 4. 결과 저장
+				} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				// 5. 연결해제
+				ConnectionManager.close(conn);
+			}
+			return list;
+		}
 
 		//페이징 전체 건수
-		public int getCount(String spotnum) {
+		public int getCount(String sname) {
 			int cnt = 0;
 			try {
 				conn = ConnectionManager.getConnnect();
 				
 				String strWhere = " where 1 = 1";//무조건 true
-				if(spotnum != null && ! spotnum.isEmpty()) {
+				if(sname != null && ! sname.isEmpty()) {
 					strWhere += " and sname like '%' || ? || '%' ";				
 				}
 				
@@ -202,8 +201,8 @@ public class ParkDAO {
 				psmt = conn.prepareStatement(sql);
 				
 				int post = 1;
-				if(spotnum != null && ! spotnum.isEmpty()) {
-					psmt.setString(post++, spotnum);				
+				if(sname != null && ! sname.isEmpty()) {
+					psmt.setString(post++, sname);				
 				}
 				
 				rs = psmt.executeQuery();			

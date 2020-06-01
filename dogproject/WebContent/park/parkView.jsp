@@ -94,8 +94,8 @@
 		    <div class="bo_vc_w_wr">
 		        
 		       
-	    	       <li><button type="button" onclick="countDog()" value= "${loginId}" class="btn_b01 btn">입장하기</button></li>
-	    	       <li><button type="button" onclick="countDog()" class="btn_b01 btn">입장하기</button></li>
+	    	       <li><button type="button" onclick="countDog()" value= "${loginId}" class="btn_b01 btn">입장하기</button></li><br>
+	    	       <li><button type="button" onclick="countDog()" class="btn_b01 btn">퇴장하기</button></li>
 	    	    
             </div>
 
