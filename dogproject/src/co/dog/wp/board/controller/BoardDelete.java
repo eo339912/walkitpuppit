@@ -19,7 +19,7 @@ public class BoardDelete implements Command {
 		BoardDAO dao = new BoardDAO();
 		dao.deleteBoard(seq);
 		
-		return "board/boardList.jsp";
+		return "BoardList.do";
 	}
 
 }

@@ -53,8 +53,11 @@ commentsO varchar2(1000),
 CONSTRAINT comment_FK FOREIGN KEY (b_seq) REFERENCES board(seq) on delete cascade
 );
 
+
+drop table comments;
 drop table board;
 drop table member;
+drop table puppy;
 
 
 

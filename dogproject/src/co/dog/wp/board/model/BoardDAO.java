@@ -15,16 +15,14 @@ public class BoardDAO {
 	ResultSet rs = null;
 
 	// 등록
-	public int boardInsert(BoardVO board) {
-		int r = 0;
-
+	public void boardInsert(BoardVO board) {
 		try {
 			// 1. DB 연결
 			conn = ConnectionManager.getConnnect();
 
 			// 2. sql구문 준비
-			String sql = "insert into board (seq, title, id ,content, regdt, filename, cnt)"
-					+ " values (seq_board.nextval, ?, ?, ?, sysdate, ?, 0)";
+			String sql = "INSERT INTO BOARD(SEQ, TITLE, ID ,CONTENT, REGDT, FILENAME, CNT)"
+					+ " VALUES (SEQ_BOARD.NEXTVAL, ?, ?, ?, SYSDATE, ?, 0)";
 			psmt = conn.prepareStatement(sql);
 
 			// 3. 실행
@@ -33,10 +31,10 @@ public class BoardDAO {
 			psmt.setString(3, board.getContent());
 			psmt.setString(4, board.getFilename());
 
-			r = psmt.executeUpdate();
+			psmt.executeUpdate();
 
 			// 4. 결과처리
-			System.out.println(r + " 건이 등록됨.");
+			System.out.println(" 등록됨.");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -45,7 +43,6 @@ public class BoardDAO {
 			ConnectionManager.close(conn);
 		}
 
-		return r;
 	}
 
 	// 전체조회

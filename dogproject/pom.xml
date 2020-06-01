@@ -6,7 +6,19 @@
   <packaging>war</packaging>
   <name>dogproject</name>
    <dependencies>
+<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+<dependency>
+    <groupId>commons-beanutils</groupId>
+    <artifactId>commons-beanutils</artifactId>
+    <version>1.9.2</version>
+</dependency>
 
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-collections4</artifactId>
+    <version>4.4</version>
+</dependency>
 
   	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 	<dependency>

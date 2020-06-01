@@ -9,8 +9,6 @@ public class BoardVO {
 	String id;
 	String cnt;
 	
-	
-	
 	public String getCnt() {
 		return cnt;
 	}

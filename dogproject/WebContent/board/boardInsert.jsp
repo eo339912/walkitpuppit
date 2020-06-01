@@ -16,9 +16,9 @@
 
 <div id="sub_content_wrap"  class="sub0401 inner">
 	<div class="inner" style="margin-bottom:10em"><!-- skin : basic_voc -->
-				<section id="bo_w">
+		<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-		  	<form action="BoardInsert.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
+		  	<form action="BoardInsertUp.do" method="post" enctype="multipart/form-data" name="fwrite" id="fwrite">
 			    <div class="bo_w_info write_div3">
 			        <span>아이디</span>
 			        <input type="text" name="id" value="${loginId}" id="id" class="frm_input required" readonly>
@@ -54,7 +54,7 @@
 				
 		
 			    <div class="btn_confirm write_div">
-				        <input type="submit" value="보내기" id="btn_submit" accesskey="s" class="btn_submit btn fr">
+				        <input type="submit" value="보내기" id="btn_submit" class="btn_submit btn fr">
 			    </div>
 		    </form>
 	

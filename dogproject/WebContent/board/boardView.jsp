@@ -42,8 +42,8 @@
 		
 		    <section id="bo_v_atc">
 		        <h2 id="bo_v_atc_title">본문</h2>
-		        <c:if test="${board.filename.isEmpty()}">
-		        <div id="bo_v_img"><img src="/dogproject/upload/img/${board.filename}"></div>
+		        <c:if test="${!board.filename.isEmpty() && board.filename != null}">
+		        <div id="bo_v_img"><img src="./upload/img/${board.filename}"></div>
 				</c:if>
 				${board.content}
 		    </section>

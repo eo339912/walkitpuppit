@@ -3,6 +3,7 @@ package co.dog.wp.main.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +22,7 @@ public class Main implements Command {
 		ArrayList<BoardVO> list = dao.getBoardList();
 		//view page에 forward
 		request.setAttribute("board", list);
+		
 		
 		return "main/main.jsp";
 	}
