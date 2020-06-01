@@ -18,7 +18,7 @@
 	<div class="inner" style="margin-bottom:10em"><!-- skin : basic_voc -->
 				<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-		  	<form action="BoardInsert.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
+		  	<form action="MarketInsert.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
 			    <div class="bo_w_info write_div3">
 			        <span>아이디</span>
 			        <input type="text" name="id" value="${loginId}" id="id" class="frm_input required" readonly>
@@ -51,7 +51,7 @@
 				</div>
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 					<span>가격입력</span>
-            		<input type="text" name="price" value="" id="price" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="가격입력하세요">
+            		<input type="text" name="price" value="" id="price" required class="frm_input full_input required" size="50" maxlength="255" placeholder="가격입력하세요">
 				</div>
 				
 				<div class="write_div  bo_w_info write_div2">

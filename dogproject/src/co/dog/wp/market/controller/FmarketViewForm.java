@@ -33,6 +33,6 @@ public class FmarketViewForm implements Command {
 				request.setAttribute("mcomment", mcommentList);
 
 		      // 뷰페이지로이동 //재요청필요 -> forward 사용		 
-				return "market/reviewView.jsp";
+				return "market/fmarketView.jsp";
 			}
 }

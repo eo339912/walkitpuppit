@@ -59,7 +59,7 @@ public class MarketInsert implements Command {
 		}
 				
 		marketDAO.MarketInsert(market);
-		return "market/marketInsert.jsp";
+		return "market/marketList.jsp";
 	}
 	private String getFileName(Part part) throws UnsupportedEncodingException {
 		for (String cd : part.getHeader("Content-Disposition").split(";")) {
