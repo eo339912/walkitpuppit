@@ -75,11 +75,10 @@ public class MarketInsertUp extends HttpServlet {
 		//첨부파일 처리
 		Part part = request.getPart("filename");
 		String fileName = getFileName(part);
-<<<<<<< HEAD
-		String path =  request.getSession().getServletContext().getRealPath("/upload/img");
-=======
+
+
 		String path = request.getSession().getServletContext().getRealPath("/upload/img");
->>>>>>> branch 'master' of https://github.com/eo339912/walkitpuppit
+
 		//String path = getServletContext().getRealPath("Upload");
 		
 		//String path = request.getSession().getServletContext().getRealPath("upload/img");

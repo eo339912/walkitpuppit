@@ -6,7 +6,7 @@
 <jsp:include page="/common/top.jsp"/>
 
 
-<script> var tit01="${market.title}"</script>
+<script> var tit01="무료나눔"</script>
 
 <div id="sub_vis_wrap" class="sub02 page02">
 	<%@include file="/common/sub_vis.jsp"%>
@@ -18,10 +18,9 @@
 
 <div id="sub_content_wrap"  class="sub0202 inner">
 	<div class="inner" style="margin-bottom:10em">
-		<script src="http://foodfactory.webtro.kr/pg/js/viewimageresize.js"></script>
+	
 		
 		<!-- 게시물 읽기 시작 { -->
-		<input type="hidden" name="seq" value="${param.seq}">
 		
 		<article id="bo_v" style="width:100%">
 		    <header>
@@ -31,7 +30,7 @@
 		        </h2>
 		    </header>
 		    
-		    <c:if test="${loginId ==  market.id}">
+		    <c:if test="${loginId == market.id}">
 				    <div class="btn_confirm write_div">
 				    	<a href="MarketDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
 					</div>
@@ -43,8 +42,7 @@
 		        <span class="sound_only">댓글</span><strong><a href="#bo_vc"> <i class="fa fa-commenting-o" aria-hidden="true"></i>0건</a></strong>
 		        <span class="sound_only">조회</span><strong><i class="fa fa-eye" aria-hidden="true"></i> ${market.cnt}회</strong>
 		        <span class="sound_only">판매물품: </span><strong>${market.fsell}</strong>
-		        <span class="sound_only">가격:</span><strong> ${market.fprice}원</strong>
-		        <strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> ${market.fregdt}</strong>
+		        <strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> ${market.regdt}</strong>
 		    </section>
 		
 		    <section id="bo_v_atc">
@@ -58,12 +56,12 @@
 	
 		          <div id="bo_v_top">
 		        	 <ul class="bo_v_com">
-	    	       <li><a href="MarketList.do" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
+	    	       <li><a href="FmarketList.do" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
 	    	    </ul>
 		        </div>
 		        <div id="bo_v_top">
 		        	 <ul class="bo_v_com">
-	    	       <li><a href="MarketUpdateForm.do?seq=${param.seq}" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i>수정</a></li>
+	    	       <li><a href="FmarketUpdateForm.do?seq=${param.seq}" class="btn_b01 btn">수정</a></li>
 	    	    </ul>
 		        </div>
 
@@ -82,7 +80,7 @@
 			        <span class="guest">${co.id}</span>
 			        <span class="sound_only">작성일</span>
 			        <span class="bo_vc_hdinfo"><i class="fa fa-clock-o" aria-hidden="true"></i>
-			        <time datetime="2020-05-29T11:32:00+09:00">${co.fregdt}</time></span>
+			        <time datetime="2020-05-29T11:32:00+09:00">${co.regdt}</time></span>
 			    </header>
 			
 			<!-- 댓글 출력 -->
@@ -119,7 +117,7 @@
 		    //댓글열기
 		    $(".cmt_btn").click(function(){
 		        $(this).toggleClass("cmt_btn_op");
-		        $("#bo_vc").toggle();
+		        $("#bo_vc").toggle();s
 		    });
 		});
 		</script>

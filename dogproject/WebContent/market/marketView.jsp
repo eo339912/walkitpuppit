@@ -61,7 +61,7 @@
 		        </div>
 		        <div id="bo_v_top">
 		        	 <ul class="bo_v_com">
-	    	       <li><a href="MarketUpdateForm.do?seq=${param.seq}" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i>수정</a></li>
+	    	       <li><a href="MarketUpdateForm.do?seq=${param.seq}" class="btn_b01 btn">수정</a></li>
 	    	    </ul>
 		        </div>
 		         <!-- } 본문 내용 끝 -->
