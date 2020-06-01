@@ -76,7 +76,6 @@ public class FrontController extends HttpServlet {
 		comm.put("/FmarketDelete.do", new FmarketDelete());
 		comm.put("/FmarketInsert.do", new FmarketInsert());
 		comm.put("/FmarketInsertForm.do", new FmarketInsertForm());
-		comm.put("/FmarketInsert.do", new FmarketInsert());
 		comm.put("/FmarketList.do", new FmarketList());
 		comm.put("/FmarketView.do", new FmarketView());
 		comm.put("/FmarketViewForm.do", new FmarketViewForm());
