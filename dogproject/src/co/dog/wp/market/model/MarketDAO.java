@@ -162,20 +162,18 @@ import co.dog.wp.common.ConnectionManager;
 				try {
 					conn = ConnectionManager.getConnnect();
 					// 2. sql구문 준비
-					String sql = "update market set seq = ?, content = ?, title = ?,  okays = ?, filename = ?, sselect = ?,  regdt = ?, sell = ?, price=?"
-							+ " where id = ? ";
+					String sql = "update market set content = ?, title = ?, filename = ?, sselect = ?,  regdt = ?, sell = ?, price=?"
+							+ " where seq = ? ";
 					psmt = conn.prepareStatement(sql);
 					// 3. 실행
-					psmt.setString(1, market.getId());
-					psmt.setString(2, market.getContent());
-					psmt.setString(3, market.getTitle());
-					psmt.setString(4, market.getOkays());
-					psmt.setString(5, market.getFilename());
-					psmt.setString(6, market.getSselect());
-					psmt.setString(7, market.getRegdt());
+					psmt.setString(1, market.getContent());
+					psmt.setString(2, market.getTitle());
+					psmt.setString(3, market.getFilename());
+					psmt.setString(4, market.getSselect());
+					psmt.setString(5, market.getRegdt());
+					psmt.setString(6, market.getSell());
+					psmt.setString(7, market.getPrice());
 					psmt.setString(8, market.getSeq());
-					psmt.setString(9, market.getSell());
-					psmt.setString(9, market.getPrice());
 				
 					r = psmt.executeUpdate();
 					// 4. 결과처리

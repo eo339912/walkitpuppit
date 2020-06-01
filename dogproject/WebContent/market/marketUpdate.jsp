@@ -21,6 +21,7 @@
 				<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
 		  	<form action="MarketUpdate.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
+			   <input type="hidden" name="seq" value="${market.seq}" >
 			    <div class="bo_w_info write_div3">
 			        <span>아이디</span>
 			        <input type="text" name="id" value="${loginId}" id="id" class="frm_input required" readonly>
