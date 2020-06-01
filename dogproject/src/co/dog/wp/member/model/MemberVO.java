@@ -5,10 +5,7 @@ public class MemberVO {
 	String id;
 	String pwd;
 	String name;
-	String pname;
-	String pbirth;
-	String pgender;
-	String pimage;
+	String thumd;
 	String regdt;
 	public String getSeq() {
 		return seq;
@@ -34,29 +31,11 @@ public class MemberVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPname() {
-		return pname;
+	public String getThumd() {
+		return thumd;
 	}
-	public void setPname(String pname) {
-		this.pname = pname;
-	}
-	public String getPbirth() {
-		return pbirth;
-	}
-	public void setPbirth(String pbirth) {
-		this.pbirth = pbirth;
-	}
-	public String getPgender() {
-		return pgender;
-	}
-	public void setPgender(String pgender) {
-		this.pgender = pgender;
-	}
-	public String getPimage() {
-		return pimage;
-	}
-	public void setPimage(String pimage) {
-		this.pimage = pimage;
+	public void setThumd(String thumd) {
+		this.thumd = thumd;
 	}
 	public String getRegdt() {
 		return regdt;
@@ -66,8 +45,10 @@ public class MemberVO {
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [seq=" + seq + ", id=" + id + ", pwd=" + pwd + ", name=" + name + ", pname=" + pname
-				+ ", pbirth=" + pbirth + ", pgender=" + pgender + ", pimage=" + pimage + ", regdt=" + regdt + "]";
+		return "MemberVO [seq=" + seq + ", id=" + id + ", pwd=" + pwd + ", name=" + name + ", thumd=" + thumd
+				+ ", regdt=" + regdt + "]";
 	}
+	
+	
 	
 }

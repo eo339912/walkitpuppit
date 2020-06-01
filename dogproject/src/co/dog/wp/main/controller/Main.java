@@ -12,7 +12,7 @@ import co.dog.wp.board.model.BoardVO;
 import co.dog.wp.common.Command;
 
 
-public class main implements Command {
+public class Main implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		//1. 파라미터
@@ -22,7 +22,7 @@ public class main implements Command {
 		//view page에 forward
 		request.setAttribute("board", list);
 		
-		return "board/index.jsp";
+		return "main/main.jsp";
 	}
 
 	

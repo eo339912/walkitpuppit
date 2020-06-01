@@ -20,8 +20,6 @@ public class BoardInsert  implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 요청정보 인코딩
-		request.setCharacterEncoding("utf-8");
 		
 		String id = (String) request.getSession().getAttribute("loginId");
 
@@ -39,7 +37,7 @@ public class BoardInsert  implements Command {
 		//첨부파일 처리
 		Part part = request.getPart("filename");
 		String fileName = getFileName(part);
-		String path = "C:\\Users\\User\\git\\walkitpuppit\\dogproject\\WebContent\\upload\\img";
+		String path = "D:\\dev\\git\\walkitpuppit\\dogproject\\WebContent\\upload";
 		if(fileName != null && !fileName.isEmpty()) {
 			File f = FileRenamePolicy.rename(new File(path, fileName));
 			part.write(f.getAbsolutePath()); //업로드 폴더에 파일 저장 ,전체파일이름명
