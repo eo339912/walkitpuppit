@@ -23,7 +23,6 @@ public class Main implements Command {
 		//view page에 forward
 		request.setAttribute("board", list);
 		
-		
 		return "main/main.jsp";
 	}
 

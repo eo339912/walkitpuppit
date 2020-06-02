@@ -70,13 +70,14 @@ a:hover{text-decoration:none;  transition-duration: 300ms;   transition-property
 	.inner_580 {width:96%;}
 }
 
-
+.wp100{width:100%;}
+.oh{overflow:hidden;}
 /* 정렬 */
 .center { text-align:center !important; }
 .left { text-align:left !important; }
 .right { text-align:right !important; }
-.fr { float:right; }
-.fl { float:left; }
+.fr { float:right !important;  }
+.fl { float:left !important;  }
 .mid { vertical-align:middle; }
 .clear {clear:both;}
 
