@@ -40,14 +40,14 @@
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매물품</span>
 				     <select name="sell"> 
-			<option value="fsell">==========선택=============
-			<option value="강아지  산책물품"> 강아지  산책물품
-			<option value="강아지 옷"> 강아지 옷 
-			<option value="강아지 생필품"> 강아지 생필품
-			<option value="강아지  간식"> 강아지  간식
-			<option value="기타" > 기타
-			</option>
-			</select><br />
+						<option value="sell">==========선택=============</option>
+						<option value="강아지  산책물품"> 강아지  산책물품</option>
+						<option value="강아지 옷"> 강아지 옷 </option>
+						<option value="강아지 생필품"> 강아지 생필품</option>
+						<option value="강아지  간식"> 강아지  간식</option>
+						<option value="기타" > 기타</option>
+					</select>
+				<br />
 				</div>
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 					<span>가격입력</span>

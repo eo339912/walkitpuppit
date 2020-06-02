@@ -41,7 +41,7 @@
 					
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매물품</span>
-				     <select name="sell"> 
+			<select name="sell"> 
 			<option value="sell">==========선택=============</option>
 			<option value="강아지  산책물품"
 			<c:if test="${fn:contains(market.sell,'강아지 산책물품')}">selected="selected"</c:if>> 강아지  산책물품</option>
