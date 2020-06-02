@@ -97,7 +97,6 @@ public class ParkDAO {
 				parkcovo.setId(rs.getString("id"));
 				parkcovo.setComments(rs.getString("comments"));
 				parkcovo.setSeq(rs.getString("seq"));
-				parkcovo.setPseq(rs.getString("pseq"));
 				parkcovo.setRegdt(rs.getString("regdt"));
 
 				list.add(parkcovo); 

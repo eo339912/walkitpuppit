@@ -100,35 +100,50 @@
             </div>
 
 		<button type="button" class="cmt_btn"><i class="fa fa-commenting-o" aria-hidden="true"></i> 댓글목록</button>
-		<!-- 댓글 시작 { -->
+		
+				<!-- 댓글 시작 { -->   
 		<section id="bo_vc">
-		    <h2>댓글목록</h2>
-		        <p id="bo_vc_empty">등록된 댓글이 없습니다.</p>
+			<h2>댓글목록</h2>
+			<c:if test="${comments.isEmpty()}">
+				<p id="bo_vc_empty">등록된 댓글이 없습니다.</p>		
+			</c:if>
+			<c:forEach items="${parkco}" var="co">
+			<article>
+				<header style="z-index:2">
+			    	<h2>${co.id}님의  댓글</h2>
+			        <span class="guest">${co.id}</span>
+			        <span class="sound_only">작성일</span>
+			        <span class="bo_vc_hdinfo"><i class="fa fa-clock-o" aria-hidden="true"></i>
+			        <time datetime="2020-05-29T11:32:00+09:00">${co.regdt}</time></span>
+			    </header>
+			
+			<!-- 댓글 출력 -->
+			<div class="cmt_contents">
+				<p>${co.comments}</p>
+				<c:if test="${loginId == co.id}">
+			    <ul class="bo_vc_act">
+					<li><a href="ParkcoDelete.do?seq=${co.seq}&pseq=${param.seq}" class="btn_b03">삭제</a></li>
+				</ul>
+				</c:if>
+			</div>
+			</article>
+			</c:forEach>
 		</section>
 		<!-- } 댓글 끝 -->
 		
 		<!-- 댓글 쓰기 시작 { -->
 		<aside id="bo_vc_w" class="bo_vc_w">
 		    <h2>댓글쓰기</h2>
-		<form name="fviewcomment" id="fviewcomment" action="ParkcoInsert.do" onsubmit="return fviewcomment_submit(this);" method="post" autocomplete="off">
-		    <span class="sound_only">내용</span>
-		        <textarea id="contents" name="contents" maxlength="10000" required="" class="required" title="내용" placeholder="댓글내용을 입력해주세요"></textarea>
-		        <script>
-				    $(document).on("keyup change", "textarea#wr_content[maxlength]", function() {
-				        var str = $(this).val()
-				        var mx = parseInt($(this).attr("maxlength"))
-				        if (str.length > mx) {
-				            $(this).val(str.substr(0, mx));
-				            return false;
-				        }
-				    });
-		    	</script>
-		    <div class="bo_vc_w_wr">
-		        <div class="btn_confirm">
-		            <input type="submit" id="btn_submit" class="btn_submit" value="댓글등록">
-		        </div>
-		    </div>
-		    </form></aside>
+			<form name="fviewcomment" id="fviewcomment" action="ParkView.do?seq=${park.seq}" method="post">
+			    <span class="sound_only">내용</span>
+			        <textarea id="comments" name="comments" maxlength="10000" required class="required" title="내용" placeholder="댓글내용을 입력해주세요"></textarea>
+			    <div class="bo_vc_w_wr">
+			        <div class="btn_confirm">
+			            <input type="submit" id="btn_submit" class="btn_submit" value="댓글등록">
+			        </div>
+			    </div>
+			</form>
+		</aside>
 		
 		<script>
 		
