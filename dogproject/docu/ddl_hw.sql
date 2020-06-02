@@ -35,6 +35,18 @@ CONSTRAINT walk_FK FOREIGN KEY (id) REFERENCES member(id),
 CONSTRAINT w_seq_FK FOREIGN KEY (p_seq) REFERENCES park(seq)
 );
 
+CREATE SEQUENCE seq_message;
+create table message(
+seq number(20),
+userid varchar2(20),
+m_id varchar2(20),
+title varchar2(100),
+contents VARCHAR2(500),
+CONSTRAINT message_PK PRIMARY KEY (seq),
+CONSTRAINT message_FK FOREIGN KEY (m_id) REFERENCES member(id)
+);
+
+
 select * from walk
 
   
