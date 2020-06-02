@@ -51,7 +51,7 @@
 			    <div class="bo_w_info write_div3 half1">
 			        <span>아이디</span>
 			        <input type="text" name="id" value=""  onchange="idDupCheck()" id="id" required="" class="frm_input required" placeholder="아이디">
-			        <span id="result"></span>
+			        <span id="result" class="fr"></span>
 				</div>
 				<div class="bo_w_info write_div3 half1">
 			        <span>비밀번호</span>

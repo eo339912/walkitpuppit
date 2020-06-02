@@ -21,7 +21,7 @@ public class CommentsDelete  implements Command {
 		CommentsDAO commentsDao = new CommentsDAO();
 		commentsDao.deleteComments(seq);
 		
-		return "BoardView.do?seq=" + b_seq;
+		return "BoardViewForm.do?seq=" + b_seq;
 	}
 
 
