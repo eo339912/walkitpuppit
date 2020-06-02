@@ -134,7 +134,7 @@
 		<!-- 댓글 쓰기 시작 { -->
 		<aside id="bo_vc_w" class="bo_vc_w">
 		    <h2>댓글쓰기</h2>
-			<form name="fviewcomment" id="fviewcomment" action="ParkViewForm.do?seq=${park.seq}" method="post">
+			<form name="fviewcomment" id="fviewcomment" action="ParkView.do?seq=${park.seq}" method="post">
 			    <span class="sound_only">내용</span>
 			        <textarea id="comments" name="comments" maxlength="10000" required class="required" title="내용" placeholder="댓글내용을 입력해주세요"></textarea>
 			    <div class="bo_vc_w_wr">
