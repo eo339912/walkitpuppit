@@ -19,14 +19,16 @@ public class ParkViewForm implements Command {
 		//파라미터 받기 -> 세션에서 seq가져오기
 		String seq = request.getParameter("seq");
 	
-		String comments = request.getParameter("comments");
+//		String comments = request.getParameter("comments");
 		
 		//서비스 로직 처리
 		ParkDAO parkDAO = new ParkDAO();
 		ParkVO parkvo = parkDAO.getPark(seq);
 		
+
 		//서비스 로직 처리 -> seq에 해당하는 댓글 리스트 조회
-		ArrayList<ParkcoVO> parkcoList = parkDAO.getParkcoList(seq);
+		ParkDAO parkDAO2 = new ParkDAO();
+		ArrayList<ParkcoVO> parkcoList = parkDAO2.getParkcoList(seq);
 		
 		//결과저장
 		request.setAttribute("park", parkvo);  

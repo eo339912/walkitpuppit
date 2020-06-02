@@ -54,7 +54,7 @@
 						<c:forEach items="${park}" var="vo">
 							<tr> 
 						
-								<td><a href="ParkView.do?seq=${vo.seq}">${vo.sname}</a></td>
+								<td><a href="ParkViewForm.do?seq=${vo.seq}">${vo.sname}</a></td>
 								<td><a href="#">${vo.senter}</a>
 								
 							</tr>
