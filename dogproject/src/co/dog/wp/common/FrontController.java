@@ -15,6 +15,8 @@ import co.dog.wp.board.controller.BoardDelete;
 import co.dog.wp.board.controller.BoardInsert;
 import co.dog.wp.board.controller.BoardInsertForm;
 import co.dog.wp.board.controller.BoardListForm;
+import co.dog.wp.board.controller.BoardUpdate;
+import co.dog.wp.board.controller.BoardUpdateForm;
 import co.dog.wp.board.controller.BoardView;
 import co.dog.wp.board.controller.BoardViewForm;
 import co.dog.wp.board.controller.CommentsDelete;
@@ -69,6 +71,8 @@ public class FrontController extends HttpServlet {
 		comm.put("/BoardList.do", new BoardListForm());
 		comm.put("/BoardView.do", new BoardView());
 		comm.put("/BoardViewForm.do", new BoardViewForm());
+		comm.put("/BoardUpdate.do", new BoardUpdate());
+		comm.put("/BoardUpdateForm.do", new BoardUpdateForm());
 		comm.put("/CommentsDelete.do", new CommentsDelete());
 		
 		comm.put("/MemberInsert.do", new MemberInsert());

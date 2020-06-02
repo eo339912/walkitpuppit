@@ -29,6 +29,7 @@
 		    <c:if test="${loginId == 'admin'}">
 				<div class="btn_confirm write_div">
 					<a href="BoardDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+					<a href="BoardUpdateForm.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글수정</a>
 				</div>
 			</c:if>
 		

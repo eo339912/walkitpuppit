@@ -14,58 +14,45 @@ import javax.servlet.http.Part;
 
 import co.dog.wp.board.model.BoardDAO;
 import co.dog.wp.board.model.BoardVO;
+import co.dog.wp.common.Command;
 import co.dog.wp.common.FileRenamePolicy;
 
-/**
- * Servlet implementation class BoardInsertUp
- */
-@WebServlet("/BoardInsertUp.do")
+@WebServlet("/BoardUpdate.do")
 @MultipartConfig(location="d:/upload")
-public class BoardInsertUp extends HttpServlet {
+public class BoardUpdate extends HttpServlet implements Command {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BoardInsertUp() {
+	
+    public BoardUpdate() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//목록으로 페이지 이동
-		request.getRequestDispatcher("/board/boardInsert.jsp").forward(request, response);
+		request.getRequestDispatcher("/board/boardUpdate.jsp").forward(request, response);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		String id = (String) request.getSession().getAttribute("loginId");
-
-		// 1 파라미터 받기
-		String title = request.getParameter("title");
+		// 1 파라미터 받기		
+		String seq = request.getParameter("seq");
 		String content = request.getParameter("content");
+		String title = request.getParameter("title");
 		
 		// 2. 서비스 로직 처리(DAO)
-		BoardDAO boardDAO = new BoardDAO();
+		BoardDAO boardDao = new BoardDAO();
 		BoardVO board = new BoardVO();
 		board.setContent(content);
 		board.setTitle(title);
-		board.setId(id);
+		board.setSeq(seq);
 		
 		//첨부파일 처리
 		Part part = request.getPart("filename");
 		String fileName = getFileName(part);
 		String path = request.getSession().getServletContext().getRealPath("/upload/img");
 		
-		//String path = request.getSession().getServletContext().getRealPath("upload/img");
 		
 		if(fileName != null && !fileName.isEmpty()) {
 			File f = FileRenamePolicy.rename(new File(path, fileName));
@@ -73,8 +60,7 @@ public class BoardInsertUp extends HttpServlet {
 			board.setFilename(f.getName()); //파일명을 vo에 담기
 		}
 				
-		boardDAO.boardInsert(board);
-		
+		boardDao.boardUpdate(board);
 		response.sendRedirect(request.getContextPath()+ "/BoardList.do");
 	}
 	
@@ -87,5 +73,12 @@ public class BoardInsertUp extends HttpServlet {
 		return null;
 	}
 
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
+
