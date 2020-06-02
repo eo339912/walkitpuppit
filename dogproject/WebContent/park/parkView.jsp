@@ -9,18 +9,17 @@
 
 <script> var tit01=" 산책로"</script>
 
-<div id="sub_vis_wrap" class="sub04 page01">
+<div id="sub_vis_wrap" class="sub01 page01">
 	<%@include file="/common/sub_vis.jsp"%>
 	<jsp:include page="/common/sub_menu.jsp"/>
 </div>
 <div class="sub_tit_wrap">
-	<span>${park.spotnm}</span></br></br>
-	<span>${park.sname}<script>document.write(tit01);</script></span>
+	
+	<span><script>document.write(tit01);</script></span>
 </div> 
 
-<div id="sub_content_wrap"  class="sub0401 inner">
+<div id="sub_content_wrap"  class="sub0101 inner">
 	<div class="inner" style="margin-bottom:10em">
-		<script src="http://foodfactory.webtro.kr/pg/js/viewimageresize.js"></script>
 		
 		<!-- 게시물 읽기 시작 { -->
 		<input type="hidden" name="seq" value="${param.seq}">
@@ -28,7 +27,7 @@
 		<article id="bo_v" style="width:100%">
 		    <header>
 		        <h2 id="bo_v_title">
-		        	<span class="bo_v_tit">${param.spotnm}</span>
+		        	<span class="bo_v_tit">${park.spotnm} ${park.sname} <script>document.write(tit01);</script></span>
 		        	
 		        </h2>
 		    </header>
@@ -41,13 +40,12 @@
 		
 		    <section id="bo_v_atc">
 		        <h2 id="bo_v_atc_title">본문</h2>
-		        <div id="bo_v_img"></div>
-				${board.content}
+		       
 		        <!-- 본문 내용 시작 { -->
 		        <div id="bo_v_con">
 		        	<p> 
 		        		
-		        		<div id="map" style="width: 1000px; height: 470px;"></div>
+		        		<div id="map" style="width: 100%; height: 470px;"></div>
                      
                      <script>
                      
@@ -93,10 +91,10 @@
 		    
 		    <div class="bo_vc_w_wr">
 		        
-		       
-	    	       <li><button type="button" onclick="countDog()" value= "${loginId}" class="btn_b01 btn">입장하기</button></li><br>
+		       <ul class="bo_ul_san">
+	    	       <li><button type="button" onclick="countDog()" value= "${loginId}" class="btn_b01 btn">입장하기</button></li>
 	    	       <li><button type="button" onclick="countDog()" class="btn_b01 btn">퇴장하기</button></li>
-	    	    
+	    	    </ul>
             </div>
 
 		<button type="button" class="cmt_btn"><i class="fa fa-commenting-o" aria-hidden="true"></i> 댓글목록</button>
@@ -104,7 +102,7 @@
 				<!-- 댓글 시작 { -->   
 		<section id="bo_vc">
 			<h2>댓글목록</h2>
-			<c:if test="${comments.isEmpty()}">
+			<c:if test="${parkco.isEmpty()}">
 				<p id="bo_vc_empty">등록된 댓글이 없습니다.</p>		
 			</c:if>
 			<c:forEach items="${parkco}" var="co">
