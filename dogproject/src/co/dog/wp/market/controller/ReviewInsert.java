@@ -14,6 +14,8 @@ import co.dog.wp.common.Command;
 import co.dog.wp.common.FileRenamePolicy;
 import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
+import co.dog.wp.market.model.ReviewDAO;
+import co.dog.wp.market.model.ReviewVO;
 
 
 @MultipartConfig(location="c:/upload")
@@ -34,14 +36,14 @@ public class ReviewInsert implements Command {
 		String regdt = request.getParameter("regdt");
 
 		//2.서비스로직처리	(DAO)
-		MarketDAO marketDAO = new MarketDAO();
-		MarketVO market = new MarketVO();
-		market.setSeq(seq);
-		market.setId(id);
-		market.setTitle(title);
-		market.setContent(content);
-		market.setFilename(filename);
-		market.setRegdt(regdt);
+		ReviewDAO reviewDAO = new ReviewDAO();
+		ReviewVO review = new ReviewVO();
+		review.setSeq(seq);
+		review.setId(id);
+		review.setTitle(title);
+		review.setContent(content);
+		review.setFilename(filename);
+		review.setRegdt(regdt);
 
 		//첨부파일 처리
 		Part part = request.getPart("filename");
@@ -50,10 +52,10 @@ public class ReviewInsert implements Command {
 		if(fileName != null && !fileName.isEmpty()) {
 			File f = FileRenamePolicy.rename(new File(path, fileName));
 			part.write(f.getAbsolutePath()); //업로드 폴더에 파일 저장 ,전체파일이름명
-			market.setFilename(f.getName()); //파일명을 vo에 담기
+			review.setFilename(f.getName()); //파일명을 vo에 담기
 		}
 				
-		marketDAO.MarketInsert(market);
+		reviewDAO.ReviewInsert(review);
 		return "market/reviewList.jsp";
 	}
 	private String getFileName(Part part) throws UnsupportedEncodingException {

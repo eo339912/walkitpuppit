@@ -12,6 +12,10 @@ import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
 import co.dog.wp.market.model.McommentDAO;
 import co.dog.wp.market.model.McommentVO;
+import co.dog.wp.market.model.McommentsDAO;
+import co.dog.wp.market.model.McommentsVO;
+import co.dog.wp.market.model.ReviewDAO;
+import co.dog.wp.market.model.ReviewVO;
 
 public class ReviewViewForm implements Command {
 	@Override
@@ -21,18 +25,18 @@ public class ReviewViewForm implements Command {
 			   String seq = request.getParameter("seq");
 			  
 		      // 서비스 로직처리 (회원정보 1건 조회)
-		      MarketDAO marketdao = new MarketDAO();
-		      marketdao.increaseCnt(seq);
-		      MarketVO vo = marketdao.getFmarket(seq);
+		      ReviewDAO reviewdao = new ReviewDAO();
+		      reviewdao.increaseCnt(seq);
+		      ReviewVO vo = reviewdao.getReview(seq);
 		      
-		      McommentDAO mcommentdao = new McommentDAO();
-			  ArrayList<McommentVO> mcommentList = mcommentdao.getMcommentList(seq);
+		      McommentsDAO mcommentsdao = new McommentsDAO();
+			  ArrayList<McommentsVO> mcommentsList = mcommentsdao.getMcommentsList(seq);
 		     
 		      // 결과저장
-		      request.setAttribute("market", vo);
-		      request.setAttribute("mcomment", mcommentList);
+		      request.setAttribute("review", vo);
+		      request.setAttribute("mcomments", mcommentsList);
 
 		      // 뷰페이지로이동 //재요청필요 -> forward 사용		 
-				return "market/fmarketView.jsp";
+				return "market/reviewView.jsp";
 			}
 }

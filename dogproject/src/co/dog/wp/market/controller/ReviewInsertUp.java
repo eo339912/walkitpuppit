@@ -16,6 +16,8 @@ import javax.servlet.http.Part;
 import co.dog.wp.common.FileRenamePolicy;
 import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
+import co.dog.wp.market.model.ReviewDAO;
+import co.dog.wp.market.model.ReviewVO;
 
 /**
  * Servlet implementation class BoardInsertUp
@@ -58,11 +60,12 @@ public class ReviewInsertUp extends HttpServlet {
 
 		// 2. 서비스 로직 처리(DAO)
 	
-		MarketDAO marketDAO = new MarketDAO();
-		MarketVO market = new MarketVO();
-		market.setContent(content);
-		market.setTitle(title);
-		market.setRegdt(regdt);
+		ReviewDAO reviewDAO = new ReviewDAO();
+		ReviewVO review = new ReviewVO();
+		review.setContent(content);
+		review.setTitle(title);
+		review.setRegdt(regdt);
+		review.setId(id);
 
 		
 		//첨부파일 처리
@@ -76,12 +79,12 @@ public class ReviewInsertUp extends HttpServlet {
 		if(fileName != null && !fileName.isEmpty()) {
 			File f = FileRenamePolicy.rename(new File(path, fileName));
 			part.write(f.getAbsolutePath()); //업로드 폴더에 파일 저장 ,전체파일이름명
-			market.setFilename(f.getName()); //파일명을 vo에 담기
+			review.setFilename(f.getName()); //파일명을 vo에 담기
 		}
 				
-		marketDAO.FmarketInsert(market);
+		reviewDAO.ReviewInsert(review);
 		
-		response.sendRedirect(request.getContextPath()+ "/ReviwList.do");
+		response.sendRedirect(request.getContextPath()+ "/ReviewList.do");
 	}
 	
 	private String getFileName(Part part) throws UnsupportedEncodingException {

@@ -20,7 +20,7 @@
 	<ul class="sub_menu_box sub02 ">
          <li class="gnb_dp2"><a href="MarketList.do">중고거래</a></li>
          <li class="gnb_dp2"><a href="FmarketList.do">무료나눔</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('process01')">후기게시판</a></li>
+         <li class="gnb_dp2"><a href="ReviewList.do">후기게시판</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub03 ">
