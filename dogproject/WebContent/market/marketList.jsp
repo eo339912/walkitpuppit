@@ -68,9 +68,11 @@
                        </c:forEach>
                  </tbody>
               </table>
+               <c:if test="${loginId != null}">
               <ul class="btn_confirm write_div">
     	    <li class="btn_submit btn fr"><a href="MarketInsertForm.do">글작성</a></li>
 			</ul>
+			</c:if>
           </div>
  		<script>
 				function gopage(p){
