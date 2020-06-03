@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import co.dog.wp.board.model.BoardVO;
 import co.dog.wp.common.ConnectionManager;
 
 public class MessageDAO {
@@ -18,14 +17,15 @@ public class MessageDAO {
 			conn = ConnectionManager.getConnnect();
 
 			// 2. sql구문 준비
-			String sql = "INSERT INTO MESSAGE(SEQ, M_ID, TITLE, CONTENTS, REGDT)"
-					+ " VALUES (SEQ_MESSAGE.NEXTVAL, ?, ?, ?, SYSDATE)";
+			String sql = "INSERT INTO MESSAGE(SEQ, USERID, M_ID, TITLE, CONTENTS, REGDT)"
+					+ " VALUES (SEQ_MESSAGE.NEXTVAL, ?, ?, ?, ?, SYSDATE)";
 				
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, message.getM_id());
-			psmt.setString(2, message.getTitle());
-			psmt.setString(3, message.getContents());
+			psmt.setString(1, message.getUserid());
+			psmt.setString(2, message.getM_id());
+			psmt.setString(3, message.getTitle());
+			psmt.setString(4, message.getContents());
 			
 
 			psmt.executeUpdate();

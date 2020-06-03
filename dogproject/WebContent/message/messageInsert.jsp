@@ -18,7 +18,7 @@
 	<div class="inner" style="margin-bottom:10em"><!-- skin : basic_voc -->
 		<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-		  	<form action="MessageInsertForm.do" method="post" enctype="multipart/form-data" name="fwrite" id="fwrite">
+		  	<form action="MessageInsert.do" method="post" name="fwrite" id="fwrite">
 		  		  <input type="hidden" name="seq" value="" id="seq" class="frm_input required" >
 		  		   <div class="bo_w_info write_div3">
 			        <span>보내는사람</span>			 

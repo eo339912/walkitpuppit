@@ -21,12 +21,14 @@ public class MessageInsert implements Command {
 		String contents = request.getParameter("contents");
 		String m_id = request.getParameter("m_id");
 		
+		
 		// 2. 서비스 로직 처리(DAO)
 		MessageDAO messageDAO = new MessageDAO();
 		MessageVO message = new MessageVO();
 		message.setM_id(m_id);
 		message.setTitle(title);
 		message.setContents(contents);
+		message.setUserid(id);
 		
 		messageDAO.messageInsert(message);
 		
