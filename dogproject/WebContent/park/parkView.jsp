@@ -74,7 +74,7 @@
                      infowindow.open(map, marker);
                      
                      });
-                     
+
                      }
                      
                      </script>
@@ -86,21 +86,30 @@
 		        </div>
 		         <!-- } 본문 내용 끝 -->
 		    </section>
-		
-		  
-		    
+
 		    <div class="bo_vc_w_wr">
 		       <ul class="bo_ul_san">
 		       
-		       		<c:if test="${walk.seq == null || walk.incheck == 0}">
-		    	       <li><button type="button" onclick="location.href='ParkWalkIn.do?p_seq=${param.seq}';"class="btn_b01 btn">입장하기</button></li>
-		       		</c:if>
 		       		<c:if test="${walk.seq != null && walk.incheck == 1}">
-	    	       		<li><button type="button" onclick="location.href='ParkWalkOut.do?seq=${walk.seq}&p_seq=${param.seq}'" class="btn_b01 btn">퇴장하기</button></li>
+	    	       		<li><a href="ParkWalkOut.do?seq=${walk.seq}&p_seq=${param.seq}" onclick="delchk();">퇴장하기</a></li>
 	    	       	</c:if>
+	    	       	
+
+					<c:if test="${walk.seq == null || walk.incheck == 0}">
+		    	       <li><a href="ParkWalkIn.do?p_seq=${param.seq}" onclick="delchk2();">입장하기</a></li>
+		       		</c:if>
 	    	    </ul>
             </div>
-
+			<script type="text/javascript">
+						function delchk(){
+       						return confirm("퇴장하시겠습니까?");
+					}
+						
+						function delchk2(){
+   							return confirm("배변봉투 준비 하셨나요 ?\n*애완동물 오물 미처리 시 10만원 과태료 부과* \n \n 목줄 착용 하셨나요?\n *1차 20만원, 2차 30만원, 3차 50만원 과태료 부과*\n\n");
+				}
+					</script>
+					
 		<button type="button" class="cmt_btn"><i class="fa fa-commenting-o" aria-hidden="true"></i> 댓글목록</button>
 		
 				<!-- 댓글 시작 { -->   
