@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import co.dog.wp.board.model.BoardVO;
 import co.dog.wp.common.ConnectionManager;
 
 	public class MarketDAO {
@@ -361,6 +362,37 @@ import co.dog.wp.common.ConnectionManager;
 					}
 
 				}
+				// 전체조회
+				public ArrayList<MarketVO> getMarketList2() {
+					ArrayList<MarketVO> list = new ArrayList<MarketVO>();
+
+					try {
+						// 1. DB연결
+						conn = ConnectionManager.getConnnect();
+						// 2. 쿼리준비
+						String sql = "select * from market order by seq desc";
+						psmt = conn.prepareStatement(sql);
+						// 3. statement 실행
+						ResultSet rs = psmt.executeQuery();
+						while (rs.next()) {
+							MarketVO vo = new MarketVO();
+							vo.setTitle(rs.getString("title"));
+							vo.setId(rs.getString("id"));
+							vo.setFilename(rs.getString("filename"));
+							list.add(vo);
+						}
+						// 4. 결과저장
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						// 5. DB연결 해제
+						ConnectionManager.close(conn);
+					}
+
+					return list;
+				}
+				
 			}
 	
 

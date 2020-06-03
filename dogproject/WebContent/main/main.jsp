@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
 <div id="foodfactory">
@@ -61,7 +62,7 @@
 				    ><!-- 동구 -->
 				    <area shape="poly" href="ParkList.do?spotnum=3450000" coords="173,176,178,150,206,130,210,94,195,70,201,50,219,74,227,73,235,58,266,60,281,44,305,70,306,94,311,114,315,130,314,148,306,166,309,174,299,193,283,196,257,188,251,176,233,172,217,168,210,181,192,180" target="_self" 
 				    onmouseover="changeImg('./images/main/map_07_on.png')" 
-				    onmouseout='./images/main/map_00.png')"
+				    onmouseout="changeImg('./images/main/map_00.png')"
 				    ><!-- 북구 -->
 				    <area shape="poly" href="ParkList.do?spotnum=3430000" coords="185,215,183,189,211,186,222,170,239,180,253,188,257,209,239,225,219,226" target="_self"
 				     onmouseover="changeImg('./images/main/map_06_on.png')" 
@@ -107,46 +108,19 @@
 			</div>
 			<div class="sec02_con_wrap  w-inner">
 				
+				 <c:forEach items="${list}" var="vo" varStatus="status">
 				<div class="con_bx">
 					<a href="#">
-						<div class="img"><img src="./images/main/sec02_img_01.png" /></div>
-						<div class="txt">
+						<div class="img"><img src="./upload/img/${vo.filename}" /></div>
+						<div class="${market.title}">
 							<div class="t">과일 편의식품 생산기업 "푸드팩토리"의 새로운 도전</div>
 							<div class="c">비즈스마트에 출연한 푸드팩토리의 영상을 확인해보세요. 푸드팩토리는 </div>
 							<a href="#" class="link_st_1">More > </a>
 						</div>
 					</a>
 				</div>
-				<div class="con_bx">
-					<a href="#">
-						<div class="img"><img src="./images/main/sec02_img_01.png" /></div>
-						<div class="txt">
-							<div class="t">과일 편의식품 생산기업 "푸드팩토리"의 새로운 도전</div>
-							<div class="c">비즈스마트에 출연한 푸드팩토리의 영상을 확인해보세요. 푸드팩토리는 </div>
-							<a href="#" class="link_st_1">More > </a>
-						</div>
-					</a>
-				</div>
-				<div class="con_bx">
-					<a href="#">
-						<div class="img"><img src="./images/main/sec02_img_01.png" /></div>
-						<div class="txt">
-							<div class="t">과일 편의식품 생산기업 "푸드팩토리"의 새로운 도전</div>
-							<div class="c">비즈스마트에 출연한 푸드팩토리의 영상을 확인해보세요. 푸드팩토리는 </div>
-							<a href="#" class="link_st_1">More > </a>
-						</div>
-					</a>
-				</div>
-				<div class="con_bx">
-					<a href="#">
-						<div class="img"><img src="./images/main/sec02_img_01.png" /></div>
-						<div class="txt">
-							<div class="t">과일 편의식품 생산기업 "푸드팩토리"의 새로운 도전</div>
-							<div class="c">비즈스마트에 출연한 푸드팩토리의 영상을 확인해보세요. 푸드팩토리는 </div>
-							<a href="#" class="link_st_1">More > </a>
-						</div>
-					</a>
-				</div>
+				</c:forEach>
+				
 			</div>
 		</div><!-- main_sec_wrap -->
 	</div>
