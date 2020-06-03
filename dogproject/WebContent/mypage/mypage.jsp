@@ -25,11 +25,11 @@
 			<!-- 내정보 -->
 			<div class="myInfo">
 				<div class="myImg fl">
-					<img src="" style="background:#333;">
+					<img src="./upload/img/${member.thumd}">
 				</div>
-				<div class="myContents fr">
-					<span>이름</span>
-					<button class="fr">Edit</button>
+				<div class="myContents fr" >
+					<span>${member.name}</span>
+					<button class="fr" onclick="location.href='MypageUpdateForm.do'">Edit</button>
 				</div>
 			</div>
 			<!-- 내정보 버튼 wrap -->
