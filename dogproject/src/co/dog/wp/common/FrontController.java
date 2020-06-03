@@ -38,12 +38,17 @@ import co.dog.wp.market.controller.MarketUpdate;
 import co.dog.wp.market.controller.MarketUpdateForm;
 import co.dog.wp.market.controller.MarketView;
 import co.dog.wp.market.controller.MarketViewForm;
+import co.dog.wp.market.controller.McommentDelete;
 import co.dog.wp.market.controller.ReviewDelete;
 import co.dog.wp.market.controller.ReviewInsert;
 import co.dog.wp.market.controller.ReviewInsertForm;
 import co.dog.wp.market.controller.ReviewList;
-import co.dog.wp.member.controller.MemberInsert;
+import co.dog.wp.market.controller.ReviewUpdate;
+import co.dog.wp.market.controller.ReviewUpdateForm;
+import co.dog.wp.market.controller.ReviewView;
+import co.dog.wp.market.controller.ReviewViewForm;
 import co.dog.wp.member.controller.MemberInsertForm;
+import co.dog.wp.member.controller.MemberInsertUp;
 import co.dog.wp.member.controller.MemberLogin;
 import co.dog.wp.member.controller.MemberLoginForm;
 import co.dog.wp.member.controller.MemberLogout;
@@ -53,6 +58,9 @@ import co.dog.wp.mypage.controller.Mypage;
 import co.dog.wp.park.controller.ParkList;
 import co.dog.wp.park.controller.ParkView;
 import co.dog.wp.park.controller.ParkViewForm;
+import co.dog.wp.park.controller.ParkWalkIn;
+import co.dog.wp.park.controller.ParkWalkList;
+import co.dog.wp.park.controller.ParkWalkOut;
 import co.dog.wp.park.controller.ParkcoDelete;
 
 /**
@@ -79,7 +87,8 @@ public class FrontController extends HttpServlet {
 		comm.put("/BoardUpdateForm.do", new BoardUpdateForm());
 		comm.put("/CommentsDelete.do", new CommentsDelete());
 		
-		comm.put("/MemberInsert.do", new MemberInsert());
+		
+		comm.put("/MemberInsertUp.do", new MemberInsertUp());
 		comm.put("/MemberInsertForm.do", new MemberInsertForm());
 		comm.put("/MemberLogin.do", new MemberLogin());
 		comm.put("/MemberLoginForm.do", new MemberLoginForm());
@@ -109,13 +118,21 @@ public class FrontController extends HttpServlet {
 		comm.put("/ReviewList.do", new ReviewList());
 		comm.put("/ReviewInsert.do", new ReviewInsert());
 		comm.put("/ReviewInsertForm.do", new ReviewInsertForm());
-		comm.put("/ReviewView.do", new FmarketView());
-		comm.put("/ReviewViewForm.do", new FmarketViewForm());
+		comm.put("/ReviewView.do", new ReviewView());
+		comm.put("/ReviewViewForm.do", new ReviewViewForm());
+		comm.put("/ReviewUpdate.do", new ReviewUpdate());
+		comm.put("/ReviewUpdateForm.do", new ReviewUpdateForm());
+		comm.put("/McommentDelete.do", new McommentDelete());
+	
 		
 		comm.put("/ParkView.do", new ParkView());
 		comm.put("/ParkViewForm.do", new ParkViewForm());
 		comm.put("/ParkList.do", new ParkList());
 		comm.put("/ParkcoDelete.do", new ParkcoDelete());
+
+		comm.put("/ParkWalkIn.do", new ParkWalkIn());
+		comm.put("/ParkWalkOut.do", new ParkWalkOut());
+		comm.put("/ParkWalkList.do", new ParkWalkList());
 		
 		comm.put("/MessageInsert.do", new MessageInsert());
 		comm.put("/MessageInsertForm.do", new MessageInsertForm());

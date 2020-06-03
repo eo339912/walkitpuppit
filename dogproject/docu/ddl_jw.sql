@@ -7,7 +7,7 @@ name varchar2(20), /*회원이름*/
 thumd varchar2(1000), /*회원사진*/
 regdt date /*가입일자*/
 );
-s
+ss
 CREATE SEQUENCE seq_puppy;
 create table puppy(
 seq number(20) primary key, /*번호*/
@@ -58,6 +58,25 @@ drop table comments;
 drop table board;
 drop table member;
 drop table puppy;
+drop table park;
 
 
+select * from walk;
+select * from park;
+select * from walk where seq=28 and id='admin';
+update walk set outpark=SYSDATE, incheck = 0  where seq=13
 
+update park set senter = (
+select sum(incheck) from walk where  p_seq = 586
+) where seq = 586
+
+
+UPDATE park A SET senter = (
+SELECT sum(incheck) FROM walk B WHERE B.p_seq = A.seq);
+
+select * from walk;
+SELECT w.*, w.inpark 
+FROM park p
+INNER JOIN walk w ON p.seq = w.p_seq where p.seq = 205 and w.incheck = 1
+
+select * from walk where p_seq = 205 and incheck = 1

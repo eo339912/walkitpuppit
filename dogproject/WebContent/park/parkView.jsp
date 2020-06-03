@@ -90,10 +90,14 @@
 		  
 		    
 		    <div class="bo_vc_w_wr">
-		        
 		       <ul class="bo_ul_san">
-	    	       <li><button type="button" onclick="countDog()" value= "${loginId}" class="btn_b01 btn">입장하기</button></li>
-	    	       <li><button type="button" onclick="countDog()" class="btn_b01 btn">퇴장하기</button></li>
+		       
+		       		<c:if test="${walk.seq == null || walk.incheck == 0}">
+		    	       <li><button type="button" onclick="location.href='ParkWalkIn.do?p_seq=${param.seq}';"class="btn_b01 btn">입장하기</button></li>
+		       		</c:if>
+		       		<c:if test="${walk.seq != null && walk.incheck == 1}">
+	    	       		<li><button type="button" onclick="location.href='ParkWalkOut.do?seq=${walk.seq}&p_seq=${param.seq}'" class="btn_b01 btn">퇴장하기</button></li>
+	    	       	</c:if>
 	    	    </ul>
             </div>
 

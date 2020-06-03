@@ -54,7 +54,7 @@
 			<c:if test="${fn:contains(market.fsell,'강아지  간식')}">selected="selected"</c:if>> 강아지  간식 </option>
 			<option value="기타"
 			<c:if test="${fn:contains(market.fsell,'기타')}">selected="selected"</c:if>> 기타 </option>
-			</select><br />
+			</select><br /> 
 			
 				</div>
 				

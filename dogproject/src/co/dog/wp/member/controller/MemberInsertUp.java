@@ -1,4 +1,4 @@
-package co.dog.wp.market.controller;
+package co.dog.wp.member.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,25 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-
+import co.dog.wp.common.Command;
 import co.dog.wp.common.FileRenamePolicy;
-import co.dog.wp.market.model.MarketDAO;
-import co.dog.wp.market.model.MarketVO;
-import co.dog.wp.market.model.ReviewDAO;
-import co.dog.wp.market.model.ReviewVO;
+import co.dog.wp.member.model.MemberDAO;
+import co.dog.wp.member.model.MemberVO;
 
 /**
  * Servlet implementation class BoardInsertUp
  */
-@WebServlet("/ReviewInsertUp.do")
+@WebServlet("/MemberInsertUp.do")
 @MultipartConfig(location="c:/upload")
-public class ReviewInsertUp extends HttpServlet {
+public class MemberInsertUp extends HttpServlet implements Command {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReviewInsertUp() {
+    public MemberInsertUp() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,7 +38,7 @@ public class ReviewInsertUp extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//목록으로 페이지 이동
-		request.getRequestDispatcher("/market/reviewtInsert.jsp").forward(request, response);
+		request.getRequestDispatcher("/market/memberInsert.jsp").forward(request, response);
 	}
 
 	/**
@@ -50,42 +48,36 @@ public class ReviewInsertUp extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		String id = (String) request.getSession().getAttribute("loginId");
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+		String pwdcf = request.getParameter("pwdcf");
+		String name = request.getParameter("name");
 
-		// 1 파라미터 받기
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
-		String regdt = request.getParameter("regdt");
-
-
+	
 		// 2. 서비스 로직 처리(DAO)
 	
-		ReviewDAO reviewDAO = new ReviewDAO();
-		ReviewVO review = new ReviewVO();
-		review.setContent(content);
-		review.setTitle(title);
-		review.setRegdt(regdt);
-		review.setId(id);
-
+		//2. 서비스 로직 처리(DAO)
+		MemberDAO memberDAO = new MemberDAO();
+		MemberVO member = new MemberVO();
+		member.setPwd(pwd);
+		member.setName(name);
+		member.setId(id);
 		
 		//첨부파일 처리
 		Part part = request.getPart("filename");
 		String fileName = getFileName(part);
 		String path =  request.getSession().getServletContext().getRealPath("/upload/img");
-		//String path = getServletContext().getRealPath("Upload");
-		
-		//String path = request.getSession().getServletContext().getRealPath("upload/img");
-		
 		if(fileName != null && !fileName.isEmpty()) {
 			File f = FileRenamePolicy.rename(new File(path, fileName));
 			part.write(f.getAbsolutePath()); //업로드 폴더에 파일 저장 ,전체파일이름명
-			review.setFilename(f.getName()); //파일명을 vo에 담기
+			member.setThumd(f.getName()); //파일명을 vo에 담기
 		}
 				
-		reviewDAO.ReviewInsert(review);
-		
-		response.sendRedirect(request.getContextPath()+ "/ReviewList.do");
+		memberDAO.memberInsert(member);
+		response.sendRedirect(request.getContextPath()+ "/MemberLogin.do");
 	}
+	
+	
 	
 	private String getFileName(Part part) throws UnsupportedEncodingException {
 		for (String cd : part.getHeader("Content-Disposition").split(";")) {
@@ -96,5 +88,10 @@ public class ReviewInsertUp extends HttpServlet {
 		return null;
 	}
 
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

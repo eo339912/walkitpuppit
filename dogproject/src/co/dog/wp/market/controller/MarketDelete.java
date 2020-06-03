@@ -19,7 +19,7 @@ public class MarketDelete implements Command {
 		MarketDAO marketdao = new MarketDAO();
 		marketdao.deleteMarket(seq);
 		
-		return "market/marketList.jsp";
+		return "MarketList.do";
 	}
 
 }

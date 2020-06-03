@@ -20,17 +20,16 @@ public class ReviewDAO {
 				// 1. DB 연결
 				conn = ConnectionManager.getConnnect();
 				// 2. sql구문 준비
-				String sql = "insert into review (seq, id, title, content, okays, filename, regdt)"
-						+ " values (seq_mol.nextval, ?, ?, ?, ?, ?, ?, sysdate)";
+				String sql = "insert into review (seq, id, title, content, filename, regdt,cnt)"
+						+ " values (seq_mol.nextval, ?, ?, ?, ?, sysdate,0)";
 				psmt = conn.prepareStatement(sql);
 				// 3. 실행
-				psmt.setString(1, review.getSeq());
-				psmt.setString(2, review.getId());
-				psmt.setString(3, review.getTitle());
-				psmt.setString(4, review.getContent());
-				psmt.setString(5, review.getOkays());
-				psmt.setString(6, review.getFilename());
-				psmt.setString(8, review.getRegdt());
+				psmt.setString(1, review.getId());
+				psmt.setString(2, review.getTitle());
+				psmt.setString(3, review.getContent());
+				psmt.setString(4, review.getFilename());
+			
+
 			
 				r = psmt.executeUpdate();
 				// 4. 결과처리
@@ -57,7 +56,9 @@ public class ReviewDAO {
 				}
 				
 				// 2. 쿼리준비
-				String sql = "select * from review order by id";
+				String sql = "select B.* from( select A.*, rownum RN from("
+						+ "select * from review "+ strWhere+ " order by seq desc"
+						+ " ) A ) B where RN between ? and ?";
 				psmt = conn.prepareStatement(sql);
 				int post = 1;
 				if(id != null && ! id.isEmpty()) {
@@ -90,25 +91,25 @@ public class ReviewDAO {
 		}
 		
 			//단건조회
-			public ReviewVO getReview(String id) {
+			public ReviewVO getReview(String seq) {
 				ReviewVO vo = new ReviewVO();
 				try {
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					// 2. 쿼리 준비
-					sql = "select * from review where id = ?";
+					sql = "select * from review where seq = ?";
 					psmt = conn.prepareStatement(sql);
 					// 3. statement 실행
-					psmt.setString(1, id );
+					psmt.setString(1, seq);
 					ResultSet rs = psmt.executeQuery();
 					if (rs.next()) {
 						vo.setSeq(rs.getString("seq"));
 						vo.setId(rs.getString("id"));
 						vo.setTitle(rs.getString("title"));
 						vo.setContent(rs.getString("content"));
-						vo.setOkays(rs.getString("okays"));
 						vo.setFilename(rs.getString("filename"));
 						vo.setRegdt(rs.getString("regdt"));
+						vo.setCnt(rs.getString("cnt"));
 					}
 					// 4. 결과저장
 				} catch (Exception e) {
@@ -124,17 +125,14 @@ public class ReviewDAO {
 				try {
 					conn = ConnectionManager.getConnnect();
 					// 2. sql구문 준비
-					sql = "update review set seq = ?, content = ?, title = ?,  okays = ?, filename = ?,  regdt = ?"
-							+ " where id = ? ";
+					sql = "update review set content = ?, title = ?, filename = ?"
+							+ " where seq = ? ";
 					psmt = conn.prepareStatement(sql);
 					// 3. 실행
-					psmt.setString(1, review.getId());
-					psmt.setString(2, review.getContent());
-					psmt.setString(3, review.getTitle());
-					psmt.setString(4, review.getOkays());
-					psmt.setString(5, review.getFilename());
-					psmt.setString(7, review.getRegdt());
-					psmt.setString(8, review.getSeq());
+					psmt.setString(1, review.getContent());
+					psmt.setString(2, review.getTitle());
+					psmt.setString(3, review.getFilename());
+					psmt.setString(4, review.getSeq());
 				
 					r = psmt.executeUpdate();
 					// 4. 결과처리
@@ -192,16 +190,16 @@ public class ReviewDAO {
 				return cnt;
 			}
 			//한건조회 조회수
-			public void increaseCnt(String id) {
+			public void increaseCnt(String seq) {
 				
 				try {
 					// 1. DB연결
 					conn = ConnectionManager.getConnnect();
 					// 2. 쿼리준비
-					String sql = "update market set cnt = cnt+1 where id = ?";
+					String sql = "update review set cnt = cnt+1 where seq = ?";
 					psmt = conn.prepareStatement(sql);
 					// 3. statement 실행
-					psmt.setString(1, id);
+					psmt.setString(1, seq);
 					
 					psmt.executeUpdate();
 					psmt.close();

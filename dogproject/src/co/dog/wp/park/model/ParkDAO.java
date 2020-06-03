@@ -153,7 +153,7 @@ public class ParkDAO {
 				} 
 				
 				// 2. 쿼리 준비
-				String sql = "select B.* from( select A.*, rownum RN from("
+				String sql = "select B.*, NVL(B.senter, 0) as se from( select A.*, rownum RN from("
 						+ "select * from park" + strWhere+ "order by seq desc"
 								+ " )A ) B where RN between ? and ?"; // 2.전체조회는 항상 오더바디 넣자
 				psmt = conn.prepareStatement(sql);
@@ -170,7 +170,7 @@ public class ParkDAO {
 				while (rs.next()) {
 					ParkVO vo = new ParkVO(); // 4. 위치 while 안으로
 					vo.setSname(rs.getString("sname"));
-					vo.setSenter(rs.getString("senter"));
+					vo.setSenter(rs.getString("se"));
 					vo.setSeq(rs.getString("seq"));
 					vo.setSpotnm(rs.getString("spotnm"));// 결과값에 담기
 					

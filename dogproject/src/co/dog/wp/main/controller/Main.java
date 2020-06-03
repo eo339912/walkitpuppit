@@ -11,17 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 import co.dog.wp.board.model.BoardDAO;
 import co.dog.wp.board.model.BoardVO;
 import co.dog.wp.common.Command;
+import co.dog.wp.market.model.MarketDAO;
+import co.dog.wp.market.model.MarketVO;
 
 
 public class Main implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		//1. 파라미터
+		String id = request.getParameter("id");
 		//2. 서비스 (DAO 목록조회)
-		BoardDAO dao = new BoardDAO();
-		ArrayList<BoardVO> list = dao.getBoardList();
-		//view page에 forward
-		request.setAttribute("board", list);
+		MarketDAO maketdao = new MarketDAO();
+		ArrayList<MarketVO> list = maketdao.getMarketList2();
+		
+		request.setAttribute("market", list);
 		
 		return "main/main.jsp";
 	}
