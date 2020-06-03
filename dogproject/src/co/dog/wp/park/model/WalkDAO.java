@@ -138,17 +138,17 @@ public class WalkDAO {
 	// 전체조회
 	public ArrayList<WalkVO> getWalkList(String p_seq) {
 		ArrayList<WalkVO> list = new ArrayList<WalkVO>();
-		WalkVO vo = new WalkVO();
 		try {
 			// 1. DB연결
 			conn = ConnectionManager.getConnnect();
 			// 2. 쿼리준비
 			String sql = "select * from walk where p_seq = ? and incheck = 1";
 			psmt = conn.prepareStatement(sql);
-			// 3. statement 실행
+			// 3. statement 실행			
+			psmt.setString(1, p_seq);
 			ResultSet rs = psmt.executeQuery();
-			psmt.setString(1, vo.getP_seq());
 			while (rs.next()) {
+				WalkVO vo = new WalkVO();
 				vo.setId(rs.getString("id"));
 				vo.setInpark(rs.getString("inpark"));
 				list.add(vo);

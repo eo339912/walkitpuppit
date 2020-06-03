@@ -12,7 +12,7 @@ import co.dog.wp.park.model.WalkDAO;
 import co.dog.wp.park.model.WalkVO;
 
 
-public class ParkWalkList  implements Command {
+public class ParkWalkList implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

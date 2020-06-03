@@ -53,7 +53,7 @@
 							<tr> 
 						
 								<td><a href="ParkViewForm.do?seq=${vo.seq}">${vo.sname}</a></td>
-								<td><a href="#">${vo.senter}</a>
+								<td><a onclick="OpenWindow(${vo.seq})">${vo.senter}</a></td>
 								
 							</tr>
 						</c:forEach>
@@ -76,6 +76,10 @@
 		</div>
 </div>
 
-
+<script>
+function OpenWindow(seq) {  
+      window.open("ParkWalkList.do?seq="+ seq,"_blank","top=50,left=50,width=816,height=340,resizable=1,scrollbars=no");
+}
+</script>
 
 <%@include file="/common/footer.jsp" %>
