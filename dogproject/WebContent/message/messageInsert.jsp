@@ -1,15 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/common/header.jsp"%>
-<jsp:include page="/common/top.jsp"/>
 
 
 <script> var tit01="쪽지보내기"</script>
 
-<div id="sub_vis_wrap" class="sub04 page01">
-	<%@include file="/common/sub_vis.jsp"%>
-	<jsp:include page="/common/sub_menu.jsp"/>
-</div>
+
 <div class="sub_tit_wrap">
 	<span><script>document.write(tit01);</script></span>
 </div>
@@ -21,7 +17,7 @@
 		  	<form action="MessageInsert.do" method="post" name="fwrite" id="fwrite">
 		  		  <input type="hidden" name="seq" value="" id="seq" class="frm_input required" >
 		  		   <div class="bo_w_info write_div3">
-			        <span>보내는사람</span>			 
+			        <span>작성자</span>			 
 		  			 <input type="text" name="userid" value="${loginId}" id="userid" class="frm_input required" readonly>
 				</div>
 				
@@ -46,7 +42,7 @@
 			 
 		
 			    <div class="btn_confirm write_div">
-				        <input type="submit" value="보내기" id="btn_submit" class="btn_submit btn fr">
+				        <input type="submit"  onClick="window.close()"  value="보내기" id="btn_submit" class="btn_submit btn fr">
 			    </div>
 		    </form>
 	
@@ -55,5 +51,3 @@
 		</div>
 </div>
 
-
-<%@include file="/common/footer.jsp" %>

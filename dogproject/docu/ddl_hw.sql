@@ -35,6 +35,8 @@ CONSTRAINT walk_FK FOREIGN KEY (id) REFERENCES member(id),
 CONSTRAINT w_seq_FK FOREIGN KEY (p_seq) REFERENCES park(seq)
 );
 
+drop table walk;
+
 CREATE SEQUENCE seq_message;
 create table message(
 seq number(20),

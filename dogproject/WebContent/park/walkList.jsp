@@ -15,10 +15,17 @@
 			<tr>
 				<td>${list.id}</td>
 				<td>${list.inpark}</td>
-				<td><a href="#"><i class="fa fa-commenting-o" aria-hidden="true" style="font-size:30px"></i></a></td>
+				<td><a onclick="OpenWindow()"><i class="fa fa-commenting-o" aria-hidden="true" style="font-size:30px"></i></a></td>
 			</tr>
 		</c:forEach>
 	</table>
 	</div>
+	
+	<script>
+function OpenWindow() {  
+      window.open("MessageInsert.do","_blank","top=50,left=50,width=816,height=800,resizable=1,scrollbars=no");
+}
+</script>
+
 </body>
 </html>
