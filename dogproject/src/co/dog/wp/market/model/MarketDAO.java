@@ -378,7 +378,9 @@ import co.dog.wp.common.ConnectionManager;
 							MarketVO vo = new MarketVO();
 							vo.setTitle(rs.getString("title"));
 							vo.setId(rs.getString("id"));
+							vo.setContent(rs.getString("content"));
 							vo.setFilename(rs.getString("filename"));
+							vo.setSeq(rs.getString("seq"));
 							list.add(vo);
 						}
 						// 4. 결과저장

@@ -107,15 +107,14 @@
 				<div class="con">워킷퍼핏 마켓에서 애견 상품을 구경하세요.<br>워킷퍼핏에서 인증하는 안전한 판매자들로 믿을 수 있어요.</div>
 			</div>
 			<div class="sec02_con_wrap  w-inner">
-				
-				 <c:forEach items="${list}" var="vo" varStatus="status">
+				<c:forEach items="${market}" var="vo" >
 				<div class="con_bx">
-					<a href="#">
+					<a href="MarketViewForm.do?seq=${vo.seq}">
 						<div class="img"><img src="./upload/img/${vo.filename}" /></div>
-						<div class="${market.title}">
-							<div class="t">과일 편의식품 생산기업 "푸드팩토리"의 새로운 도전</div>
-							<div class="c">비즈스마트에 출연한 푸드팩토리의 영상을 확인해보세요. 푸드팩토리는 </div>
-							<a href="#" class="link_st_1">More > </a>
+						<div class="txt">
+							<div class="t">${vo.title}</div>
+							<div class="c">${vo.content} </div>
+							<a href="MarketViewForm.do?seq=${vo.seq}" class="link_st_1">More > </a>
 						</div>
 					</a>
 				</div>
