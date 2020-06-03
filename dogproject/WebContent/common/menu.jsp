@@ -31,7 +31,7 @@
       <div><span>내 정보</span></div>
       <ul class="gnb_dp2_wrap">
          <li class="gnb_dp2"><a href="Mypage.do?id=${loginId}">마이페이지</a></li>
-         <li class="gnb_dp2"><a href="javascript:GoPage('product01')">내 히스토리</a></li>
+         <li class="gnb_dp2"><a href="Myhistory.do?id=${loginId}">내 히스토리</a></li>
       </ul>
    </li>
 
