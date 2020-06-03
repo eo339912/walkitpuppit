@@ -70,7 +70,7 @@
 	<div class="inner inner_580" style="margin-bottom:10em"><!-- skin : basic_voc -->
 		<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-		  	<form action="MemberInsert.do" method="post" name="fwrite" id="fwrite">
+		  	<form action="MemberInsertUp.do" method="post" name="fwrite" id="fwrite" enctype="multipart/form-data">
 			    <div class="bo_w_info write_div3 half1">
 			        <span>아이디</span>
 			        <input type="text" name="id" value=""  onchange="idDupCheck()" id="id" required="" class="frm_input required" placeholder="아이디">
@@ -95,7 +95,7 @@
 		    		    <div class="bo_w_flie write_div">
 			  				<div class="file_wr write_div">
 								<label for="bf_file_1" class="lb_icon"><i class="fa fa-download" aria-hidden="true"></i></label>
-								<input type="file" name="thumd" id="bf_file_1" class="frm_file ">
+								<input type="file" name="filename" id="bf_file_1" class="frm_file ">
 			 				 </div>
 						</div>
 		    	  	</div>

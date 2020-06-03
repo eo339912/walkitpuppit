@@ -47,8 +47,8 @@ import co.dog.wp.market.controller.ReviewUpdate;
 import co.dog.wp.market.controller.ReviewUpdateForm;
 import co.dog.wp.market.controller.ReviewView;
 import co.dog.wp.market.controller.ReviewViewForm;
-import co.dog.wp.member.controller.MemberInsert;
 import co.dog.wp.member.controller.MemberInsertForm;
+import co.dog.wp.member.controller.MemberInsertUp;
 import co.dog.wp.member.controller.MemberLogin;
 import co.dog.wp.member.controller.MemberLoginForm;
 import co.dog.wp.member.controller.MemberLogout;
@@ -84,7 +84,8 @@ public class FrontController extends HttpServlet {
 		comm.put("/BoardUpdateForm.do", new BoardUpdateForm());
 		comm.put("/CommentsDelete.do", new CommentsDelete());
 		
-		comm.put("/MemberInsert.do", new MemberInsert());
+		
+		comm.put("/MemberInsertUp.do", new MemberInsertUp());
 		comm.put("/MemberInsertForm.do", new MemberInsertForm());
 		comm.put("/MemberLogin.do", new MemberLogin());
 		comm.put("/MemberLoginForm.do", new MemberLoginForm());
