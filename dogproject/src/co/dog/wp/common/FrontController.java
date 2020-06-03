@@ -53,6 +53,9 @@ import co.dog.wp.mypage.controller.Mypage;
 import co.dog.wp.park.controller.ParkList;
 import co.dog.wp.park.controller.ParkView;
 import co.dog.wp.park.controller.ParkViewForm;
+import co.dog.wp.park.controller.ParkWalkIn;
+import co.dog.wp.park.controller.ParkWalkList;
+import co.dog.wp.park.controller.ParkWalkOut;
 import co.dog.wp.park.controller.ParkcoDelete;
 
 /**
@@ -116,6 +119,10 @@ public class FrontController extends HttpServlet {
 		comm.put("/ParkViewForm.do", new ParkViewForm());
 		comm.put("/ParkList.do", new ParkList());
 		comm.put("/ParkcoDelete.do", new ParkcoDelete());
+
+		comm.put("/ParkWalkIn.do", new ParkWalkIn());
+		comm.put("/ParkWalkOut.do", new ParkWalkOut());
+		comm.put("/ParkWalkList.do", new ParkWalkList());
 		
 		comm.put("/MessageInsert.do", new MessageInsert());
 		comm.put("/MessageInsertForm.do", new MessageInsertForm());

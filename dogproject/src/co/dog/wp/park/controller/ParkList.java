@@ -13,6 +13,8 @@ import co.dog.wp.common.Command;
 import co.dog.wp.common.Paging;
 import co.dog.wp.park.model.ParkDAO;
 import co.dog.wp.park.model.ParkVO;
+import co.dog.wp.park.model.WalkDAO;
+import co.dog.wp.park.model.WalkVO;
 
 public class ParkList implements Command {
 	
@@ -47,7 +49,9 @@ public class ParkList implements Command {
 	 	
 		//리스트
 		ArrayList<ParkVO> list = parkdao.getParkList(start, end, sname, spotnum);
-			
+		
+		WalkDAO walkDAO2 = new WalkDAO();
+		walkDAO2.ParkUpdate();
 		//결과저장
 		request.setAttribute("park", list); 
 		

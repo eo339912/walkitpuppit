@@ -40,9 +40,7 @@
 		    <!-- } 게시판 검색 끝 -->  
 		    <div class="tbl_head01 tbl_wrap">
 		    
-			
-		    
-		        <table>
+		        <table style="text-align:center">
 			        <caption>게시판 목록 </caption>
 			        <thead>
 			        <tr>

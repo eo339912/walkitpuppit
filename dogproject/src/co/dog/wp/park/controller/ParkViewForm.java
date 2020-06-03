@@ -11,6 +11,8 @@ import co.dog.wp.common.Command;
 import co.dog.wp.park.model.ParkDAO;
 import co.dog.wp.park.model.ParkVO;
 import co.dog.wp.park.model.ParkcoVO;
+import co.dog.wp.park.model.WalkDAO;
+import co.dog.wp.park.model.WalkVO;
 
 public class ParkViewForm implements Command {
 
@@ -18,7 +20,7 @@ public class ParkViewForm implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//파라미터 받기 -> 세션에서 seq가져오기
 		String seq = request.getParameter("seq");
-	
+		String id = (String) request.getSession().getAttribute("loginId");
 //		String comments = request.getParameter("comments");
 		
 		//서비스 로직 처리
@@ -30,9 +32,14 @@ public class ParkViewForm implements Command {
 		ParkDAO parkDAO2 = new ParkDAO();
 		ArrayList<ParkcoVO> parkcoList = parkDAO2.getParkcoList(seq);
 		
+		//서비스 로직 처리
+		WalkDAO Walkdao  = new WalkDAO();
+		WalkVO Walkvo = Walkdao.getWalk(seq, id);
+				
 		//결과저장
 		request.setAttribute("park", parkvo);  
 		request.setAttribute("parkco", parkcoList);
+		request.setAttribute("walk", Walkvo);
 		
 		return "park/parkView.jsp";
 	}

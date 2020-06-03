@@ -11,6 +11,8 @@ import co.dog.wp.common.Command;
 import co.dog.wp.park.model.ParkDAO;
 import co.dog.wp.park.model.ParkVO;
 import co.dog.wp.park.model.ParkcoVO;
+import co.dog.wp.park.model.WalkDAO;
+import co.dog.wp.park.model.WalkVO;
 
 
 public class ParkView implements Command {
@@ -37,10 +39,15 @@ public class ParkView implements Command {
 		//2. 서비스 로직 처리(DAO) -> seq에 해당하는 댓글 리스트 조회
 		ParkDAO parkDAO2 = new ParkDAO();
 		ArrayList<ParkcoVO> parkcoList = parkDAO2.getParkcoList(seq);
- 
+		
+		//서비스 로직 처리
+		WalkDAO Walkdao  = new WalkDAO();
+		WalkVO Walkvo = Walkdao.getWalk(seq, id);
+				
 		//결과저장
 		request.setAttribute("park", parkvo);  
 		request.setAttribute("parkco", parkcoList);
+		request.setAttribute("walk", Walkvo);
 		
 		return "park/parkView.jsp";
 	}
