@@ -43,23 +43,34 @@
 		<div class="mySec mySec2 fr">
 			<span class="myHeader">Message</span>
 			<div class="myMessage">
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<p>지원 : 메세지를 봐라 이녀석아</p>
-				<span>-</span>
+			 <table style="text-align:center">
+			        <caption>게시판 목록</caption>
+			        <thead>
+			        <tr>
+			            <th scope="col" width="25%">보낸사람</th>
+			            <th scope="col">제목</th>
+			            <th scope="col" width="15%">날짜  <i class="fa fa-sort" aria-hidden="true"></i></th>
+			        </tr>
+			        </thead>
+			        <tbody>
+			        	<c:forEach items="${message}" var="message"  varStatus="status">
+							<tr>
+								
+					            <td class="td_subject" style="padding-left:0px">
+				             	  	<div class="bo_tit">
+				             	  		<a href="MessageViewForm.do?seq=${message.seq}">${message.title}</a>			             	  	
+				             	  	</div>
+								</td>
+				            	<td class="td_name sv_use"><span class="sv_member">${message.userid}</span></td>
+				                
+				                <fmt:parseDate value="${message.regdt}" var="sdate" pattern="yyyy-MM-dd HH:mm:ss"></fmt:parseDate>
+            					<fmt:formatDate pattern="yyyy-MM-dd" value="${sdate}" var="bd"/>
+				               
+				                <td class="td_datetime">${bd}</td>
+							</tr>
+						</c:forEach>
+			        </tbody>
+		        </table>
 			</div>
 		</div><!-- sec2 -->
 		<div class="clear"></div>
