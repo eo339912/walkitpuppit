@@ -29,7 +29,7 @@
 		        <form name="searchfrm" method="get">
 		        	<input name="p" value="1" type="hidden">
 		        	<input type="text" name="title" value="" id="title" class="sch_input" size="25" maxlength="20" placeholder="제목을 입력해주세요">
-		       		<button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
+		       		<button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span></span></button>
 		        </form>
 		    </fieldset>
 		    <!-- } 게시판 검색 끝 -->  
