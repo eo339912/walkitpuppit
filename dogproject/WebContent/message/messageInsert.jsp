@@ -42,7 +42,7 @@
 			 
 		
 			    <div class="btn_confirm write_div">
-				        <input type="submit"  onClick="window.close()"  value="보내기" id="btn_submit" class="btn_submit btn fr">
+				        <input type="submit" value="보내기" id="btn_submit" class="btn_submit btn fr">
 			    </div>
 		    </form>
 	

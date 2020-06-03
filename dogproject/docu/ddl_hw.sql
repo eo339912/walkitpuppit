@@ -44,9 +44,11 @@ userid varchar2(20),
 m_id varchar2(20),
 title varchar2(100),
 contents VARCHAR2(500),
+REGDT date ,
 CONSTRAINT message_PK PRIMARY KEY (seq),
 CONSTRAINT message_FK FOREIGN KEY (m_id) REFERENCES member(id)
 );
+drop table message;
 
 
 select * from walk
