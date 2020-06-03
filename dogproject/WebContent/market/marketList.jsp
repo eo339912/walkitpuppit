@@ -63,10 +63,10 @@
                      </td>
                         <td><div class="bo_tit"><a href="#">
 									<c:if test="${vo.sselect == '판매중'}">
-										<p class="disti" style="background: #d0dce5;">판매중</p>
+										<p class="disti" style="background: #a0d9fb;">판매중</p>
 									</c:if>
 									<c:if test="${vo.sselect == '판매완료'}">
-										<p class="disti" style="background: #9fbaca;">판매완료</p>
+										<p class="disti" style="background: #82bee2;">판매완료</p>
 									</c:if>
                         </a></div></td>
                         <td class="td_name sv_use"><span class="sv_member">${vo.id}</span></td>
