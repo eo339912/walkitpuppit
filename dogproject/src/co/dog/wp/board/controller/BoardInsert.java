@@ -20,7 +20,7 @@ public class BoardInsert  implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
+	
 		String id = (String) request.getSession().getAttribute("loginId");
 
 		// 1 파라미터 받기

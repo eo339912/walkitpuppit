@@ -39,10 +39,18 @@ m_seq number(20),
 mcomment varchar2(1000),
 CONSTRAINT mcomment_FK FOREIGN KEY (m_seq) REFERENCES market(seq) on delete cascade);
 
+create table mcomments(
+id varchar2(20),
+regdt date,
+seq number(20) primary key,
+c_seq number(20),
+mcomments varchar2(1000),
+CONSTRAINT mcomments_FK FOREIGN KEY (c_seq) REFERENCES review(seq) on delete cascade);
+
 CREATE SEQUENCE seq_market;
 CREATE SEQUENCE seq_review;
 CREATE SEQUENCE seq_member;
 CREATE SEQUENCE seq_mcomment;
 CREATE SEQUENCE seq_mol;
-
+CREATE SEQUENCE seq_mcomments;
 

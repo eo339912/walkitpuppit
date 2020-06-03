@@ -45,11 +45,7 @@
                  <c:forEach items="${list}" var="vo" varStatus="status">
                     <tr>
                         <td class="td_num2">${((paging.page-1) * 5 + status.index+1)}</td>
-                        <td>
-                        	<c:if test="${!vo.filename.isEmpty() && vo.filename != null}">
-					       	 <div id="bo_v_img"><img src="./upload/img/${vo.filename}"></div>
-							</c:if>
-                        </td>
+                     
                         <td class="td_subject" style="padding-left:0px; position:relative">
                            <div class="bo_tit" style="display: inline;"><a href="ReviewViewForm.do?seq=${vo.seq}">${vo.title}</a></div>
                             
@@ -59,7 +55,8 @@
 											</div>
 											</c:if>
                      </td>
-                        <td class="td_name sv_use"><span class="sv_member">${vo.id}</span></td>
+                        <td class="td_name s
+                        v_use"><span class="sv_member">${vo.id}</span></td>
                          <td class="td_datetime">${vo.regdt}</td>
                        </tr>
                        </c:forEach>
