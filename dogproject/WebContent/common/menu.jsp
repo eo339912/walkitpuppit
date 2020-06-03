@@ -13,7 +13,6 @@
          <li class="gnb_dp2"><a href="ParkList.do?spotnum=3430000">서구</a></li>
          <li class="gnb_dp2"><a href="ParkList.do?spotnum=3460000">수성구</a></li>
          <li class="gnb_dp2"><a href="ParkList.do?spotnum=3410000">중구</a></li>
-         <li class="gnb_dp2"><a href="MessageInsert.do">쪽지테스트</a></li>
       </ul>
    </li>
 
