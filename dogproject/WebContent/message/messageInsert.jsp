@@ -18,10 +18,16 @@
 	<div class="inner" style="margin-bottom:10em"><!-- skin : basic_voc -->
 		<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-		  	<form action="BoardInsertUp.do" method="post" enctype="multipart/form-data" name="fwrite" id="fwrite">
+		  	<form action="MessageInsertForm.do" method="post" enctype="multipart/form-data" name="fwrite" id="fwrite">
+		  		  <input type="hidden" name="seq" value="" id="seq" class="frm_input required" >
+		  		   <div class="bo_w_info write_div3">
+			        <span>보내는사람</span>			 
+		  			 <input type="text" name="userid" value="${loginId}" id="userid" class="frm_input required" readonly>
+				</div>
+				
 			    <div class="bo_w_info write_div3">
-			        <span>아이디</span>
-			        <input type="text" name="id" value="${loginId}" id="id" class="frm_input required" readonly>
+			        <span>받는사람</span>
+			        <input type="text" name="m_id" value="" id="m_id" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="받는사람">
 				</div>
 				
 				<div class="bo_w_tit write_div bo_w_info write_div2">
@@ -33,7 +39,7 @@
 				<div class="write_div  bo_w_info write_div2">
 					<span>내용</span>
 			        <div style="" class="wr_content">
-						<textarea id="content" name="content" maxlength="65536" style="width: 100%; height: 300px;"></textarea>
+						<textarea id="contents" name="contents" maxlength="65536" style="width: 100%; height: 300px;"></textarea>
 		            </div>
 			    </div>
 			    
