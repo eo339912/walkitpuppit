@@ -151,7 +151,7 @@
 .sec02_con_wrap .con_bx{ box-sizing:border-box; border:1px solid #ddd; border-left:0;}
 .sec02_con_wrap .con_bx:first-child{border-left:1px solid #ddd;}
 .sec02_con_wrap .con_bx .img{width:100%; overflow:hidden; max-height:238px;}
-.sec02_con_wrap .con_bx .img img{width:100%;}
+.sec02_con_wrap .con_bx .img img{width:100%;min-height: 246px;}
 .sec02_con_wrap .con_bx .txt{width:100%; overflow:hidden; box-sizing:border-box; background:#FFF; padding:15px; border-top:3px solid #ccc;}
 .sec02_con_wrap .con_bx .txt .t{font-weight:500; font-size:1.1em; width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .sec02_con_wrap .con_bx .txt .c{color:#343434; font-size:0.95em; margin-top:1em;width:95%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
