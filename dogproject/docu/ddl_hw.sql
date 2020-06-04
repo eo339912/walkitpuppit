@@ -50,6 +50,12 @@ CONSTRAINT message_FK FOREIGN KEY (m_id) REFERENCES member(id)
 );
 drop table message;
 
+alter table walk 
+add (sname VARCHAR2(60));
+
+alter table walk add FOREIGN KEY(sname) REFERENCES park(sname);
+
+add CONSTRAINT walks_FK FOREIGN KEY (sname) REFERENCES park(sname);
 
 select * from walk
 

@@ -7,6 +7,15 @@ String id;
 String inpark;
 String outpark;
 String incheck;
+String sname;
+
+
+public String getSname() {
+	return sname;
+}
+public void setSname(String sname) {
+	this.sname = sname;
+}
 public String getSeq() {
 	return seq;
 }
