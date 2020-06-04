@@ -58,5 +58,5 @@ alter table walk add FOREIGN KEY(sname) REFERENCES park(sname);
 add CONSTRAINT walks_FK FOREIGN KEY (sname) REFERENCES park(sname);
 
 select * from walk
-
+D
   
