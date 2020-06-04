@@ -59,4 +59,9 @@ add CONSTRAINT walks_FK FOREIGN KEY (sname) REFERENCES park(sname);
 
 select * from walk
 
+select round(((to_date(outpark,'HHMISS')-to_date(inpark,'HHMISS'))*24*60),3) AS walktime from walk;
+
+select to_date(outpark,'YYYY-MM-DD') as outpark from walk where seq=26;
+
+select round((outpark-inpark)*24*60) as walktime from walk where seq=26 and id='admin';
   

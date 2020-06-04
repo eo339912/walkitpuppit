@@ -8,8 +8,17 @@ String inpark;
 String outpark;
 String incheck;
 String sname;
+String walktime;
 
 
+
+
+public String getWalktime() {
+	return walktime;
+}
+public void setWalktime(String walktime) {
+	this.walktime = walktime;
+}
 public String getSname() {
 	return sname;
 }

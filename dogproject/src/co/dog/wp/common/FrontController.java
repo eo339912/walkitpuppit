@@ -66,6 +66,7 @@ import co.dog.wp.mypage.controller.Mypage;
 import co.dog.wp.mypage.controller.MypageUpdate;
 import co.dog.wp.mypage.controller.MypageUpdateForm;
 import co.dog.wp.mypage.controller.MyreviewList;
+import co.dog.wp.mypage.controller.MywalkTime;
 import co.dog.wp.park.controller.ParkList;
 import co.dog.wp.park.controller.ParkView;
 import co.dog.wp.park.controller.ParkViewForm;
@@ -92,6 +93,7 @@ public class FrontController extends HttpServlet {
 		comm.put("/Myhistory.do", new Myhistory());
 		comm.put("/MymarketList.do", new MymarketList());
 		comm.put("/MyreviewList.do", new MyreviewList());
+		comm.put("/MywalkTime.do", new MywalkTime());
 
 		comm.put("/BoardDelete.do", new BoardDelete());
 		comm.put("/BoardInsertForm.do", new BoardInsertForm());

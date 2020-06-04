@@ -26,7 +26,7 @@
 			<div class="myBtnWrap">
 				<div><a href="MymarketList.do?id=${loginId}">내가 쓴 글</a></div>
 				<div><a href="MyreviewList.do?id=${loginId}">내가 쓴 후기글</a></div>
-				<div><a href="#">공원 입장 시간</a></div>
+				<div><a href="MywalkTime.do?id=${loginId}">나의 산책 시간</a></div>
 			</div>
 			</div>
 			

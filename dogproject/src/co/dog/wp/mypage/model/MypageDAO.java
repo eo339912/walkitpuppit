@@ -51,7 +51,6 @@ public class MypageDAO {
 			// 5. DB연결 해제
 			ConnectionManager.close(conn);
 		}
-
 		return list;
 	}
 	
@@ -89,5 +88,45 @@ public class MypageDAO {
 
 		return list;
 	}
+	
+	//나의 총 산책 시간 리스트 
+		public ArrayList<WalkVO> getWalkTime(String id) {
+			ArrayList<WalkVO> list = new ArrayList<WalkVO>();
+			try {
+				// 1. DB연결
+				conn = ConnectionManager.getConnnect();
+			
+				// 2. 쿼리준비
+				String sql = "select id, seq, sname," 
+						+ " to_date(inpark,'YYYY-MM-DD') as inpark,"
+						+ " to_date(outpark,'YYYY-MM-DD') as outpark,"
+						+ " round((outpark-inpark)*24*60) as walktime"
+						+ " from walk where id = ? and incheck=0 order by seq desc";
+		
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, id);
+				
+				// 3. statement 실행
+				ResultSet rs = psmt.executeQuery();
+				while (rs.next()) {
+					WalkVO walk = new WalkVO();
+					walk.setSeq(rs.getString("seq"));
+					walk.setSname(rs.getString("sname"));
+					walk.setInpark(rs.getString("inpark"));
+					walk.setOutpark(rs.getString("outpark"));
+					walk.setWalktime(rs.getString("walktime"));
+				
+					list.add(walk);
+				}
+				// 4. 결과저장
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				// 5. DB연결 해제
+				ConnectionManager.close(conn);
+			}
+			return list;
+		}
 
 }
