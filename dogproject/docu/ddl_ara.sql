@@ -51,3 +51,8 @@ seq number(20) primary key,
 c_seq number(20),
 mcomments varchar2(1000),
 CONSTRAINT mcomments_FK FOREIGN KEY (c_seq) REFERENCES review(seq) on delete cascade);
+
+drop table market 
+drop table review
+drop table mcomment
+drop table mcomments

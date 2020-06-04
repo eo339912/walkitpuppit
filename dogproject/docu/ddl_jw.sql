@@ -7,7 +7,7 @@ name varchar2(20), /*회원이름*/
 thumd varchar2(1000), /*회원사진*/
 regdt date /*가입일자*/
 );
-s
+
 
 CREATE SEQUENCE seq_puppy;
 create table puppy(
@@ -59,7 +59,7 @@ drop table comments;
 drop table board;
 drop table member;
 drop table puppy;
-drop table park;
+
 
 
 select * from walk;

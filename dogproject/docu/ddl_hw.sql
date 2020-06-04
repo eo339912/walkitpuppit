@@ -49,16 +49,17 @@ REGDT date ,
 CONSTRAINT message_PK PRIMARY KEY (seq),
 CONSTRAINT message_FK FOREIGN KEY (m_id) REFERENCES member(id)
 );
+
 drop table message;
+drop table walk
+drop table parkcomments
+drop table PARK
 
-alter table walk 
-add (sname VARCHAR2(60));
 
 
 
-add CONSTRAINT walks_FK FOREIGN KEY (sname) REFERENCES park(sname);
 
-select * from walk
+
 
 select round(((to_date(outpark,'HHMISS')-to_date(inpark,'HHMISS'))*24*60),3) AS walktime from walk;
 
