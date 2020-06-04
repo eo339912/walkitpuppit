@@ -41,7 +41,8 @@ content varchar2(1000), /*내용*/
 filename varchar2(1000), /*파일업로드*/
 id varchar2(20), /*작성자*/
 regdt date, /*등록일자*/
-cnt number(20)
+cnt number(20),
+CONSTRAINT boards_FK FOREIGN KEY (id) REFERENCES member(id) on delete cascade
 );
 
 CREATE SEQUENCE seq_comments;
@@ -54,6 +55,7 @@ commentsO varchar2(1000),
 CONSTRAINT comment_FK FOREIGN KEY (b_seq) REFERENCES board(seq) on delete cascade
 );
 
+테이블 3개
 
 drop table comments;
 drop table board;

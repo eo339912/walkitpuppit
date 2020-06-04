@@ -163,7 +163,7 @@
 			$('#dialog-message').dialog({
 				modal: true, 
 				buttons: {
-					"입장하기": function() { $(this).dialog('close'); location.href='ParkWalkIn.do?p_seq=${param.seq}'},
+					"입장하기": function() { $(this).dialog('close'); location.href='ParkWalkIn.do?p_seq=${param.seq}&sname=${park.sname}'},
 					"취소": function() { $(this).dialog('close'); },
 				}
 			});

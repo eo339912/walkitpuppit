@@ -98,8 +98,8 @@ public class MypageDAO {
 			
 				// 2. 쿼리준비
 				String sql = "select id, seq, p_seq, sname," 
-						+ " to_char(inpark,'YYYY-MM-DD') as inpark,"
-						+ " to_char(outpark,'YYYY-MM-DD') as outpark,"
+						+ " to_char(inpark,'HH24:MI:SS') as inpark,"
+						+ " to_char(outpark,'HH24:MI:SS') as outpark,"
 						+ " round((outpark-inpark)*24*60) as walktime" 
 						+ " from walk where id = ? and incheck=0 order by seq desc";
 		
