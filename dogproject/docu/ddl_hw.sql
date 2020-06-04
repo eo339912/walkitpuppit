@@ -50,7 +50,7 @@ CONSTRAINT message_FK FOREIGN KEY (m_id) REFERENCES member(id)
 );
 drop table message;
 
-
+f
 select * from walk
 
   
