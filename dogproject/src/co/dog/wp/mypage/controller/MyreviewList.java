@@ -8,12 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.dog.wp.common.Command;
 
-public class Mymarket implements Command {
+public class MyreviewList implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		return "/mypage/mymarket.jsp";
+		String id = (String) request.getSession().getAttribute("loginId");
+		
+		return "/mypage/myreviewList.jsp";
 	}
 
 }
