@@ -61,7 +61,14 @@
 											</div>
 											</c:if>
                      </td>
-                        <td><div class="bo_tit"><a href="#">${vo.sselect}</a></div></td>
+                        <td><div class="bo_tit"><a href="#">
+									<c:if test="${vo.sselect == '판매중'}">
+										<p class="disti" style="background: #4280f3;">판매중</p>
+									</c:if>
+									<c:if test="${vo.sselect == '판매완료'}">
+										<p class="disti" style="background: #89b8ff;">판매완료</p>
+									</c:if>
+                        </a></div></td>
                         <td class="td_name sv_use"><span class="sv_member">${vo.id}</span></td>
                          <td class="td_datetime">${vo.regdt}</td>
                        </tr>

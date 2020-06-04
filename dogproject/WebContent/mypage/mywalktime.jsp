@@ -21,6 +21,14 @@
 	<div class="inner" style="margin-bottom:10em">
 		<!-- 게시판 목록 시작 { -->
 		<div id="bo_list" style="width:100%" class="sub_board">
+				<!-- 내정보 버튼 wrap -->
+		<div class="myhistory">
+			<div class="myBtnWrap">
+				<div><a href="MymarketList.do?id=${loginId}">내가 쓴 글</a></div>
+				<div><a href="MyreviewList.do?id=${loginId}">내가 쓴 후기글</a></div>
+				<div class="active"><a href="MywalkTime.do?id=${loginId}">나의 산책 시간</a></div>
+			</div>
+		</div>
 		    
 		    <div class="tbl_head01 tbl_wrap">
 		        <table style="text-align:center">

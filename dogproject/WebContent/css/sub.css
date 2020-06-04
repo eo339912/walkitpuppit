@@ -563,6 +563,13 @@
 .mySec3 .dogInfoWrap ul li .dogInfo .pname span{font-size: 0.8em; margin-left: 10px; color: #ffa300;}
 .mySec3 .dogInfoWrap ul li .dogInfo2{padding:15px; border:1px solid #eee; overflow: hidden;} 
 
+.myhistory{margin-bottom: 30px;}
+.myhistory .myBtnWrap{border:1px solid #dfdfdf;box-sizing: border-box;display:table;width: 100%;}
+.myhistory .myBtnWrap div{width: 33.3%; display: table-cell;}
+.myhistory .myBtnWrap div:nth-child(2){border-right:1px solid #eee;border-left:1px solid #eee;}
+.myhistory .myBtnWrap div a{padding:10px 0;width:100%;text-align:center;display: inline-block;padding: 16px 0;}
+.myhistory .myBtnWrap div.active{background-color: #ffad18;}
+.myhistory .myBtnWrap div.active a{color:#fff; font-weight:bold}
 @media all and (max-width:700px) {
 	.mySec { width: 100%;margin: 1% 0;}
 	.mySec3 {margin:0}
@@ -606,3 +613,10 @@
   color: black;
 }
 
+.disti{ 
+    margin: 0 auto;
+   color:#fff;
+    padding: 7px;
+    border-radius: 10px;
+    display:inline-block;
+    }
