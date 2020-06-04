@@ -24,8 +24,8 @@
 	</ul>
 
 	<ul class="sub_menu_box sub03 ">
-         <li class="gnb_dp2 m1"><a href="Mypage.do">마이페이지</a></li>
-         <li class="gnb_dp2 m2"><a href="javascript:GoPage('product01')">내 히스토리</a></li>
+         <li class="gnb_dp2 m1"><a href="Mypage.do?id=${loginId}">마이페이지</a></li>
+         <li class="gnb_dp2 m2"><a href="Myhistory.do?id=${loginId}">내 히스토리</a></li>
 	</ul>
 
 	<ul class="sub_menu_box sub04 ">

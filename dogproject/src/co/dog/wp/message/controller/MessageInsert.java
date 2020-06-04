@@ -31,6 +31,7 @@ public class MessageInsert implements Command {
 		message.setUserid(id);
 		
 		messageDAO.messageInsert(message);
+
 		
 		return "ParkWalkList.do?seq="+seq;
 	}

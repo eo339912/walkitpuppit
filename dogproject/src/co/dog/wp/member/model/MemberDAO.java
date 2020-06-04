@@ -65,6 +65,7 @@ public class MemberDAO {
 				vo.setName(rs.getString("name"));
 				vo.setPwd(rs.getString("pwd"));
 				vo.setRegdt(rs.getString("regdt"));
+				vo.setThumd(rs.getString("thumd"));
 			}
 			// 4. 결과저장
 
@@ -87,7 +88,7 @@ public class MemberDAO {
 			conn = ConnectionManager.getConnnect();
 
 			// 2. sql구문 준비
-			String sql = "update member set pwd=?, name=?, hobby=?, gender=?, religion=?, introduction=?"
+			String sql = "update member set pwd=?, name=?, thumd=?"
 					+ " where id=?";
 
 			psmt = conn.prepareStatement(sql);
@@ -95,7 +96,8 @@ public class MemberDAO {
 			// 3. 실행
 			psmt.setString(1, member.getPwd());
 			psmt.setString(2, member.getName());
-			psmt.setString(7, member.getId());
+			psmt.setString(3, member.getThumd());
+			psmt.setString(4, member.getId());
 
 			r = psmt.executeUpdate();
 
