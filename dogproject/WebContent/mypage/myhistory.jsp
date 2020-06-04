@@ -17,15 +17,16 @@
 <div class="sub_tit_wrap">
 	<span><script>document.write(tit01);</script></span>
 </div>
+
 	<div id="sub_content_wrap"  class="sub0301 inner">
 	<div class="inner" style="margin-bottom:10em">
 
 		<!-- 내정보 버튼 wrap -->
 		<div class="mySec mySec1 fl">
 			<div class="myBtnWrap">
-				<div><a href="Mymarket.do?id=${loginId}">내가 쓴 글</a></div>
-				<div><a>내가 쓴 후기글</a></div>
-				<div><a>공원 입장 시간</a></div>
+				<div><a href="MymarketList.do?id=${loginId}">내가 쓴 글</a></div>
+				<div><a href="MyreviewList.do?id=${loginId}">내가 쓴 후기글</a></div>
+				<div><a href="#">공원 입장 시간</a></div>
 			</div>
 			</div>
 			
