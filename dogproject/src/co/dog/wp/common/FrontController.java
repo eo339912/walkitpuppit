@@ -57,9 +57,15 @@ import co.dog.wp.member.controller.MemberInsertUp;
 import co.dog.wp.member.controller.MemberLogin;
 import co.dog.wp.member.controller.MemberLoginForm;
 import co.dog.wp.member.controller.MemberLogout;
+import co.dog.wp.message.controller.GetMessage;
 import co.dog.wp.message.controller.MessageInsert;
+import co.dog.wp.message.controller.MessageInsert2;
 import co.dog.wp.message.controller.MessageInsertForm;
+import co.dog.wp.message.controller.MessageInsertForm2;
 import co.dog.wp.message.controller.MessageViewForm;
+import co.dog.wp.message.controller.MessageViewForm2;
+import co.dog.wp.message.controller.SendMessage;
+import co.dog.wp.message.controller.SendView;
 import co.dog.wp.mypage.controller.Myhistory;
 import co.dog.wp.mypage.controller.MymarketList;
 import co.dog.wp.mypage.controller.Mypage;
@@ -155,6 +161,12 @@ public class FrontController extends HttpServlet {
 		comm.put("/MessageInsert.do", new MessageInsert());
 		comm.put("/MessageInsertForm.do", new MessageInsertForm());
 		comm.put("/MessageViewForm.do", new MessageViewForm());
+		comm.put("/GetMessage.do", new GetMessage());
+		comm.put("/SendMessage.do", new SendMessage());
+		comm.put("/SendView.do", new SendView());
+		comm.put("/MessageViewForm2.do", new MessageViewForm2());
+		comm.put("/MessageInsertForm2.do", new MessageInsertForm2());
+		comm.put("/MessageInsert2.do", new MessageInsert2());
 
 	}
 
