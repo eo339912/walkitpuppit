@@ -15,7 +15,7 @@
 		<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
 		  	<form action="MessageInsert.do" method="post" name="fwrite" id="fwrite">
-		  		  <input type="hidden" name="seq" value="" id="seq" class="frm_input required" >
+		  		  <input type="hidden" name="seq" value="${param.seq}" id="seq" class="frm_input required" >
 		  		   <div class="bo_w_info write_div3">
 			        <span>작성자</span>			 
 		  			 <input type="text" name="userid" value="${loginId}" id="userid" class="frm_input required" readonly>
@@ -23,7 +23,7 @@
 				
 			    <div class="bo_w_info write_div3">
 			        <span>받는사람</span>
-			        <input type="text" name="m_id" value="" id="m_id" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="받는사람">
+			        <input type="text" name="m_id" value="${param.mid}" id="m_id" required="" class="frm_input full_input required"  placeholder="받는사람">
 				</div>
 				
 				<div class="bo_w_tit write_div bo_w_info write_div2">

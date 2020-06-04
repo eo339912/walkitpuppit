@@ -15,7 +15,7 @@ public class MessageInsert implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = (String) request.getSession().getAttribute("loginId");
-		
+		String seq = request.getParameter("seq");
 		// 1 파라미터 받기
 		String title = request.getParameter("title");
 		String contents = request.getParameter("contents");
@@ -32,7 +32,7 @@ public class MessageInsert implements Command {
 		
 		messageDAO.messageInsert(message);
 		
-		return "message/messageInsert.jsp";
+		return "ParkWalkList.do?seq="+seq;
 	}
 
 }

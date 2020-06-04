@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import co.dog.wp.board.model.BoardVO;
 import co.dog.wp.common.ConnectionManager;
 
 public class ReviewDAO {
@@ -237,6 +238,42 @@ public class ReviewDAO {
 					ConnectionManager.close(conn);
 				}
 
+			}
+			
+			
+			// 전체조회
+			public ArrayList<ReviewVO> getReviewList() {
+				ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
+
+				try {
+					// 1. DB연결
+					conn = ConnectionManager.getConnnect();
+					// 2. 쿼리준비
+					String sql = "select * from review order by seq desc";
+					psmt = conn.prepareStatement(sql);
+					// 3. statement 실행
+					ResultSet rs = psmt.executeQuery();
+					while (rs.next()) {
+						ReviewVO vo = new ReviewVO();
+						vo.setSeq(rs.getString("seq"));
+						vo.setId(rs.getString("id"));
+						vo.setTitle(rs.getString("title"));
+						vo.setContent(rs.getString("content"));
+						vo.setFilename(rs.getString("filename"));
+						vo.setRegdt(rs.getString("regdt"));
+
+						list.add(vo);
+					}
+					// 4. 결과저장
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					// 5. DB연결 해제
+					ConnectionManager.close(conn);
+				}
+
+				return list;
 			}
 			
 

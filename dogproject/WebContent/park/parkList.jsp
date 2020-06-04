@@ -53,7 +53,7 @@
 							<tr> 
 						
 								<td><a href="ParkViewForm.do?seq=${vo.seq}">${vo.sname}</a></td>
-								<td><a onclick="OpenWindow(${vo.seq})">${vo.senter}</a></td>
+								<td><a onclick="OpenWindow(${vo.seq}, '${vo.sname}')">${vo.senter}</a></td>
 								
 							</tr>
 						</c:forEach>
@@ -77,8 +77,8 @@
 </div>
 
 <script>
-function OpenWindow(seq) {  
-      window.open("ParkWalkList.do?seq="+ seq,"_blank","top=50,left=50,width=816,height=340,resizable=1,scrollbars=no");
+function OpenWindow(seq, sname) {  
+      window.open("ParkWalkList.do?seq="+ seq + "&sname=" + sname,"_blank","top=50,left=50,width=816,height=750,resizable=1,scrollbars=no");
 }
 </script>
 
