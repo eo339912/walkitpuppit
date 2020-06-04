@@ -50,12 +50,12 @@
 			        	<c:forEach items="${board}" var="vo"  varStatus="status">
 							<tr>
 								<td class="td_num2"> ${((paging.page-1) * 5 + status.index+1)}</td>
-					            <td class="td_subject" style="padding-left:0px">
-				             	  	<div class="bo_tit">
+					            <td class="td_subject" style="padding-left:0px; position:relative">
+				             	  	<div class="bo_tit"  style="display:inline;">
 				             	  		<a href="BoardViewForm.do?seq=${vo.seq}">${vo.title}</a>
 				             	  		<c:if test="${loginId == 'admin'}">
 										    <div class="btn_confirm write_div" style="display: inline;">
-										    	<a href="BoardDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+										    	<a href="BoardDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 											</div>
 										</c:if>
 				             	  	</div>
@@ -74,7 +74,7 @@
 		    
 		    <c:if test="${loginId == 'admin'}">
 		    <div class="btn_confirm write_div">
-		    	<a href="BoardInsertForm.do" class="btn_submit btn fr" >글작성</a>
+		    	<a href="BoardInsertForm.do" class="btn_submit btn fr" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 글쓰기</a>
 			</div>
 			</c:if>
 			

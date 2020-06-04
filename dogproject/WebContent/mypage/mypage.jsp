@@ -74,7 +74,7 @@
 		</div><!-- sec2 -->
 		<div class="clear"></div>
 		<!-- section3_dogInfo-->
-		<div class="mySec3 dogInfo">
+		<!-- <div class="mySec3 dogInfo">
 			<span class="myHeader">강아지정보</span>
 			<div class="dogInfoWrap">
 				<ul>
@@ -88,53 +88,9 @@
 							<span class="fr">Age | 3살</span>
 						</div>
 					</li>
-					
-					<li>					
-						<div class="dogInfo">
-							<div class="dogImg fl"><img src=""></div>
-							<p class="pname">강아지이름<span>female</span></p>
-						</div>
-						<div class="dogInfo2">
-							<span>강아지종 | 시츄</span>
-							<span class="fr">Age | 3살</span>
-						</div>
-					</li>
-					
-					<li>					
-						<div class="dogInfo">
-							<div class="dogImg fl"><img src=""></div>
-							<p class="pname">강아지이름<span>female</span></p>
-						</div>
-						<div class="dogInfo2">
-							<span>강아지종 | 시츄</span>
-							<span class="fr">Age | 3살</span>
-						</div>
-					</li>
-					
-					<li>					
-						<div class="dogInfo">
-							<div class="dogImg fl"><img src=""></div>
-							<p class="pname">강아지이름<span>female</span></p>
-						</div>
-						<div class="dogInfo2">
-							<span>강아지종 | 시츄</span>
-							<span class="fr">Age | 3살</span>
-						</div>
-					</li>
-					
-					<li>					
-						<div class="dogInfo">
-							<div class="dogImg fl"><img src=""></div>
-							<p class="pname">강아지이름<span>female</span></p>
-						</div>
-						<div class="dogInfo2">
-							<span>강아지종 | 시츄</span>
-							<span class="fr">Age | 3살</span>
-						</div>
-					</li>
 				</ul>
 			</div>
-		</div><!-- sec3 -->
+		</div> --><!-- sec3 -->
 	</div><!-- inner -->
 </div>
 	<script>
