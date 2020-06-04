@@ -19,14 +19,10 @@ public class MypageUpdateForm implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  // 파라미터 받기
 		String id = (String) request.getSession().getAttribute("loginId");
-			
 	      // 서비스 로직처리 (회원정보 1건 조회)
 		   MemberDAO memberDAO = new MemberDAO();
-	    
 	      MemberVO vo = memberDAO.getMember(id);
-	     
-	      request.setAttribute("market", vo);
-	
+	      request.setAttribute("member", vo);
 		return "mypage/mypageUpdate.jsp";
 		
 	}
