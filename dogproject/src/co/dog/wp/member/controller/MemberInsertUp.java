@@ -74,7 +74,7 @@ public class MemberInsertUp extends HttpServlet implements Command {
 		}
 				
 		memberDAO.memberInsert(member);
-		response.sendRedirect(request.getContextPath()+ "/MemberLogin.do");
+		response.sendRedirect(request.getContextPath()+ "/MemberLoginForm.do");
 	}
 	
 	
