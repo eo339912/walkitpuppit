@@ -1,6 +1,7 @@
 package co.dog.wp.common;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -19,6 +20,8 @@ import co.dog.wp.board.controller.BoardUpdateForm;
 import co.dog.wp.board.controller.BoardView;
 import co.dog.wp.board.controller.BoardViewForm;
 import co.dog.wp.board.controller.CommentsDelete;
+import co.dog.wp.board.model.BoardDAO;
+import co.dog.wp.board.model.BoardVO;
 import co.dog.wp.main.controller.Main;
 import co.dog.wp.market.controller.CommentDelete;
 import co.dog.wp.market.controller.FcommentDelete;
@@ -47,6 +50,8 @@ import co.dog.wp.market.controller.ReviewUpdate;
 import co.dog.wp.market.controller.ReviewUpdateForm;
 import co.dog.wp.market.controller.ReviewView;
 import co.dog.wp.market.controller.ReviewViewForm;
+import co.dog.wp.market.model.ReviewDAO;
+import co.dog.wp.market.model.ReviewVO;
 import co.dog.wp.member.controller.MemberInsertForm;
 import co.dog.wp.member.controller.MemberInsertUp;
 import co.dog.wp.member.controller.MemberLogin;
@@ -159,6 +164,17 @@ public class FrontController extends HttpServlet {
 		String contextPath = request.getContextPath();
 		String path = url.substring(contextPath.length());
 		Command subCommand = comm.get(path);
+		
+		//footer
+		BoardDAO boardDAO = new BoardDAO();
+		ArrayList<BoardVO> boardlist = boardDAO.getBoardList();
+		request.setAttribute("footerBoard", boardlist);
+		
+		ReviewDAO reviewDAO = new ReviewDAO();
+		ArrayList<ReviewVO> reviewlist = reviewDAO.getReviewList();
+		request.setAttribute("footerReview", reviewlist);
+		
+		
 		
 		String viewPage = subCommand.exec(request, response);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
