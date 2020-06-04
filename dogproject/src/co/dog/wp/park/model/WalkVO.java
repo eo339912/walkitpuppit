@@ -7,6 +7,24 @@ String id;
 String inpark;
 String outpark;
 String incheck;
+String sname;
+String walktime;
+
+
+
+
+public String getWalktime() {
+	return walktime;
+}
+public void setWalktime(String walktime) {
+	this.walktime = walktime;
+}
+public String getSname() {
+	return sname;
+}
+public void setSname(String sname) {
+	this.sname = sname;
+}
 public String getSeq() {
 	return seq;
 }

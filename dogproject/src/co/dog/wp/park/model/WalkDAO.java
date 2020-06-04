@@ -20,13 +20,14 @@ public class WalkDAO {
 			conn = ConnectionManager.getConnnect();
 
 			// 2. sql구문 준비
-			String sql = "INSERT INTO WALK(SEQ, ID, INCHECK, INPARK, P_SEQ)"
-					+ " VALUES (SEQ_WALK.NEXTVAL, ?, 1, SYSDATE, ?)";
+			String sql = "INSERT INTO WALK(SEQ, ID, INCHECK, INPARK, P_SEQ, SNAME)"
+					+ " VALUES (SEQ_WALK.NEXTVAL, ?, 1, SYSDATE, ?, ?)";
 			psmt = conn.prepareStatement(sql);
 
 			// 3. 실행
 			psmt.setString(1, walk.getId());
-			psmt.setString(2, walk.getP_seq());
+			psmt.setString(2, walk.getP_seq());	
+			psmt.setString(3, walk.getSname());	
 
 			psmt.executeUpdate();
 

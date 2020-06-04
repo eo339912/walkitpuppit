@@ -20,12 +20,15 @@ public class ParkWalkIn implements Command {
 		}
 		// 1 파라미터 받기
 		String p_seq = request.getParameter("p_seq");
+		String sname = request.getParameter("sname");
 		
 		// 2. 서비스 로직 처리(DAO)
 		WalkDAO walkDAO = new WalkDAO();
 		WalkVO walk = new WalkVO();
 		walk.setId(id);
-		walk.setP_seq(p_seq);	
+		walk.setP_seq(p_seq);
+		walk.setSname(sname);
+		
 		walkDAO.WalkIN(walk);
 		
 		return "ParkViewForm.do?seq="+p_seq;

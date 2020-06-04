@@ -26,7 +26,7 @@
               <form name="fsearch" method="get">
               <input name="p" value="1" type="hidden">
               <input type="text" name="id" value="" required="" id="id" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
-              <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span>검색</span></button>
+              <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span></span></button>
               </form>
           </fieldset>
           <!-- } 게시판 검색 끝 -->   
