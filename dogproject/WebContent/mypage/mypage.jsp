@@ -35,7 +35,7 @@
 			<!-- 내정보 버튼 wrap -->
 			<div class="myBtnWrap">
 				<div><a>내가 쓴 글</a></div>
-				<div><a>좋아요한 공원</a></div>
+				<div><a>내가 쓴 후기글</a></div>
 				<div><a>공원 입장 시간</a></div>
 			</div>	
 		</div><!-- sec1 -->
