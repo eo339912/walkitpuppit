@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
 
 <%@include file="/common/header.jsp"%>
@@ -44,7 +45,11 @@
 						<c:forEach items="${myrlist}" var="vo">
 							<tr> 					
 								<td><a class="bold" href="ReviewViewForm.do?seq=${vo.seq}">${vo.title}</a></td>
-								<td><a>${vo.regdt}</a></td>						
+								
+								<fmt:parseDate value="${vo.regdt}" var="sdate" pattern="yyyy-MM-dd HH:mm:ss"></fmt:parseDate>
+            					<fmt:formatDate pattern="yyyy-MM-dd" value="${sdate}" var="bd"/>	
+            					
+            					<td class="td_datetime">${bd}</td>						
 							</tr>
 						</c:forEach>
 			        </tbody>

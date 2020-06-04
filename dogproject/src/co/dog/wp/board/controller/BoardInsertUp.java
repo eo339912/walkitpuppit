@@ -20,7 +20,7 @@ import co.dog.wp.common.FileRenamePolicy;
  * Servlet implementation class BoardInsertUp
  */
 @WebServlet("/BoardInsertUp.do")
-@MultipartConfig(location="d:/upload")
+@MultipartConfig(location="c:/upload")
 public class BoardInsertUp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

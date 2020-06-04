@@ -98,9 +98,10 @@ public class MypageDAO {
 			
 				// 2. 쿼리준비
 				String sql = "select id, seq, p_seq, sname," 
-						+ " to_char(inpark,'HH24:MI:SS') as inpark,"
-						+ " to_char(outpark,'HH24:MI:SS') as outpark,"
-						+ " round((outpark-inpark)*24*60) as walktime" 
+						+ " to_char(inpark,'HH24:MI') as inpark,"
+						+ " to_char(outpark,'HH24:MI') as outpark,"
+						+ " round((outpark-inpark)*24*60) as walktime,"
+						+ " to_char(inpark, 'YYYY-MM-DD') as tdate"
 						+ " from walk where id = ? and incheck=0 order by seq desc";
 		
 				psmt = conn.prepareStatement(sql);
@@ -116,6 +117,7 @@ public class MypageDAO {
 					walk.setInpark(rs.getString("inpark"));
 					walk.setOutpark(rs.getString("outpark"));
 					walk.setWalktime(rs.getString("walktime"));
+					walk.setTdate(rs.getString("tdate"));
 				
 					list.add(walk);
 				}

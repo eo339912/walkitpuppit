@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
 
 <%@include file="/common/header.jsp"%>
@@ -55,7 +56,11 @@
 								</td>			
 								<td><a href="MarketViewForm.do?seq=${vo.seq}" class="bold" >${vo.title}${vo.ftitle}</a></td>
 								<td><a>${vo.sselect}${vo.fsselect}</a></td>
-								<td><a>${vo.regdt}${vo.fregdt}</a></td>						
+								
+								<fmt:parseDate value="${vo.regdt}${vo.fregdt}" var="sdate" pattern="yyyy-MM-dd HH:mm:ss"></fmt:parseDate>
+            					<fmt:formatDate pattern="yyyy-MM-dd" value="${sdate}" var="bd"/>	
+            					
+            					<td class="td_datetime">${bd}</td>			
 							</tr>
 						</c:forEach>
 			        </tbody>

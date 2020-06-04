@@ -9,10 +9,16 @@ String outpark;
 String incheck;
 String sname;
 String walktime;
+String tdate;
 
 
 
-
+public String getTdate() {
+	return tdate;
+}
+public void setTdate(String tdate) {
+	this.tdate = tdate;
+}
 public String getWalktime() {
 	return walktime;
 }

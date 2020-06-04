@@ -35,6 +35,7 @@
 			        <caption>게시판 목록 </caption>
 			        <thead>
 			        <tr>
+			            <th scope="col">날짜</th>
 			            <th scope="col">공원이름</th>
 			            <th scope="col">입장시간</th>
 			            <th scope="col">퇴장시간</th>
@@ -43,7 +44,8 @@
 			        </thead>
 			        <tbody>
 						<c:forEach items="${mywlist}" var="vo">
-							<tr> 					
+							<tr> 		
+            					<td><a>${vo.tdate}</a></td>
 								<td><a href="ParkViewForm.do?seq=${vo.p_seq}" class="bold">${vo.sname}</a></td>
 								<td><a>${vo.inpark}</a></td>
 								<td><a>${vo.outpark}</a></td>
