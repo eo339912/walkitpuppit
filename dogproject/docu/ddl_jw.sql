@@ -80,4 +80,7 @@ SELECT w.*, w.inpark
 FROM park p
 INNER JOIN walk w ON p.seq = w.p_seq where p.seq = 205 and w.incheck = 1
 
-select * from walk where p_seq = 205 and incheck = 1
+select * from walk where p_seq = 205 and incheck = 1;
+
+select * from message;
+select * from message where m_id = 'admin' order by seq desc;

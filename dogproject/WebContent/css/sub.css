@@ -540,6 +540,12 @@
 .mySec2 .myHeader{padding: 16px 0;border-bottom:1px solid #dfdfdf; display:inline-block; width:100%; text-align:center}
 .mySec2 .myMessage{width:100%; padding:3% 2%;overflow: scroll; height: 100%;}
 .mySec2 .myMessage p{width:100%; margin-bottom:1%; padding:2% 3%; background-color:#eee; border-radius:20px; box-sizing:border-box;}
+.mySec2 .myMessage table{width:100%;}
+.mySec2 .myMessage table tr{border-bottom:1px dashed #ddd}
+.mySec2 .myMessage table tr td{padding:10px}
+.mySec2 .myMessage table tr th{padding:10px}
+.mySec2 .myMessage table thead tr{border-bottom:1px solid #ddd}
+
 .mySec3{border: 1px solid #dfdfdf;margin: 1%;overflow:hidden;box-sizing:border-box;}
 .mySec3 .myHeader{padding: 16px 0;border-bottom:1px solid #dfdfdf; display:inline-block; width:100%; text-align:center}
 .mySec3 .dogInfoWrap {width:100%; padding:3% 2%;overflow: scroll; height: 308px;}

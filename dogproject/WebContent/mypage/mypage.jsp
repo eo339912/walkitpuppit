@@ -47,21 +47,20 @@
 			        <caption>게시판 목록</caption>
 			        <thead>
 			        <tr>
-			            <th scope="col" width="25%">보낸사람</th>
+			            <th scope="col" width="20%">보낸사람</th>
 			            <th scope="col">제목</th>
-			            <th scope="col" width="15%">날짜  <i class="fa fa-sort" aria-hidden="true"></i></th>
+			            <th scope="col" width="30%">날짜  <i class="fa fa-sort" aria-hidden="true"></i></th>
 			        </tr>
 			        </thead>
 			        <tbody>
 			        	<c:forEach items="${message}" var="message"  varStatus="status">
 							<tr>
-								
 					            <td class="td_subject" style="padding-left:0px">
-				             	  	<div class="bo_tit">
-				             	  		<a href="MessageViewForm.do?seq=${message.seq}">${message.title}</a>			             	  	
-				             	  	</div>
+				             	  	<div class="bo_tit">${message.userid}</div>
 								</td>
-				            	<td class="td_name sv_use"><span class="sv_member">${message.userid}</span></td>
+				            	<td class="td_name sv_use"><span class="sv_member">
+				            		<a onclick="OpenWindow(${message.seq})">${message.title}</a>
+				            		</span></td>
 				                
 				                <fmt:parseDate value="${message.regdt}" var="sdate" pattern="yyyy-MM-dd HH:mm:ss"></fmt:parseDate>
             					<fmt:formatDate pattern="yyyy-MM-dd" value="${sdate}" var="bd"/>
@@ -138,7 +137,11 @@
 		</div><!-- sec3 -->
 	</div><!-- inner -->
 </div>
-
+	<script>
+function OpenWindow(seq) { 
+      window.open("MessageViewForm.do?seq=" + seq, "_blank","top=50,left=50,width=816,height=750,resizable=yes,scrollbars=no");
+}
+</script>
 	
 
 <%@include file="/common/footer.jsp" %>

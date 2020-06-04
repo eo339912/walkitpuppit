@@ -59,6 +59,7 @@ import co.dog.wp.member.controller.MemberLoginForm;
 import co.dog.wp.member.controller.MemberLogout;
 import co.dog.wp.message.controller.MessageInsert;
 import co.dog.wp.message.controller.MessageInsertForm;
+import co.dog.wp.message.controller.MessageViewForm;
 import co.dog.wp.mypage.controller.Myhistory;
 import co.dog.wp.mypage.controller.Mypage;
 import co.dog.wp.mypage.controller.MypageUpdate;
@@ -147,6 +148,7 @@ public class FrontController extends HttpServlet {
 		
 		comm.put("/MessageInsert.do", new MessageInsert());
 		comm.put("/MessageInsertForm.do", new MessageInsertForm());
+		comm.put("/MessageViewForm.do", new MessageViewForm());
 
 	}
 

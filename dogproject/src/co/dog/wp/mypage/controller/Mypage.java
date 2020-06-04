@@ -28,16 +28,10 @@ public class Mypage implements Command {
 		
 		
 		//쪽지 서비스로직
-		//MessageDAO messageDAO = new MessageDAO();
-		//String m_id = request.getParameter("m_id");
+		MessageDAO messageDAO = new MessageDAO();
+		List<MessageVO> list = messageDAO.getMessageList(id);
 		
-		//(쪽지함 리트스)
-		//List<MessageVO> list = messageDAO.getMessageList(m_id);
-		
-	//	request.setAttribute("message", list);
-		
-	//	MemberVO member = new MemberVO();
-		//request.setAttribute("member", member);
+		request.setAttribute("message", list);
 		
 		
 		return "mypage/mypage.jsp";

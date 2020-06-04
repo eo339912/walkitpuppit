@@ -95,6 +95,7 @@ public class MessageDAO {
 			ResultSet rs = psmt.executeQuery();
 			if (rs.next()) {
 				message.setUserid(rs.getString("userid"));
+				message.setM_id(rs.getString("m_id"));
 				message.setSeq(rs.getString("seq"));
 				message.setTitle(rs.getString("title"));
 				message.setContents(rs.getString("contents"));
