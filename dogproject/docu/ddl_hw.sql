@@ -31,6 +31,7 @@ id varchar2(20),
 inpark date ,
 outpark  date,
 incheck number(2),
+sname VARCHAR2(60),
 CONSTRAINT walk_FK FOREIGN KEY (id) REFERENCES member(id),
 CONSTRAINT w_seq_FK FOREIGN KEY (p_seq) REFERENCES park(seq)
 );
@@ -53,7 +54,7 @@ drop table message;
 alter table walk 
 add (sname VARCHAR2(60));
 
-alter table walk add FOREIGN KEY(sname) REFERENCES park(sname);
+
 
 add CONSTRAINT walks_FK FOREIGN KEY (sname) REFERENCES park(sname);
 
@@ -63,5 +64,10 @@ select round(((to_date(outpark,'HHMISS')-to_date(inpark,'HHMISS'))*24*60),3) AS 
 
 select to_date(outpark,'YYYY-MM-DD') as outpark from walk where seq=26;
 
-select round((outpark-inpark)*24*60) as walktime from walk where seq=26 and id='admin';
+select round((outpark-inpark)*24*60) as walktime from walk where seq=26 and incheck=0;
+
+select to_char(inpark,'HH24:MI') from walk where seq=28
+select to_char(inpark,'MI') from walk where seq=28
+
+
   

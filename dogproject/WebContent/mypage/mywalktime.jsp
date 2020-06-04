@@ -36,7 +36,7 @@
 			        <tbody>
 						<c:forEach items="${mywlist}" var="vo">
 							<tr> 					
-								<td><a href="ParkViewForm.do?seq=${vo.seq}" class="bold">${vo.sname}</a></td>
+								<td><a href="ParkViewForm.do?seq=${vo.p_seq}" class="bold">${vo.sname}</a></td>
 								<td><a>${vo.inpark}</a></td>
 								<td><a>${vo.outpark}</a></td>
 								<td><a>${vo.walktime}</a></td>														

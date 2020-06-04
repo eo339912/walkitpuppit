@@ -97,10 +97,10 @@ public class MypageDAO {
 				conn = ConnectionManager.getConnnect();
 			
 				// 2. 쿼리준비
-				String sql = "select id, seq, sname," 
-						+ " to_date(inpark,'YYYY-MM-DD') as inpark,"
-						+ " to_date(outpark,'YYYY-MM-DD') as outpark,"
-						+ " round((outpark-inpark)*24*60) as walktime"
+				String sql = "select id, seq, p_seq, sname," 
+						+ " to_char(inpark,'YYYY-MM-DD') as inpark,"
+						+ " to_char(outpark,'YYYY-MM-DD') as outpark,"
+						+ " round((outpark-inpark)*24*60) as walktime" 
 						+ " from walk where id = ? and incheck=0 order by seq desc";
 		
 				psmt = conn.prepareStatement(sql);
@@ -110,6 +110,7 @@ public class MypageDAO {
 				ResultSet rs = psmt.executeQuery();
 				while (rs.next()) {
 					WalkVO walk = new WalkVO();
+					walk.setP_seq(rs.getString("p_seq"));
 					walk.setSeq(rs.getString("seq"));
 					walk.setSname(rs.getString("sname"));
 					walk.setInpark(rs.getString("inpark"));
