@@ -57,7 +57,7 @@
                             
                             <c:if test="${loginId == vo.id}">
 										    <div class="btn_confirm write_div" style="display: inline;">
-										    	<a href="MarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+										    	<a href="MarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr"  style="position: absolute;right: 0;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 											</div>
 											</c:if>
                      </td>
@@ -68,10 +68,11 @@
                        </c:forEach>
                  </tbody>
               </table>
-              <ul class="btn_confirm write_div">
-    	    <li class="btn_submit btn fr"><a href="FmarketInsertForm.do">글작성</a></li>
-			</ul>
+              
           </div>
+          <ul class="btn_confirm write_div">
+    	    <li class="btn_submit btn fr"><a href="FmarketInsertForm.do"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 글쓰기</a></li>
+			</ul>
  		<script>
 				function gopage(p){
 					document.fsearch.p.value = p;

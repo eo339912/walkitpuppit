@@ -51,7 +51,7 @@
                             
                             <c:if test="${loginId == vo.id}">
 										    <div class="btn_confirm write_div" style="display: inline;">
-										    	<a href="ReviewDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="position: absolute;right: 0;">글삭제</a>
+										    	<a href="ReviewDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="position: absolute;right: 0;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 											</div>
 											</c:if>
                      </td>
@@ -62,12 +62,14 @@
                        </c:forEach>
                  </tbody>
               </table>
-               <c:if test="${loginId != null}">
+               
+          </div>
+          
+          <c:if test="${loginId != null}">
               <ul class="btn_confirm write_div">
-    	    <li class="btn_submit btn fr"><a href="ReviewInsertForm.do">글작성</a></li>
+    	    <li class="btn_submit btn fr"><a href="ReviewInsertForm.do"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 글쓰기</a></li>
 			</ul>
 			</c:if>
-          </div>
  		<script>
 				function gopage(p){
 					document.fsearch.p.value = p;
