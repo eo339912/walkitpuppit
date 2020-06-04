@@ -70,7 +70,8 @@
 .page04 .sub_menu_wrap .sub_menu_box li.m4 a,
 .page05 .sub_menu_wrap .sub_menu_box li.m5 a,
 .page06 .sub_menu_wrap .sub_menu_box li.m6 a,
-.page07 .sub_menu_wrap .sub_menu_box li.m7 a{font-weight:500; color:#fff; }
+.page07 .sub_menu_wrap .sub_menu_box li.m7 a,
+.page08 .sub_menu_wrap .sub_menu_box li.m8 a{font-weight:500; color:#fff; }
 
 .page01 .sub_menu_wrap .sub_menu_box li.m1 a:after,
 .page02 .sub_menu_wrap .sub_menu_box li.m2 a:after,
@@ -78,15 +79,17 @@
 .page04 .sub_menu_wrap .sub_menu_box li.m4 a:after,
 .page05 .sub_menu_wrap .sub_menu_box li.m5 a:after,
 .page06 .sub_menu_wrap .sub_menu_box li.m6 a:after,
-.page07 .sub_menu_wrap .sub_menu_box li.m7 a:after{transform:scaleX(1);}
+.page07 .sub_menu_wrap .sub_menu_box li.m7 a:after,
+.page08 .sub_menu_wrap .sub_menu_box li.m8 a:after{transform:scaleX(1);}
 
 .page01 .sub_menu_wrap .sub_menu_box li.m1 a:after,
 .page02 .sub_menu_wrap .sub_menu_box li.m2 a:after,
 .page03 .sub_menu_wrap .sub_menu_box li.m3 a:after,
 .page04 .sub_menu_wrap .sub_menu_box li.m4 a:after,
 .page05 .sub_menu_wrap .sub_menu_box li.m5 a:after,
-.page06 .sub_menu_wrap .sub_menu_box li.m6 a:after.
-.page07 .sub_menu_wrap .sub_menu_box li.m7 a:after{transform:scaleX(1); }
+.page06 .sub_menu_wrap .sub_menu_box li.m6 a:after,
+.page07 .sub_menu_wrap .sub_menu_box li.m7 a:after,
+.page08 .sub_menu_wrap .sub_menu_box li.m8 a:after{transform:scaleX(1); }
 
 .sub01 .sub_menu_box.sub01,
 .sub02 .sub_menu_box.sub02,
@@ -94,7 +97,8 @@
 .sub04 .sub_menu_box.sub04,
 .sub05 .sub_menu_box.sub05,
 .sub06 .sub_menu_box.sub06,
-.sub07 .sub_menu_box.sub07{display:block;}
+.sub07 .sub_menu_box.sub07,
+.sub08 .sub_menu_box.sub08{display:block;}
 
 @media all and (max-width:1000px) {
 	#sub_vis_wrap{padding-bottom:15px;}
@@ -113,7 +117,8 @@
 	.page04 .sub_menu_wrap .sub_menu_box li.m4 a,
 	.page05 .sub_menu_wrap .sub_menu_box li.m5 a,
 	.page06 .sub_menu_wrap .sub_menu_box li.m6 a,
-	.page07 .sub_menu_wrap .sub_menu_box li.m7 a{font-weight:500; color:#FBA726; }
+	.page07 .sub_menu_wrap .sub_menu_box li.m7 a,
+	.page08 .sub_menu_wrap .sub_menu_box li.m8 a{font-weight:500; color:#FBA726; }
 
 	.sub01 .sub_menu_box.sub01,
 	.sub02 .sub_menu_box.sub02,
@@ -121,7 +126,8 @@
 	.sub04 .sub_menu_box.sub04,
 	.sub05 .sub_menu_box.sub05,
 	.sub06 .sub_menu_box.sub06,
-	.sub07 .sub_menu_box.sub07{display:none;}
+	.sub07 .sub_menu_box.sub07,
+	.sub08 .sub_menu_box.sub08{display:none;}
 }
 
 
@@ -575,7 +581,15 @@
   margin-bottom: 15px;
 }
 
-.alert.warning {background-color: #ff9800;}
+.alert.warning {background-color: #ff9800;
+    position: fixed;
+    width: calc(50% - 20px);
+    top: 0;
+    left: 50%;
+    margin: 10px;
+    z-index: 9999;
+    transform: translateX(-50%);
+}
 
 .closebtn {
   margin-left: 15px;

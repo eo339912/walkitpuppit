@@ -9,7 +9,7 @@
 
 <script> var tit01=" 산책로"</script>
 
-<div id="sub_vis_wrap" class="sub01 page01">
+<div id="sub_vis_wrap" class="sub01 page${param.m}">
 	<%@include file="/common/sub_vis.jsp"%>
 	<jsp:include page="/common/sub_menu.jsp"/>
 </div>
@@ -25,11 +25,23 @@
 		<input type="hidden" name="seq" value="${param.seq}">
 		
 		<article id="bo_v" style="width:100%">
-		    <header>
-		        <h2 id="bo_v_title">
+		    <header class="oh">
+		        <h2 id="bo_v_title" class="fl">
 		        	<span class="bo_v_tit">${park.spotnm} ${park.sname} <script>document.write(tit01);</script></span>
 		        	
 		        </h2>
+		        
+		     <div class="bo_vc_w_wr fr" style="margin-top: 39px;">
+		       <ul class="bo_ul_san">
+		       
+		       		<c:if test="${walk.seq == null || walk.incheck == 0}">
+		    	       <li><button type="button"  onclick="crayBtn1()" class="btn_b01 btn btn_add">입장하기</button></li>
+		       		</c:if>
+		       		<c:if test="${walk.seq != null && walk.incheck == 1}">
+	    	       		<li><button type="button" onclick="location.href='ParkWalkOut.do?seq=${walk.seq}&p_seq=${param.seq}'" class="btn_b01 btn btn_add">퇴장하기</button></li>
+	    	       	</c:if>
+	    	    </ul>
+            </div>
 		    </header>
 		    
 		   
@@ -74,7 +86,7 @@
                      infowindow.open(map, marker);
                      
                      });
-
+                     
                      }
                      
                      </script>
@@ -86,30 +98,8 @@
 		        </div>
 		         <!-- } 본문 내용 끝 -->
 		    </section>
+		
 
-		    <div class="bo_vc_w_wr">
-		       <ul class="bo_ul_san">
-		       
-		       		<c:if test="${walk.seq != null && walk.incheck == 1}">
-	    	       		<li><a href="ParkWalkOut.do?seq=${walk.seq}&p_seq=${param.seq}" onclick="delchk();">퇴장하기</a></li>
-	    	       	</c:if>
-	    	       	
-
-					<c:if test="${walk.seq == null || walk.incheck == 0}">
-		    	       <li><a href="ParkWalkIn.do?p_seq=${param.seq}" onclick="delchk2();">입장하기</a></li>
-		       		</c:if>
-	    	    </ul>
-            </div>
-			<script type="text/javascript">
-						function delchk(){
-       						return confirm("퇴장하시겠습니까?");
-					}
-						
-						function delchk2(){
-   							return confirm("배변봉투 준비 하셨나요 ?\n*애완동물 오물 미처리 시 10만원 과태료 부과* \n \n 목줄 착용 하셨나요?\n *1차 20만원, 2차 30만원, 3차 50만원 과태료 부과*\n\n");
-				}
-					</script>
-					
 		<button type="button" class="cmt_btn"><i class="fa fa-commenting-o" aria-hidden="true"></i> 댓글목록</button>
 		
 				<!-- 댓글 시작 { -->   
@@ -156,6 +146,31 @@
 			</form>
 		</aside>
 		
+		<div id="dialog-message" title="잠깐! 펫티켓 챙기셨나요?" style='display:none'>
+		 	<p style="font-size:20px; font-weight:bold">① 반려견과 외출할 때에는 목줄·인식표를 착용해주세요!</p>
+			※ 위반 시 과태료 : 1차 위반 20만원 / 2차 30만원 / 3차 50만원<br>
+			<span style="font-size:15px;">
+			목줄 등 안전조치를 위반하여 사람의 신체에 상해를 이르게 한 자 : 2년 이하의 징역 또는 2천만원 이하의 벌금<br>
+			목줄 등 안전조치를 위반하여 사람을 사망에 이르게 한 자 : 3년 이하의 징역 또는 3천만원 이하의 벌금
+			</span>
+		<br><br>
+			<p style="font-size:20px; font-weight:bold">② 쾌적한 산책문화를 위해 외출 시에는 배변봉투를 꼭 챙겨주세요!</p>
+			※ 미수거 시 과태료 : 1차 위반 5만원 / 2차 7만원 / 3차 10만원
+		</div>
+		
+		<script>
+		function crayBtn1()
+		{
+			$('#dialog-message').dialog({
+				modal: true, 
+				buttons: {
+					"입장하기": function() { $(this).dialog('close'); location.href='ParkWalkIn.do?p_seq=${param.seq}'},
+					"취소": function() { $(this).dialog('close'); },
+				}
+			});
+		}
+		</script>
+		
 		<script>
 		
 		$(function() {            
@@ -175,6 +190,7 @@
 		
 		</div>
 </div>
+
 
 
 

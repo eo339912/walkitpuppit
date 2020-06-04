@@ -449,3 +449,22 @@ box-sizing: content-box;
 /* Mobile화면으로 */
 #device_change {display:block;margin:0.3em;padding:0.5em 0;border:1px solid #eee;border-radius:2em;background:#fff;color:#000;font-size:2em;text-decoration:none;text-align:center}
 
+
+
+/* add */
+.btn_add{
+	background: #f97111;
+	line-height: 45px;
+    height: 45px;
+    padding: 0 40px;
+}
+.btn_add:hover {
+    background: #e26e1c;
+}
+.ui-dialog{
+width:800px !important;
+}
+.ui-widget-header {
+    background: #ff880e !important;
+    color: #fff !important;
+}

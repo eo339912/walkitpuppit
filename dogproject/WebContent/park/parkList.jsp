@@ -8,8 +8,7 @@
 
 
 <script> var tit01="산책로"</script>
-
-<div id="sub_vis_wrap" class="sub01 page01">
+<div id="sub_vis_wrap" class="sub01 page${param.m}">
 	<%@include file="/common/sub_vis.jsp"%>
 	<jsp:include page="/common/sub_menu.jsp"/>
 </div>
@@ -31,6 +30,7 @@
 		        <legend>게시물 검색</legend>		
 		        <form name="searchfrm" method="get">
 		        	<input name="p" value="1" type="hidden">
+		        	
 		        	<input name="spotnum" value="${param.spotnum}" type="hidden">
 		        	<input name="sname2" value="${param.sname}" type="hidden">
 		        	<input type="text" name="sname" value="" id="sname" class="sch_input" size="25" maxlength="20" placeholder="장소를 입력해주세요">
@@ -44,17 +44,21 @@
 			        <caption>게시판 목록 </caption>
 			        <thead>
 			        <tr>
-			            <th scope="col">공원이름</th>
-			            <th scope="col">산책중인 강아지(수)</th>
+			            <th>공원이름</th>
+			            <th>산책중인 강아지(수)</th>
 			        </tr>
 			        </thead>
 			        <tbody>
 						<c:forEach items="${park}" var="vo">
 							<tr> 
 						
-								<td><a href="ParkViewForm.do?seq=${vo.seq}">${vo.sname}</a></td>
+								<td style="line-height:29px;">
+									<img src="./images/sub/list_icon_1.png" style="width:29px; margin:0 10px;"/>
+									<a href="ParkViewForm.do?seq=${vo.seq}&m=${param.m}">
+										<strong>${vo.sname} 산책로</strong>
+									</a>
+								</td>
 								<td><a onclick="OpenWindow(${vo.seq}, '${vo.sname}')">${vo.senter}</a></td>
-								
 							</tr>
 						</c:forEach>
 			        </tbody>
@@ -81,5 +85,9 @@ function OpenWindow(seq, sname) {
       window.open("ParkWalkList.do?seq="+ seq + "&sname=" + sname,"_blank","top=50,left=50,width=816,height=750,resizable=1,scrollbars=no");
 }
 </script>
+
+
+
+
 
 <%@include file="/common/footer.jsp" %>
