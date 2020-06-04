@@ -25,8 +25,8 @@
 		<div class="mySec mySec1 fl">
 			<div class="myBtnWrap">
 				<div><a href="MymarketList.do?id=${loginId}">내가 쓴 글</a></div>
-				<div><a>내가 쓴 후기글</a></div>
-				<div><a>공원 입장 시간</a></div>
+				<div><a href="MyreviewList.do?id=${loginId}">내가 쓴 후기글</a></div>
+				<div><a href="#">공원 입장 시간</a></div>
 			</div>
 			</div>
 			
