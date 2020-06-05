@@ -16,23 +16,23 @@
 			<input type="hidden" name="seq" value="${param.seq}" id="seq" class="frm_input required" >
 		  	<div class="bo_w_info write_div3">
 				<span>작성자</span>			 
-		  		<p>${message.userid}</p>
+		  		<p class="add">${message.userid}</p>
 			</div>
 				
 			<div class="bo_w_info write_div3">
 				<span>받는사람</span>
-			    <p>${message.m_id}</p>
+			    <p class="add">${message.m_id}</p>
 			</div>
 				
 			<div class="bo_w_tit write_div bo_w_info write_div2">
 				<span>제목</span>
-				<p>${message.title}</p>
+				<p class="add">${message.title}</p>
 			</div>
 				
 				
 			<div class="write_div  bo_w_info write_div2">
 				<span>내용</span>
-			    <p>${message.contents}</p>
+			    <p class="add">${message.contents}</p>
 			</div>
 			    
 		</section>

@@ -32,8 +32,8 @@
 				<div class="bo_w_tit write_div bo_w_info write_div2">
 				     <span>판매상태</span>
 <div style="margin-top:11.5px; padding-bottom:15px; font-size:0.9em">
-							 &nbsp;&nbsp;<input type="radio" value ="판매중" name="fsselect" class="frm_input2"/> 판매중  &nbsp;&nbsp;
-							 &nbsp;&nbsp;<input type="radio" value ="판매완료" name="fsselect" class="frm_input2"/> 판매완료
+							 &nbsp;&nbsp;<input type="radio" value ="판매중" name="fsselect" class="frm_input2"/> 나눔중  &nbsp;&nbsp;
+							 &nbsp;&nbsp;<input type="radio" value ="판매완료" name="fsselect" class="frm_input2"/> 나눔완료
 					</div>
 				</div>
 					
