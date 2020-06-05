@@ -15,11 +15,12 @@ public class FmarketDelete implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//파라미터 받기 -> 세션에서 seq가져오기
 		String seq = request.getParameter("seq");
+		
 		//서비스 로직 처리
 		MarketDAO marketdao = new MarketDAO();
 		marketdao.deleteMarket(seq);
 		
-		return "market/fmarketList.jsp";
+		return "FmarketList.do";
 	}
 
 }
