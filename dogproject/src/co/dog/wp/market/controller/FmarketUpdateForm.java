@@ -20,9 +20,8 @@ public class FmarketUpdateForm implements Command {
 			
 	      // 서비스 로직처리 (회원정보 1건 조회)
 	      MarketDAO marketdao = new MarketDAO();
-	    
 	      MarketVO vo = marketdao.getFmarket(seq);
-	     
+	      
 	      request.setAttribute("market", vo);
 	
 		return "market/fmarketUpdate.jsp";

@@ -186,6 +186,34 @@ import co.dog.wp.common.ConnectionManager;
 					ConnectionManager.close(conn);
 				}
 			}
+			public void fmarketUpdate(MarketVO market) {
+				int r = 0;
+				try {
+					conn = ConnectionManager.getConnnect();
+					// 2. sql구문 준비
+					String sql = "update market set fcontent = ?, ftitle = ?, filename = ?, fsselect = ?, fsell = ?, fprice=?"
+							+ " where seq = ? ";
+					psmt = conn.prepareStatement(sql);
+					// 3. 실행
+					psmt.setString(1, market.getFcontent());
+					psmt.setString(2, market.getFtitle());
+					psmt.setString(3, market.getFilename());
+					psmt.setString(4, market.getFsselect());
+					psmt.setString(5, market.getFsell());
+					psmt.setString(6, market.getFprice());
+					psmt.setString(7, market.getSeq());
+				
+					r = psmt.executeUpdate();
+					// 4. 결과처리
+					System.out.println(r + " 건이 수정됨.");
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					// 5. 연결해제
+					ConnectionManager.close(conn);
+				}
+			}
 			public void marketDelete(String id) {		
 				try {
 					conn = ConnectionManager.getConnnect();

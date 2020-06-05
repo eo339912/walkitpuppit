@@ -42,7 +42,6 @@ public class FmarketUpdate extends HttpServlet implements Command {
 			String fcontent = request.getParameter("fcontent");
 			String filename = request.getParameter("filename");
 			String fsselect = request.getParameter("fsselect");
-			String regdt = request.getParameter("regdt");
 			String fsell = request.getParameter("fsell");
 			String fprice = request.getParameter("fprice");
 			
@@ -53,7 +52,6 @@ public class FmarketUpdate extends HttpServlet implements Command {
 			market.setFtitle(ftitle);
 			market.setSeq(seq);
 			market.setFsselect(fsselect);
-			market.setRegdt(regdt);
 			market.setFsell(fsell);
 			market.setFprice(fprice);
 			market.setFilename(filename);
@@ -73,8 +71,8 @@ public class FmarketUpdate extends HttpServlet implements Command {
 				market.setFilename(f.getName()); //파일명을 vo에 담기
 			}
 					
-			marketDao.marketUpdate(market);
-			response.sendRedirect(request.getContextPath()+ "/MarketList.do");
+			marketDao.fmarketUpdate(market);
+			response.sendRedirect(request.getContextPath()+ "/FmarketList.do");
 		}
 		
 		private String getFileName(Part part) throws UnsupportedEncodingException {

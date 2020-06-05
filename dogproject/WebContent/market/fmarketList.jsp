@@ -57,7 +57,7 @@
                             
                             <c:if test="${loginId == vo.id or loginId == 'admin'}" >
 										    <div class="btn_confirm write_div" style="display: inline;">
-										    	<a href="MarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr"  style="position: absolute;right: 0;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+										    	<a href="FmarketDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr"  style="position: absolute;right: 0;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 											</div>
 											</c:if>
                      </td>
