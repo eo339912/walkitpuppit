@@ -42,6 +42,8 @@ filename varchar2(1000), /*파일업로드*/
 id varchar2(20), /*작성자*/
 regdt date, /*등록일자*/
 cnt number(20)
+CONSTRAINT board_FK FOREIGN KEY (b_seq) REFERENCES board(seq) on delete cascade
+
 );
 
 CREATE SEQUENCE seq_comments;
