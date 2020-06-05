@@ -47,8 +47,8 @@
 			        <caption>게시판 목록</caption>
 			        		<div class="myhistory">
 			<div class="myBtnWrap">
-				<div><a href="GetMessage.do?id=${loginId}">받은쪽지함</a></div>
-				<div><a href="SendMessage.do?id=${loginId}">보낸쪽지함</a></div>	
+				<div><a href="Mypage.do?id=${loginId}">받은쪽지함</a></div>
+				<div class="active"><a href="SendMessage.do?id=${loginId}">보낸쪽지함</a></div>	
 				<div><a onclick="OpenWindow2('${loginId}')"><i class="fa fa-commenting-o" aria-hidden="true" style="font-size:30px"></i></a></div>			
 							
 			</div>

@@ -48,12 +48,39 @@
 			        		<div class="myhistory">
 			<div class="myBtnWrap">
 				<input type="hidden" name="seq" value="${param.seq}" id="seq" class="frm_input required" >
-				<div><a href="GetMessage.do?id=${loginId}">받은쪽지함</a></div>
+				<div class="active"><a href="Mypage.do?id=${loginId}">받은쪽지함</a></div>
 				<div><a href="SendMessage.do?id=${loginId}">보낸쪽지함</a></div>	
 				<div><a onclick="OpenWindow('${loginId}')"><i class="fa fa-commenting-o" aria-hidden="true" style="font-size:30px"></i></a></div>			
 							
 			</div>
 		</div>
+		
+		<thead>
+			        <tr>
+			            <th scope="col" width="20%">보낸사람</th>
+			            <th scope="col">제목</th>
+			            <th scope="col" width="30%">날짜  <i class="fa fa-sort" aria-hidden="true"></i></th>
+			        </tr>
+			        </thead>
+			        <tbody>
+			        	<c:forEach items="${message}" var="message"  varStatus="status">
+							<tr>
+					            <td class="td_subject" style="padding-left:0px">
+				             	  	<div class="bo_tit">${message.userid}</div>
+								</td>
+				            	<td class="td_name sv_use"><span class="sv_member">
+				            		<a onclick="OpenWindow(${message.seq})">${message.title}</a>
+				            		</span></td>
+				                
+				                <fmt:parseDate value="${message.regdt}" var="sdate" pattern="yyyy-MM-dd HH:mm:ss"></fmt:parseDate>
+            					<fmt:formatDate pattern="yyyy-MM-dd" value="${sdate}" var="bd"/>
+				               
+				                <td class="td_datetime">${bd}</td>
+							</tr>
+						</c:forEach>
+			        </tbody>
+		
+		
 	        </table>
 			</div>
 		</div><!-- sec2 -->

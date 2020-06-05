@@ -14,7 +14,7 @@
 	<div class="inner" style="margin-bottom:10em"><!-- skin : basic_voc -->
 		<section id="bo_w">
 	    <!-- 게시물 작성/수정 시작 { -->
-		  	<form action="MessageInsert.do" method="post" name="fwrite" id="fwrite">
+		  	<form action="MessageInsert2.do" method="post" name="fwrite" id="fwrite">
 		  		  <input type="hidden" name="seq" value="${param.seq}" id="seq" class="frm_input required" >
 		  		   <div class="bo_w_info write_div3">
 			        <span>작성자</span>			 

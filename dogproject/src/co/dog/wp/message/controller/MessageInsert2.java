@@ -33,7 +33,7 @@ public class MessageInsert2 implements Command {
 		messageDAO.messageInsert(message);
 
 		
-		return "message/massageInsert2.jsp";
+		return "/message/massageInsert2.do";
 	}
 
 }
