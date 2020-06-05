@@ -43,7 +43,7 @@
 		        <span class="sound_only">댓글</span><strong><a href="#bo_vc"> <i class="fa fa-commenting-o" aria-hidden="true"></i>0건</a></strong>
 		        <span class="sound_only">조회</span><strong><i class="fa fa-eye" aria-hidden="true"></i> ${market.cnt}회</strong>
 		        <span class="sound_only">판매물품: </span><strong>${market.fsell}</strong>
-		        <strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> ${market.regdt}</strong>
+		        <strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> ${market.fregdt}</strong>
 		    </section>
 		
 		    <section id="bo_v_atc">

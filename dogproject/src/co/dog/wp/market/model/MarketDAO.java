@@ -267,7 +267,7 @@ import co.dog.wp.common.ConnectionManager;
 							vo.setFcontent(rs.getString("fcontent"));
 							vo.setFilename(rs.getString("filename"));
 							vo.setFsselect(rs.getString("fsselect"));
-							vo.setRegdt(rs.getString("regdt"));
+							vo.setFregdt(rs.getString("fregdt"));
 							vo.setFsell(rs.getString("fsell"));
 							vo.setCnt(rs.getString("cnt"));
 
