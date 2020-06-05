@@ -6,7 +6,7 @@ public class Paging {
 	int totalPageCount;     //페이지 갯수
 	int totalRecord ;		//전체 레코드건수
 	int page = 1;			//현재 페이지
-	int startPage;          //페이지 리스트의 첫 페이지 번호
+	int startPage;    s      //페이지 리스트의 첫 페이지 번호
 	int endPage;            //페이지 리스트의 마지막 페이지 번호 
 	int first;
 	int last;
