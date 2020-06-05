@@ -43,7 +43,7 @@
 		        <span class="sound_only">조회</span><strong><i class="fa fa-eye" aria-hidden="true"></i> ${market.cnt}회</strong>
 		        <span class="">판매물품: </span><strong>${market.sell}</strong>
 		        <span class="">가격:</span><strong> ${market.price}원</strong>
-		        <strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> ${market.regdt}</strong>
+		        <strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i>${market.regdt}</strong>
 		    </section>
 		
 		    <section id="bo_v_atc">

@@ -2,6 +2,7 @@ package co.dog.wp.member.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 import javax.servlet.ServletException;
@@ -52,6 +53,7 @@ public class MemberInsertUp extends HttpServlet implements Command {
 		String pwd = request.getParameter("pwd");
 		String pwdcf = request.getParameter("pwdcf");
 		String name = request.getParameter("name");
+		String pwckok = request.getParameter("pwckok");
 
 	
 		// 2. 서비스 로직 처리(DAO)
@@ -73,8 +75,22 @@ public class MemberInsertUp extends HttpServlet implements Command {
 			member.setThumd(f.getName()); //파일명을 vo에 담기
 		}
 				
-		memberDAO.memberInsert(member);
-		response.sendRedirect(request.getContextPath()+ "/MemberLoginForm.do");
+		System.out.println(pwckok);
+		PrintWriter out = response.getWriter();
+		if( !pwckok.isEmpty()) {
+			int ok = memberDAO.memberInsert(member);
+			if(ok == 1) {
+				out.println("<script>alert('계정이 등록 되었습니다'); location.href='MemberLoginForm.do';</script>");							
+			}else if(ok != 1){
+				out.println("<script>alert('존재하는 아이디입니다.'); location.href='MemberInsertForm.do';</script>");						
+			}
+		}else if(pwckok.isEmpty()){
+			out.println("<script>alert('비밀번호를 확인해주세요'); location.href='MemberInsertForm.do';</script>");						
+		}
+			
+		out.flush();
+		
+		//response.sendRedirect(request.getContextPath()+ "/MemberInsertForm.do?ok=1");
 	}
 	
 	

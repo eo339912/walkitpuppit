@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import co.dog.wp.common.Command;
 import co.dog.wp.member.model.MemberDAO;
@@ -24,7 +25,6 @@ public class MemberLogin implements Command {
 		MemberDAO dao = new MemberDAO();
 		MemberVO vo = dao.getMember(id);
 		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out = response.getWriter();
 		
 		//id.조회 결과없으면 id가 없다.
 		//id.조회 결과있으면 pwd가 맞는지 검사 후 로그인 -> 틀리면 오류 
@@ -39,10 +39,10 @@ public class MemberLogin implements Command {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginId", id);
 			session.setAttribute("loginMember", vo);
+			
 			return "/";
 			//String ContextPath= request.getContextPath();
 			//response.sendRedirect(ContextPath + "/");
-			
 		}
 		
 		

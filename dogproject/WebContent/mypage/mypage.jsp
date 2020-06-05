@@ -50,7 +50,7 @@
 				<input type="hidden" name="seq" value="${param.seq}" id="seq" class="frm_input required" >
 				<div class="active"><a href="Mypage.do?id=${loginId}">받은쪽지함</a></div>
 				<div><a href="SendMessage.do?id=${loginId}">보낸쪽지함</a></div>	
-				<div><a onclick="OpenWindow('${loginId}')"><i class="fa fa-commenting-o" aria-hidden="true" style="font-size:30px"></i></a></div>			
+				<div><a onclick="OpenWindow1('${loginId}')" style="padding: 3px 0;"><i class="fa fa-commenting-o" aria-hidden="true" style="font-size:30px"></i></a></div>			
 							
 			</div>
 		</div>
@@ -110,9 +110,16 @@
 	<script>
 
 
-function OpenWindow(userid, seq) { 
-      window.open("MessageInsertForm2.do?userid=" + userid, "_blank","top=50,left=50,width=816,height=750,resizable=yes,scrollbars=no");
+
+function OpenWindow(seq) { 
+    window.open("MessageViewForm2.do?seq=" + seq, "_blank","top=50,left=50,width=816,height=500,resizable=yes,scrollbars=no");
 }
+
+
+function OpenWindow1(userid) { 
+    window.open("MessageInsertForm2.do?userid=" + userid, "_blank","top=50,left=50,width=816,height=750,resizable=yes,scrollbars=no");
+}
+
 
 </script>
 	

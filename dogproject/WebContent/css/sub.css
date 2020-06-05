@@ -542,6 +542,7 @@
 .mySec1 .myBtnWrap div{width:100%;}
 .mySec1 .myBtnWrap div:nth-child(2){border-top:1px solid #eee;border-bottom:1px solid #eee;}
 .mySec1 .myBtnWrap div a{padding:10px 0;width:100%;text-align:center;display: inline-block;padding: 16px 0;}
+.mySec1 .myBtnWrap div a:hover{background: #eee;}
 .mySec2 {border: 1px solid #dfdfdf;height: 366px;}
 .mySec2 .myHeader{padding: 16px 0;border-bottom:1px solid #dfdfdf; display:inline-block; width:100%; text-align:center}
 .mySec2 .myMessage{width:100%; padding:3% 2%;overflow: scroll; height: 100%;}

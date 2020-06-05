@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@include file="/common/header.jsp"%>
 <jsp:include page="/common/top.jsp"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <script>
 	function idDupCheck(){
@@ -39,6 +40,10 @@
 		    if (this.readyState == 4 ) {	//응답완료
 		    	if( this.status == 200){	//정상실행
 		     		 document.getElementById("pwck").innerHTML = this.responseText;
+		     		 
+		     		 if(this.responseText == "사용가능"){
+		     			document.getElementById("pwckok").value= "ok";
+		     		 }
 		    	}else{
 		    		document.getElementById("pwck").innerHTML = this.status + this.statusText
 		    	}	    		
@@ -80,6 +85,7 @@
 			        <span>비밀번호</span>
 			        <input type="password" name="pwd" id="pwd" onchange="checkPW()" required=""  class="frm_input required" placeholder="비밀번호">
 			        <p id="pwck" class="right wp100 pt7 oh"></p>
+			        <input type="hidden" name="pwckok" id="pwckok" >
 				</div>
 				    		
 				<div class="bo_w_info write_div3 half1">
@@ -111,6 +117,7 @@
 		</section>
 	<!-- } 게시물 작성/수정 끝 -->
 	</div><!--inner -->
+
 </div>
 
 
