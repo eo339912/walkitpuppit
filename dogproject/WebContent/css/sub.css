@@ -4,7 +4,7 @@
 #sub_vis_wrap{position:relative; width:100%; clear:both}
 	.visual-area {margin-top:0px; position:relative; width:100%; line-height:1.4; box-sizing:border-box;overflow:hidden;  background:repeat-x 50% 0; background-size:cover; -webkit-animation:animate_background 20s linear;-moz-animation:animate_background 20s linear;-o-animation:animate_background 20s linear;animation:animate_background 20s linear;}
 	.visual-area .visual-area-in{ position:relative;display:table;width:100%; height:auto;  z-index:2}
-	.visual-area .visual-area-txt {display:none;width:100%; vertical-align:middle; text-align:center; box-sizing:border-box;color:#fff; height: 23em; }
+	.visual-area .visual-area-txt {display:none;width:100%; vertical-align:middle; text-align:center; box-sizing:border-box;color:#fff; height: 19.5em; }
 	.visual-area .visual-area-txt span {font-family: 'yg-jalnan', 'crd'; font-size:3em; font-weight:600; display:inline-block;}
 
 #sub_vis_wrap.sub01 .visual-area .visual-area-txt.sub01,
@@ -14,7 +14,7 @@
 #sub_vis_wrap.sub05 .visual-area .visual-area-txt.sub05{display:table-cell;}
 
 #sub_vis_wrap.sub01 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_01.png");}
-#sub_vis_wrap.sub02 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_06.png");}
+#sub_vis_wrap.sub02 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_02.png");}
 #sub_vis_wrap.sub03 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_03.png");}
 #sub_vis_wrap.sub04 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_04.png");}
 #sub_vis_wrap.sub05 .visual-area { background-image:url("/dogproject/images/sub/sub_vis_05.png");}
@@ -563,6 +563,13 @@
 .mySec3 .dogInfoWrap ul li .dogInfo .pname span{font-size: 0.8em; margin-left: 10px; color: #ffa300;}
 .mySec3 .dogInfoWrap ul li .dogInfo2{padding:15px; border:1px solid #eee; overflow: hidden;} 
 
+.myhistory{margin-bottom: 30px;}
+.myhistory .myBtnWrap{border:1px solid #dfdfdf;box-sizing: border-box;display:table;width: 100%;}
+.myhistory .myBtnWrap div{width: 33.3%; display: table-cell;}
+.myhistory .myBtnWrap div:nth-child(2){border-right:1px solid #eee;border-left:1px solid #eee;}
+.myhistory .myBtnWrap div a{padding:10px 0;width:100%;text-align:center;display: inline-block;padding: 16px 0;}
+.myhistory .myBtnWrap div.active{background-color: #ffad18;}
+.myhistory .myBtnWrap div.active a{color:#fff; font-weight:bold}
 @media all and (max-width:700px) {
 	.mySec { width: 100%;margin: 1% 0;}
 	.mySec3 {margin:0}
@@ -606,3 +613,10 @@
   color: black;
 }
 
+.disti{ 
+    margin: 0 auto;
+   color:#fff;
+    padding: 7px;
+    border-radius: 10px;
+    display:inline-block;
+    }

@@ -29,10 +29,12 @@
 		        </h2>
 		    </header>
 		    
-		    <c:if test="${loginId == review.id}">
-				    <div class="btn_confirm write_div">
-				    	<a href="ReviewDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
-					</div>
+		   
+			<c:if test="${loginId == 'admin' || loginId == review.id}">
+				<div class="btn_confirm write_div">
+					<a href="ReviewDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+					<a href="ReviewUpdateForm.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글수정</a>
+				</div>
 			</c:if>
 		
 		    <section id="bo_v_info">
@@ -57,11 +59,7 @@
 	    	       <li><a href="ReviewList.do" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
 	    	    </ul>
 		        </div>
-		        <div id="bo_v_top">
-		        	 <ul class="bo_v_com">
-	    	       <li><a href="ReviewUpdateForm.do?seq=${param.seq}" class="btn_b01 btn">수정</a></li>
-	    	    </ul>
-		        </div>
+		       
 		         <!-- } 본문 내용 끝 -->
 		  
 		    <!-- 게시물 상단 버튼 시작 { -->

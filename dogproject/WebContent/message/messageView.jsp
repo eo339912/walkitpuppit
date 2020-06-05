@@ -3,7 +3,7 @@
 <%@include file="/common/header.jsp"%>
 
 
-<script> var tit01="쪽지함"</script>
+<script> var tit01="받은쪽지함"</script>
 
 
 <div class="sub_tit_wrap">

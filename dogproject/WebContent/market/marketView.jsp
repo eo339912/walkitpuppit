@@ -28,12 +28,13 @@
 		        	
 		        </h2>
 		    </header>
-		    
-		    <c:if test="${loginId == market.id}">
-				    <div class="btn_confirm write_div">
-				    	<a href="MarketDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
-					</div>
+		    <c:if test="${loginId == 'admin' || loginId == market.id}">
+				<div class="btn_confirm write_div">
+					<a href="MarketDelete.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글삭제</a>
+					<a href="MarketUpdateForm.do?seq=${param.seq}" id="btn_submit" class="btn_submit btn fr" style="margin-left: 10px;">글수정</a>
+				</div>
 			</c:if>
+			
 		
 		    <section id="bo_v_info">
 		        <h2>페이지 정보</h2>
@@ -59,11 +60,7 @@
 	    	       <li><a href="MarketList.do" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
 	    	    </ul>
 		        </div>
-		        <div id="bo_v_top">
-		        	 <ul class="bo_v_com">
-	    	       <li><a href="MarketUpdateForm.do?seq=${param.seq}" class="btn_b01 btn">수정</a></li>
-	    	    </ul>
-		        </div>
+		        
 		         <!-- } 본문 내용 끝 -->
 		  
 		    <!-- 게시물 상단 버튼 시작 { -->

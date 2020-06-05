@@ -22,13 +22,13 @@
 	<div class="inner" style="margin-bottom:10em">
 
 		<!-- 내정보 버튼 wrap -->
-		<div class="mySec mySec1 fl">
+		<div class="myhistory">
 			<div class="myBtnWrap">
 				<div><a href="MymarketList.do?id=${loginId}">내가 쓴 글</a></div>
 				<div><a href="MyreviewList.do?id=${loginId}">내가 쓴 후기글</a></div>
 				<div><a href="MywalkTime.do?id=${loginId}">나의 산책 시간</a></div>
 			</div>
-			</div>
+		</div>
 			
 	</div>
 	</div>

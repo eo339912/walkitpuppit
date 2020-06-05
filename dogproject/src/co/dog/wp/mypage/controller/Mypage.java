@@ -27,11 +27,6 @@ public class Mypage implements Command {
 		request.setAttribute("member", member);
 		
 		
-		//쪽지 서비스로직
-		MessageDAO messageDAO = new MessageDAO();
-		List<MessageVO> list = messageDAO.getMessageList(id);
-		
-		request.setAttribute("message", list);
 		
 		
 		return "mypage/mypage.jsp";

@@ -45,7 +45,7 @@ public class MessageDAO {
 
 	}
 	
-	// 전체조회
+	// 전체조회 받은쪽지함
 	public ArrayList<MessageVO> getMessageList(String m_id) {
 		ArrayList<MessageVO> list = new ArrayList<MessageVO>();
 		
@@ -78,6 +78,7 @@ public class MessageDAO {
 
 		return list;
 	}
+	
 
 	
 	// 한건조회 board_seq
@@ -112,4 +113,39 @@ public class MessageDAO {
 
 		return message;
 	}
+	
+	// 전체조회 보낸쪽지함
+	public ArrayList<MessageVO> getSendMessageList(String userid) {
+		ArrayList<MessageVO> list = new ArrayList<MessageVO>();
+		
+		try {
+			// 1. DB연결
+			conn = ConnectionManager.getConnnect();
+			// 2. 쿼리준비
+			String sql = "select * from message where userid = ? order by seq desc";
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, userid);
+			// 3. statement 실행
+			ResultSet rs = psmt.executeQuery();
+			while (rs.next()) {
+				MessageVO message = new MessageVO();
+				message.setM_id(rs.getString("m_id"));
+				message.setTitle(rs.getString("title"));
+				message.setRegdt(rs.getString("regdt"));
+				message.setSeq(rs.getString("seq"));
+				list.add(message);
+			}
+			// 4. 결과저장
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 5. DB연결 해제
+			ConnectionManager.close(conn);
+		}
+
+		return list;
+	}
+	
 }
