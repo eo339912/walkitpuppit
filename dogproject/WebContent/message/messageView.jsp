@@ -6,7 +6,7 @@
 <script> var tit01="받은쪽지함"</script>
 
 
-<div class="sub_tit_wrap">
+<div class="sub_tit_wrap" style="margin: 1em auto;">
 	<span><script>document.write(tit01);</script></span>
 </div>
 

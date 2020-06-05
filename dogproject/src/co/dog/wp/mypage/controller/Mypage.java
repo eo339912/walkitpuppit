@@ -19,6 +19,9 @@ public class Mypage implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		String id = (String) request.getSession().getAttribute("loginId");
+		if(id == null ) {
+			return "MemberLogin.do";
+		}
 		
 		MemberDAO memberDAO = new MemberDAO();
 		MemberVO member = memberDAO.getMember(id);

@@ -362,6 +362,7 @@ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);}
 #bo_w .write_div2 .wr_content {width:88%; float:right; }
 #bo_w .write_div3{font-size:17px; font-weight:400; margin:0px 0;position:relative;width:100%;float:left;border-bottom:1px solid #ececec;}
 #bo_w .write_div3 span{float:left;border-radius:0px;padding:11.5px 0px;width:12%; font-size:17px; font-weight:500; padding-left:20px;}
+#bo_w .write_div3 p, #bo_w .write_div2 p{float:left;border-radius:0px;padding:11.5px 0px;width:12%; font-size:17px; font-weight:500; padding-left:20px;}
 #bo_w .bo_w_info.half{width:50%; float:left; }
 #bo_w .bo_w_info.half span{width: 23%;}
 #bo_w .bo_w_info.half  .frm_input	 {float:left; width:76%; padding-left: 13px; box-sizing: border-box;}

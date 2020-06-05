@@ -39,6 +39,9 @@ public class BoardView implements Command {
 		CommentsDAO commentsDAO2 = new CommentsDAO();
 		ArrayList<CommentsVO> commentsList = commentsDAO2.getCommentsList(seq);
 		
+		CommentsDAO commentsDAO3 = new CommentsDAO();
+		CommentsVO commentsVO3  = commentsDAO3.commentCount(seq);
+		request.setAttribute("cCnt", commentsVO3);
 		//결과저장
 		request.setAttribute("board", board);
 		request.setAttribute("comments", commentsList);

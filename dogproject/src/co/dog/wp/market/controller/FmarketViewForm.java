@@ -29,6 +29,9 @@ public class FmarketViewForm implements Command {
 		      McommentDAO mcommentdao = new McommentDAO();
 			  ArrayList<McommentVO> mcommentList = mcommentdao.getMcommentList(seq);
 		     
+			  McommentDAO McommentDAO3 = new McommentDAO();
+				 McommentVO McommentVO3  = McommentDAO3.commentCount(seq);
+				request.setAttribute("cCnt", McommentVO3);
 				
 				request.setAttribute("market", vo);
 				request.setAttribute("mcomment", mcommentList);

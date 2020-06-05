@@ -49,8 +49,6 @@ public class CommentsDAO{
 	// 전체조회
 	public ArrayList<CommentsVO> getCommentsList(String bseq) {
 		ArrayList<CommentsVO> list = new ArrayList<CommentsVO>();
-		
-		
 		try {
 			// 1. DB연결
 			conn = ConnectionManager.getConnnect();
@@ -107,6 +105,34 @@ public class CommentsDAO{
 			ConnectionManager.close(conn);
 		}
 
+	}
+	
+	//댓글수	
+	public CommentsVO commentCount(String b_seq) {
+		CommentsVO vo = new CommentsVO();
+
+		try {
+			// 1. DB연결
+			conn = ConnectionManager.getConnnect();
+			// 2. 쿼리준비
+			String sql = "select count(*) as cnt from comments where b_seq = ?";
+			psmt = conn.prepareStatement(sql);
+			// 3. statement 실행
+			psmt.setString(1, b_seq);
+			ResultSet rs = psmt.executeQuery();
+			if (rs.next()) {
+				vo.setCnt(rs.getString("cnt"));
+			}
+			// 4. 결과저장
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 5. DB연결 해제
+			ConnectionManager.close(conn);
+		}
+
+		return vo;
 	}
 
 }

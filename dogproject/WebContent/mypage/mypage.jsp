@@ -43,9 +43,7 @@
 		<div class="mySec mySec2 fr">
 			<span class="myHeader">Message</span>
 			<div class="myMessage">
-			 <table style="text-align:center">
-			        <caption>게시판 목록</caption>
-			        		<div class="myhistory">
+			<div class="myhistory" style="margin-bottom: 5px; ">
 			<div class="myBtnWrap">
 				<input type="hidden" name="seq" value="${param.seq}" id="seq" class="frm_input required" >
 				<div class="active"><a href="Mypage.do?id=${loginId}">받은쪽지함</a></div>
@@ -54,6 +52,8 @@
 							
 			</div>
 		</div>
+			 <table style="text-align:center; margin-bottom: 22px;">
+			       
 		
 		<thead>
 			        <tr>

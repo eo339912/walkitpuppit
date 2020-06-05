@@ -86,3 +86,6 @@ select * from walk where p_seq = 205 and incheck = 1;
 
 select * from message;
 select * from message where m_id = 'admin' order by seq desc;
+
+select count(*) from comments where seq
+select * from comments

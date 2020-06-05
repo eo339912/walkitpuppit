@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import co.dog.wp.board.model.CommentsVO;
 import co.dog.wp.common.ConnectionManager;
 
 public class McommentsDAO{
@@ -109,4 +110,31 @@ public class McommentsDAO{
 
 	}
 
+	//댓글수	
+	public McommentsVO commentCount(String c_seq) {
+		McommentsVO vo = new McommentsVO();
+
+		try {
+			// 1. DB연결
+			conn = ConnectionManager.getConnnect();
+			// 2. 쿼리준비
+			String sql = "select count(*) as cnt from mcomments where c_seq = ?";
+			psmt = conn.prepareStatement(sql);
+			// 3. statement 실행
+			psmt.setString(1, c_seq);
+			ResultSet rs = psmt.executeQuery();
+			if (rs.next()) {
+				vo.setCnt(rs.getString("cnt"));
+			}
+			// 4. 결과저장
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 5. DB연결 해제
+			ConnectionManager.close(conn);
+		}
+
+		return vo;
+	}
 }

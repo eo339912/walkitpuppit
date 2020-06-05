@@ -370,7 +370,7 @@ import co.dog.wp.common.ConnectionManager;
 						// 1. DB연결
 						conn = ConnectionManager.getConnnect();
 						// 2. 쿼리준비
-						String sql = "select * from market order by seq desc";
+						String sql = "select * from market where title is not null order by seq desc";
 						psmt = conn.prepareStatement(sql);
 						// 3. statement 실행
 						ResultSet rs = psmt.executeQuery();

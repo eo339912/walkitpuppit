@@ -110,5 +110,33 @@ public class McommentDAO{
 		}
 
 	}
+	
+	//댓글수	
+	public McommentVO commentCount(String m_seq) {
+		McommentVO vo = new McommentVO();
+
+		try {
+			// 1. DB연결
+			conn = ConnectionManager.getConnnect();
+			// 2. 쿼리준비
+			String sql = "select count(*) as cnt from mcomment where m_seq = ?";
+			psmt = conn.prepareStatement(sql);
+			// 3. statement 실행
+			psmt.setString(1, m_seq);
+			ResultSet rs = psmt.executeQuery();
+			if (rs.next()) {
+				vo.setCnt(rs.getString("cnt"));
+			}
+			// 4. 결과저장
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 5. DB연결 해제
+			ConnectionManager.close(conn);
+		}
+
+		return vo;
+	}
 
 }

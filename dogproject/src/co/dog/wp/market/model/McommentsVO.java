@@ -6,6 +6,14 @@ public class McommentsVO {
 	String seq;
 	String mcomments;
 	String c_seq;
+	String cnt;
+	
+	public String getCnt() {
+		return cnt;
+	}
+	public void setCnt(String cnt) {
+		this.cnt = cnt;
+	}
 	public String getId() {
 		return id;
 	}

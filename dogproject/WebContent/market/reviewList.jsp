@@ -49,7 +49,7 @@
                         <td class="td_subject" style="padding-left:0px; position:relative">
                            <div class="bo_tit" style="display: inline;"><a href="ReviewViewForm.do?seq=${vo.seq}">${vo.title}</a></div>
                             
-                            <c:if test="${loginId == vo.id}">
+                            <c:if test="${loginId == vo.id or loginId == 'admin'}">
 										    <div class="btn_confirm write_div" style="display: inline;">
 										    	<a href="ReviewDelete.do?seq=${vo.seq}" id="btn_submit" class="btn_submit btn fr" style="position: absolute;right: 0;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 											</div>

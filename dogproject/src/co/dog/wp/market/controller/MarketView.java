@@ -7,7 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import co.dog.wp.board.model.CommentsDAO;
+import co.dog.wp.board.model.CommentsVO;
 import co.dog.wp.common.Command;
 import co.dog.wp.market.model.MarketDAO;
 import co.dog.wp.market.model.MarketVO;
@@ -39,6 +40,10 @@ public class MarketView implements Command {
 	      MarketVO vo = marketdao.getMarket(seq);
 	      McommentDAO mcommentDAO = new McommentDAO();
 		  ArrayList<McommentVO> mcommentList = mcommentDAO.getMcommentList(seq);
+		
+		  McommentDAO mcommentDAO3 = new McommentDAO();
+		  McommentVO mcommentVO3  = mcommentDAO3.commentCount(seq);
+			request.setAttribute("cCnt", mcommentVO3);
 			
 	      // 결과저장
 	      request.setAttribute("market", vo);

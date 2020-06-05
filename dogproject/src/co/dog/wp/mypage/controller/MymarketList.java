@@ -15,8 +15,10 @@ public class MymarketList implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
 		String id = (String) request.getSession().getAttribute("loginId");
+		if(id == null ) {
+			return "MemberLogin.do";
+		}
 		
 		MypageDAO mypageDAO = new MypageDAO();
 		

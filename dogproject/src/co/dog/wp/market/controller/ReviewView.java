@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.dog.wp.board.model.CommentsDAO;
+import co.dog.wp.board.model.CommentsVO;
 import co.dog.wp.common.Command;
 import co.dog.wp.market.model.McommentDAO;
 import co.dog.wp.market.model.McommentVO;
@@ -37,6 +39,10 @@ public class ReviewView implements Command {
 	      ReviewVO vo = reviewdao.getReview(seq);
 	      McommentsDAO mcommentsDAO = new McommentsDAO();
 		  ArrayList<McommentsVO> mcommentsList = mcommentsDAO.getMcommentsList(seq);
+		
+		  McommentsDAO mcommentsDAO3 = new McommentsDAO();
+		  McommentsVO mcommentsVO3  = mcommentsDAO3.commentCount(seq);
+			request.setAttribute("cCnt", mcommentsVO3);
 			
 	      // 결과저장
 	      request.setAttribute("review", vo);

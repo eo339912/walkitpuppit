@@ -28,10 +28,14 @@ public class BoardViewForm  implements Command {
 		//2. 서비스 로직 처리(DAO) -> seq에 해당하는 댓글 리스트 조회
 		CommentsDAO commentsDAO = new CommentsDAO();
 		ArrayList<CommentsVO> commentsList = commentsDAO.getCommentsList(seq);
-				
+		
+		CommentsDAO commentsDAO3 = new CommentsDAO();
+		CommentsVO commentsVO3  = commentsDAO3.commentCount(seq);
+		
 		//결과저장
 		request.setAttribute("board", vo);
 		request.setAttribute("comments", commentsList);
+		request.setAttribute("cCnt", commentsVO3);
 		
 		return "board/boardView.jsp";
 	}

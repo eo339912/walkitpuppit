@@ -40,7 +40,11 @@ public class FmarketView implements Command {
 	      MarketVO vo = marketdao.getFmarket(seq);
 	      McommentDAO mcommentDAO = new McommentDAO();
 		  ArrayList<McommentVO> mcommentList = mcommentDAO.getMcommentList(seq);
-			
+		
+		  McommentDAO McommentDAO3 = new McommentDAO();
+		 McommentVO McommentVO3  = McommentDAO3.commentCount(seq);
+		request.setAttribute("cCnt", McommentVO3);
+		
 	      // 결과저장
 	      request.setAttribute("market", vo);
 		  request.setAttribute("mcomment", mcommentList);
